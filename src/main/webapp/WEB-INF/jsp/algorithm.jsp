@@ -41,7 +41,7 @@
         <div id="large-header" class="large-header">
            <br>
             <ul>
-                <li><a href="#home">Diverse</a></li>
+                <li><a href="/algorithm/diverse">Diverse</a></li>
                 <li><div class="dropdown">
                     <button class="dropbtn">Dropdown</button>
                     <div class="dropdown-content">
@@ -63,11 +63,11 @@
 
 
             <canvas id="demo-canvas"></canvas>
-            <div class="component" id="mydiv">
+
 
                 <h1 class="main-title">WELCOME TO <span class="thin">ALGORITHM SOLVER</span></h1></div>
 
-        </div>
+
     </div>
 
 </div><!-- /container -->

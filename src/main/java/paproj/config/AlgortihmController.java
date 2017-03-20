@@ -40,7 +40,13 @@ public class AlgortihmController {
 
         return new ModelAndView("algorithm.jsp");
 
+    }
 
+    @RequestMapping(value="/algorithm/diverse")
+    public ModelAndView algorithmDiverse()
+    {
+
+        return new ModelAndView("algorithm-insertion.jsp");
 
     }
 
