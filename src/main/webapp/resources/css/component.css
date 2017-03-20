@@ -99,16 +99,25 @@
 	.demo-2 .main-title {
 		font-size: 4em;
 	}
-
-	#mydiv {
+}
+#mydiv
+    {
 		top: 50%;
 		left: 50%;
 		width: 30em;
 		height: 18em;
 		margin-top: -9em; /*set to a negative number 1/2 of your height*/
 		margin-left: -15em; /*set to a negative number 1/2 of your width*/
-		border: 1px solid #ccc;
-		background-color: #f3f3f3;
-
+		border: 1px solid cornflowerblue;
+		background-color: #74f342;
+		position: absolute;
+		z-index: 90000000;
 	}
-}
+
+ tbody{
+
+	 width: 100%;
+	 z-index: 100;
+     position: absolute;
+	 top: 0px;
+ }

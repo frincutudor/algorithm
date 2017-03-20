@@ -31,8 +31,10 @@
 
 <body>
 
-
 <div class="container demo-1">
+
+</div>
+<div class="container tbody">
 
     <div class="content">
 
@@ -48,7 +50,7 @@
                         <a href="#">Link 3</a>
                     </div>
                 </div></li>
-                <h></h>
+
                 <li><a href="#contact">Divide et imp</a></li>
                 <li><a href="#about">Programare dinamica</a></li>
                 <li><a href="#about">Pattern match</a></li>
@@ -59,14 +61,18 @@
 
 
 
-            <canvas id="demo-canvas"></canvas>
 
-            <div id="mydiv"><h1 class="main-title">WELCOME TO <span class="thin">ALGORITHM SOLVER</span></h1></div>
+            <canvas id="demo-canvas"></canvas>
+            <div class="component" id="mydiv">
+
+                <h1 class="main-title">WELCOME TO <span class="thin">ALGORITHM SOLVER</span></h1></div>
 
         </div>
     </div>
 
 </div><!-- /container -->
+
+
 <script src="/resources/js/TweenLite.min.js"></script>
 <script src="/resources/js/EasePack.min.js"></script>
 <script src="/resources/js/rAF.js"></script>
