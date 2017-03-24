@@ -3,9 +3,11 @@ package paproj.config;
 
 import org.springframework.context.annotation.*;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -42,5 +44,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
        // registry.addResourceHandler("/static/**").addResourceLocations("/");
     }
 
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.defaultContentType(MediaType.APPLICATION_JSON_UTF8);
+
+    }
 
 }
