@@ -5,11 +5,6 @@
 <web-app>
     <display-name>PA proj Web-App</display-name>
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>WEB-INF/spring/*.xml</param-value>
-    </context-param>
-
-
 </web-app>
+
 
