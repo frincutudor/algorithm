@@ -19,7 +19,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan
+@ComponentScan(basePackages = "paproj.controllers")
 public class WebMvcConfig extends WebMvcConfigurerAdapter{
 
 

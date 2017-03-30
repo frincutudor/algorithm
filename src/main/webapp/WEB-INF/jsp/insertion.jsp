@@ -1,28 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alex
-  Date: 28.03.2017
-  Time: 21:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link href="/resources/css/welcome-template.css" rel="stylesheet">
     <link href="/resources/css/template.css" rel="stylesheet">
+    <link href="/resources/css/insertion-template.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
 
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
 </head>
-<body>
-
-
 <body>
 
 
@@ -35,7 +24,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="/algorithm">Insertion Sort</a>
+                    <a href="index.html">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
@@ -72,20 +61,18 @@
             </li>
         </ul>
 
-        <div class="title">
-            <h3>W</h3>
-            <h2>elcome to <h1>ALGORITHM SOLVER</h1></h2>
+
+        <div id="center">
+
+            <form>
+            <textarea>
+
+            </textarea>
+            </form>
+            <input type="submit" value="Submit">
+
+
         </div>
-
-        <article class="container">
-
-            <blockquote>
-                <strong>Imagination</strong> is <em>more important</em> than <strong>knowledge</strong>
-            </blockquote>
-            <b>Einstein, A.</b>
-
-        </article>
-
 
 
         <div id="large-header" class="large-header">
@@ -106,5 +93,5 @@
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
 </body>
-</body>
+
 </html>
