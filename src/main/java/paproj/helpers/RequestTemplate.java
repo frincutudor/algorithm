@@ -3,7 +3,8 @@ package paproj.helpers;
 import java.util.ArrayList;
 
 import static paproj.algorithms.InsertionSort.insertionSort;
-import static paproj.helpers.InputParser.inputParser;
+import static paproj.helpers.common.InputParser.inputParser;
+
 
 /**
  * Created by frincutudor on 3/24/17.

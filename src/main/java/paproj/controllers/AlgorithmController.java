@@ -23,7 +23,7 @@ public class AlgorithmController {
     public ModelAndView algorithmHome()
     {
 
-        return new ModelAndView("insertion.jsp");
+        return new ModelAndView("welcome.jsp");
 
     }
 
@@ -31,6 +31,12 @@ public class AlgorithmController {
     public ModelAndView home()
     {
         return new ModelAndView("welcome.jsp");
+    }
+
+    @RequestMapping(value="/home/insertion")
+    public ModelAndView homeInsertion()
+    {
+        return new ModelAndView("insertion.jsp");
     }
 
     @RequestMapping(value = "/algorithm/insertion" , method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

@@ -64,12 +64,7 @@
 
         <div id="center">
 
-            <form>
-            <textarea>
-
-            </textarea>
-            </form>
-            <input type="submit" value="Submit">
+            <label ng-></label>
 
 
         </div>

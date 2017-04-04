@@ -35,7 +35,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="/algorithm">Insertion Sort</a>
+                    <a href="/home/insertion">Insertion Sort</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
