@@ -2,7 +2,7 @@ package paproj.helpers;
 
 import java.util.ArrayList;
 
-import static paproj.algorithms.InsertionSort.insertionSort;
+import static paproj.algorithms.Sorting.InsertionSort.insertionSort;
 import static paproj.helpers.common.InputParser.inputParser;
 
 

@@ -8,7 +8,7 @@ import paproj.helpers.common.Response;
 
 import java.util.ArrayList;
 
-import static paproj.algorithms.InsertionSort.insertionSort;
+import static paproj.algorithms.Sorting.InsertionSort.insertionSort;
 import static paproj.helpers.common.InputParser.inputParser;
 
 /**
@@ -44,7 +44,6 @@ public class AlgorithmController {
     {
         Response response= new Response();
         ArrayList<Integer> listToSort=inputParser(insertionBody.getInsertionBody());
-
         response.setResponse(insertionSort(listToSort).toString());
 
         return response;

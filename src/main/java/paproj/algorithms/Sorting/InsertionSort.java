@@ -1,19 +1,16 @@
-package paproj.algorithms;
+package paproj.algorithms.Sorting;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
- * Created by frincutudor on 2/28/17.
+ * Created by Joywalker on 4/4/2017.
  */
+
 public class InsertionSort {
 
     public static ArrayList<Integer> insertionSort(ArrayList<Integer> listToSort)
     {
         int i , j;
         int key;
-
-
         for(j=1;j<listToSort.size();j++)
         {
             key=listToSort.get(j);
@@ -24,22 +21,7 @@ public class InsertionSort {
                 i--;
             }
             listToSort.set(i+1, key);
-
-
         }
-
         return listToSort;
     }
-
-
-
-
-
-
-    public static void main(String[] args )
-    {
-
-
-    }
-
 }
