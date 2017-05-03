@@ -1,6 +1,7 @@
 package paproj.helpers;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 import static paproj.algorithms.Sorting.InsertionSort.insertionSort;
 import static paproj.helpers.common.InputParser.inputParser;
@@ -25,7 +26,7 @@ public class RequestTemplate {
 
     public String solveInsertion()
     {
-        ArrayList<Integer> algorithmValues=new ArrayList<Integer>();
+        Vector<Integer> algorithmValues=new Vector<Integer>();
         algorithmValues=inputParser(request);
 
         algorithmValues=insertionSort(algorithmValues);

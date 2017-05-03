@@ -1,13 +1,15 @@
 package paproj.algorithms.Sorting;
 
 import java.util.ArrayList;
+import java.util.Vector;
+
 /**
  * Created by Joywalker on 4/4/2017.
  */
 
 public class InsertionSort {
 
-    public static ArrayList<Integer> insertionSort(ArrayList<Integer> listToSort)
+    public static Vector<Integer> insertionSort(Vector<Integer> listToSort)
     {
         int i , j;
         int key;
