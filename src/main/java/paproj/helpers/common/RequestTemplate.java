@@ -1,4 +1,6 @@
-package paproj.helpers;
+package paproj.helpers.common;
+
+import com.sun.xml.internal.bind.v2.TODO;
 
 import java.util.ArrayList;
 
@@ -22,15 +24,10 @@ public class RequestTemplate {
     }
 
 
-
+    //TODO: Create RequestHandler§
     public String solveInsertion()
     {
-        ArrayList<Integer> algorithmValues=new ArrayList<Integer>();
-        algorithmValues=inputParser(request);
-
-        algorithmValues=insertionSort(algorithmValues);
-
-        return algorithmValues.toString();
+        return insertionSort(inputParser(request)).toString();
     }
 
 

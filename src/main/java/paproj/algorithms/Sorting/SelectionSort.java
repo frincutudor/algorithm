@@ -5,13 +5,18 @@ import java.util.Vector;
 /**
  * Created by Joywalker on 4/5/2017.
  */
+
+//TODO : @AlexIonut -> Make JSP + JavaScript ( angular method ) for this algorithm (HINT: look at the insertion sort one )
+
+
 public class SelectionSort {
 
     // VectorToSort will be static, so we cannot change values
     private static Vector<Integer> vectorToSort;
-    private int vectorSize;
-    private void SelectionSort(Vector<Integer> vectorToSort,int vectorSize)
+
+    private static Vector<Integer> selectionSort(Vector<Integer> vectorToSort)
     {
+        int vectorSize=vectorToSort.size();
         int j,i,aux,min,minat;
         for(i = 0; i < vectorSize -1;i++)
         {
@@ -29,17 +34,13 @@ public class SelectionSort {
             vectorToSort.set(i,minat);
             vectorToSort.set(minat,aux);
         }
+
+        return vectorToSort;
     }
-    public int getVectorSize() {
-        return vectorSize;
-    }
-    public void setVectorSize(int vectorSize)
-    {
-        this.vectorSize = vectorSize;
-    }
-    public static Vector<Integer> printSortedVector()
+
+    /*public static Vector<Integer> printSortedVector()
     {
         //review this
         return vectorToSort;
-    }
+    }*/
 }

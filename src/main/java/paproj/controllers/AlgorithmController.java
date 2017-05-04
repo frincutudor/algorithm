@@ -15,7 +15,7 @@ import static paproj.helpers.common.InputParser.inputParser;
  * Created by frincutudor on 3/10/17.
  */
 
-
+// TODO: Get rid of jsp . HTML Config
 @RestController
 public class AlgorithmController {
 
