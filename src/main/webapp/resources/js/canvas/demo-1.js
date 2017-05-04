@@ -39,7 +39,7 @@
                 var p2 = points[j]
                 if(!(p1 == p2)) {
                     var placed = false;
-                    for(var k = 0; k < 5; k++) {
+                    for(var k = 0; k < 7; k++) {
                         if(!placed) {
                             if(closest[k] == undefined) {
                                 closest[k] = p2;
@@ -48,7 +48,7 @@
                         }
                     }
 
-                    for(var k = 0; k < 5; k++) {
+                    for(var k = 0; k < 7 ; k++) {
                         if(!placed) {
                             if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
                                 closest[k] = p2;
@@ -63,7 +63,7 @@
 
         // assign a circle to each point
         for(var i in points) {
-            var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
+            var c = new Circle(points[i], 2+Math.random()*2, 'rgba(245,255,250,0.3)');
             points[i].circle = c;
         }
     }
@@ -153,7 +153,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
+            ctx.strokeStyle = 'rgba(255,247,158,'+ p.active+')';
             ctx.stroke();
         }
     }
@@ -172,11 +172,10 @@
             if(!_this.active) return;
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'rgba(156,217,249,'+ _this.active+')';
+            ctx.fillStyle = 'rgba(135,206,250,'+ _this.active+')';
             ctx.fill();
         };
     }
-
     // Util
     function getDistance(p1, p2) {
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);

@@ -11,6 +11,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+
+    <script src="/resources/js/canvas/TweenLite.min.js"></script>
+    <script src="/resources/js/canvas/EasePack.min.js"></script>
+    <script src="/resources/js/canvas/rAF.js"></script>
+    <script src="/resources/js/canvas/demo-1.js"></script>
+    <script src="/resources/angular/test.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
 
@@ -20,6 +27,8 @@
 
     <div class="row">
         <br>
+
+        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
@@ -61,12 +70,21 @@
             </li>
         </ul>
 
-
+        <!--TODO Arrange button , make this div look nice -->
         <div id="center">
+            <div ng-app="myApp" ng-controller="myCtrl">
 
-            <label ng-></label>
+        <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
+        <textarea id="insertionArea">
+        </textarea>
 
 
+                <button type="button" ng-click="click()">Try it</button>
+
+
+                <!--TODO Convert JSON response to look nice -->
+                <p>{{content}}</p>
+            </div>
         </div>
 
 
@@ -82,11 +100,12 @@
 
 </div>
 
-
 <script src="/resources/js/canvas/TweenLite.min.js"></script>
 <script src="/resources/js/canvas/EasePack.min.js"></script>
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
+<script src="/resources/angular/insertion.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
 
 </html>
