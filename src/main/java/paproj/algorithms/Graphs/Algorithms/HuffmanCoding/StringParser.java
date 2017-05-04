@@ -1,6 +1,4 @@
-package paproj.algorithms.Graphs.HuffmanAlg.Utilities;
-
-import sun.rmi.transport.proxy.CGIHandler;
+package paproj.algorithms.Graphs.Algorithms.HuffmanCoding;
 
 import java.util.ArrayList;
 

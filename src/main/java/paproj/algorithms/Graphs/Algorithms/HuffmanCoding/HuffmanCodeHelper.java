@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.HuffmanAlg.Utilities;
+package paproj.algorithms.Graphs.Algorithms.HuffmanCoding;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -53,7 +53,6 @@ public class HuffmanCodeHelper {
     private HuffmanNode createTree()
     {
         for(int i = 0; i < nodesVector.size(); i++) { PQ.add(nodesVector.get(i));}
-
         while(PQ.size() > 1)
         {
             HuffmanNode firstPop = PQ.poll();

@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.HuffmanAlg.Utilities;
+package paproj.algorithms.Graphs.Algorithms.HuffmanCoding;
 
 /**
  * Created by Joywalker on 4/14/2017.
