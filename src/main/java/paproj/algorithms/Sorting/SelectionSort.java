@@ -10,8 +10,9 @@ public class SelectionSort {
     // VectorToSort will be static, so we cannot change values
     private static Vector<Integer> vectorToSort;
     private int vectorSize;
-    private void SelectionSort(Vector<Integer> vectorToSort,int vectorSize)
+    private void SelectionSort(Vector<Integer> vectorToSort)
     {
+        vectorSize = vectorToSort.size();
         int j,i,aux,min,minat;
         for(i = 0; i < vectorSize -1;i++)
         {
@@ -29,13 +30,6 @@ public class SelectionSort {
             vectorToSort.set(i,minat);
             vectorToSort.set(minat,aux);
         }
-    }
-    public int getVectorSize() {
-        return vectorSize;
-    }
-    public void setVectorSize(int vectorSize)
-    {
-        this.vectorSize = vectorSize;
     }
     public static Vector<Integer> printSortedVector()
     {
