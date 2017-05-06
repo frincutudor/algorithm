@@ -1,4 +1,4 @@
-package paproj.helpers.common;
+package paproj.helpers.commonhelpers;
 
 /**
  * Created by frincutudor on 3/21/17.

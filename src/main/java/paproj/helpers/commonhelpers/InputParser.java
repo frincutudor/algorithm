@@ -1,5 +1,5 @@
 
-package paproj.helpers.common;
+package paproj.helpers.commonhelpers;
 import java.util.ArrayList;
 
 /**

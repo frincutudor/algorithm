@@ -17,7 +17,7 @@ public class Edge implements Comparable<Edge> {
 
     @Override
     /**
-     * Sorting in queue
+     * sorting in queue
      */
     public int compareTo(Edge other)
     {

@@ -1,6 +1,4 @@
-package paproj.helpers.common;
-
-import org.json.JSONObject;
+package paproj.helpers.commonhelpers;
 
 /**
  * Created by frincutudor on 5/5/17.

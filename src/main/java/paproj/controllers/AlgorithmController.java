@@ -1,26 +1,23 @@
 package paproj.controllers;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import org.json.JSONObject;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanCodeHelper;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
-import paproj.helpers.common.JSONParser;
-import paproj.helpers.common.JSONResponse;
-import paproj.helpers.huffman.HuffmanBody;
-import paproj.helpers.insertion.InsertionBody;
-import paproj.helpers.common.Response;
+import paproj.helpers.commonhelpers.JSONParser;
+import paproj.helpers.commonhelpers.JSONResponse;
+import paproj.helpers.jsonbody.HuffmanBody;
+
+import paproj.helpers.commonhelpers.Response;
+import paproj.helpers.jsonbody.InsertionBody;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-import static paproj.algorithms.Sorting.InsertionSort.insertionSort;
-import static paproj.helpers.common.InputParser.inputParser;
+import static paproj.algorithms.sorting.InsertionSort.insertionSort;
+import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 /**
  * Created by frincutudor on 3/10/17.

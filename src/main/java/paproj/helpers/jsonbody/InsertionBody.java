@@ -1,4 +1,4 @@
-package paproj.helpers.insertion;
+package paproj.helpers.jsonbody;
 
 /**
  * Created by tufr261616 on 30.03.2017.

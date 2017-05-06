@@ -1,4 +1,4 @@
-package paproj.helpers.common;
+package paproj.helpers.commonhelpers;
 
 import com.google.gson.Gson;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;

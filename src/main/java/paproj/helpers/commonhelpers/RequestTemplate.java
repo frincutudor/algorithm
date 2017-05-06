@@ -1,11 +1,7 @@
-package paproj.helpers.common;
+package paproj.helpers.commonhelpers;
 
-import com.sun.xml.internal.bind.v2.TODO;
-
-import java.util.ArrayList;
-
-import static paproj.algorithms.Sorting.InsertionSort.insertionSort;
-import static paproj.helpers.common.InputParser.inputParser;
+import static paproj.algorithms.sorting.InsertionSort.insertionSort;
+import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 
 /**

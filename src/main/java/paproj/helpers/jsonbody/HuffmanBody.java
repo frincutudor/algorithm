@@ -1,9 +1,10 @@
-package paproj.helpers.huffman;
+package paproj.helpers.jsonbody;
 
 /**
  * Created by frincutudor on 5/4/17.
  */
 public class HuffmanBody {
+
     String huffmanBody;
 
     public String getHuffmanBody() {
