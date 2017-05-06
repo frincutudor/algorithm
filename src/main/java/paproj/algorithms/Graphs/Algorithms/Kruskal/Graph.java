@@ -1,5 +1,6 @@
 package paproj.algorithms.Graphs.Algorithms.Kruskal;
 
+import paproj.algorithms.Graphs.Algorithms.Kruskal.Edge;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,6 +16,10 @@ public class Graph {
     {
         this.nVertices = _nVertices;
         graph = new HashMap<>(nVertices);
+        for(int i = 0; i < nVertices; i++)
+        {
+            graph.put(i,new ArrayList<>());
+        }
     }
 
     public void addVertex(int vertex)
@@ -25,6 +30,8 @@ public class Graph {
     {
         graph.get(source).add(new Edge(source,destination,cost));
     }
+    public HashMap<Integer, ArrayList<Edge>> getGraph() {return graph;}
+    //TODO : Add class to parse inserted values into array of 3 ints to call addEdge.
 }
 
 

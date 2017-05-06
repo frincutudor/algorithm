@@ -10,7 +10,7 @@ public class RamerDouglasPeucker {
     private static List<Point> filteredList;
     private static int startIndex = 0;
     private static int lastIndex;
-    public static List<Point> RamerDouglasPeuckerFilter(List<Point> points,double epsilon) {
+    public static List<Point> RamerDouglasPeuckerFilter(List<Point> points, double epsilon) {
 
         double furthestPointDistance = 0.0;
         int furthestPointIndex = 0;
@@ -33,7 +33,7 @@ public class RamerDouglasPeucker {
                  * As it goes recursively, the in this list will be stored all the points from
                  * the middle point to last point.
                  */
-                List<Point> finalList = new ArrayList<Point>(firstHalf);
+                List<Point> finalList = new ArrayList<>(firstHalf);
                 finalList.addAll(secondHalf.subList(1, secondHalf.size()));
                 filteredList = finalList;
                 return filteredList;
@@ -41,13 +41,5 @@ public class RamerDouglasPeucker {
                 return line.asList();
             }
         }
-
-    public static void printValues() //print points to console
-    {
-        for (Point point : filteredList)
-        {
-            System.out.println(point.toString());
-        }
-    }
     }
 

@@ -1,5 +1,8 @@
 package paproj.algorithms.Graphs.Algorithms.Kruskal;
 
+import paproj.algorithms.Graphs.Algorithms.Kruskal.Edge;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.Vertex;
+
 import java.util.*;
 
 /**
@@ -7,9 +10,8 @@ import java.util.*;
  */
 public class Kruskal
 {
-    public HashMap<Vertex,ArrayList<Edge>> vertices;
-    public static HashSet<Edge> finalList;
-    public static HashSet<Edge> Kruskal(HashMap<Vertex,ArrayList<Edge>> vertexArrayListHashMap, Vertex source) {
+    private HashMap<Vertex,ArrayList<Edge>> graph;
+    public static Set<Edge> Kruskal(HashMap<Integer,ArrayList<Edge>> vertexArrayListHashMap) {
         /**
          * Algorithm :
          * 1.Sort edges in priority queue
@@ -19,24 +21,30 @@ public class Kruskal
          * 5.Get next edge
          */
         int graphSize = vertexArrayListHashMap.size();
-        int finalListSize = finalList.size();
+        Set<Edge> minSpawnTree = new HashSet<Edge>();
         PriorityQueue<Edge> edgesPQ = new PriorityQueue<>(graphSize - 1);
-        for (Vertex vertex : vertexArrayListHashMap.keySet()) {
-            Iterator<Edge> it = vertexArrayListHashMap.get(vertex).iterator();
+        List<Edge> edges = new ArrayList<>();
+        for (Integer integer : vertexArrayListHashMap.keySet()) {
+            Iterator<Edge> it = vertexArrayListHashMap.get(integer).iterator();
             while (it.hasNext()) {
                 //add edge to queue
-                edgesPQ.add(it.next());
+                edges.add(it.next());
             }
         }
-
-        source.setVisited();
-        while (finalListSize < graphSize - 1) {
+        Collections.sort(edges);
+        edgesPQ.addAll(edges);
+        UnionFind UF = new UnionFind(graphSize);
+        while (!edgesPQ.isEmpty() && minSpawnTree.size() < graphSize-1) {
             //extract from PQ
             Edge current = edgesPQ.poll();
-            if (!finalList.contains(current.getDestination())) {
-                finalList.add(current);
+            int source = current.getSource();
+            int destination = current.getDestination();
+
+            if (!UF.connected(source, destination)) {
+                UF.union(source, destination);
+                minSpawnTree.add(current);
             }
         }
-        return finalList;
+        return minSpawnTree;
     }
 }
