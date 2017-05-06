@@ -31,4 +31,6 @@ public class Graph {
     {
        return vertices.get(index);
     }
+
+    //TODO : Add class to parse inserted values into array of 3 ints to call addEdge.
 }
