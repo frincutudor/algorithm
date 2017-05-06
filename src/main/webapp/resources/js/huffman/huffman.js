@@ -56,8 +56,6 @@ function canvasDraw(jsonData) {
         }
     }
 
-
-
     function preOrderTraversal(root,parent) {
 
 
