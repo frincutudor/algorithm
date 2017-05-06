@@ -1,4 +1,6 @@
 package paproj.algorithms.Graphs.Algorithms.Dijkstra;
+import paproj.algorithms.Graphs.Helpers.Edge;
+
 import java.util.*;
 
 /**
@@ -10,8 +12,9 @@ public class DijkstraShortestPath
     private PriorityQueue<Vertex> PQ;
     private int nbVertices;
     private Set<Vertex> visited;
+    private Vertex source;
 
-    public static void DijkstraShortestPath(Vertex source){
+    public void DijkstraShortestPath(Vertex _source){
 
         /**
          *  i.Take the current node
@@ -19,6 +22,7 @@ public class DijkstraShortestPath
          *  iii.Update distances to all the neighbours
          */
         PriorityQueue<Vertex> PQ = new PriorityQueue<Vertex>();
+        this.source = _source;
         source.distance = 0;
         PQ.add(source);
 
@@ -30,10 +34,10 @@ public class DijkstraShortestPath
             for(Edge neighbour : vertexNeighbours)
             {
                double oldDistance = vertexDistance;
-               double costToDestination = neighbour.getLength();
+               double costToDestination = neighbour.getCost();
                double newDistance = oldDistance + costToDestination;
 
-                Vertex destination = neighbour.getDestination();
+                Vertex destination = neighbour.getTo();
                 if(destination.distance>newDistance){
                     // Remove the node and update it's distance
                     PQ.remove(destination);
@@ -48,5 +52,15 @@ public class DijkstraShortestPath
                 }
             }
         }
+    }
+
+    public void printPathTo(Vertex destination)
+    {
+            //print the shortest path from source to this node
+            for(Vertex pathVertex : destination.shortestPathList) {
+                System.out.print(pathVertex.toString()+"->");
+            }
+            //add the destination node
+            System.out.println(destination);
     }
 }
