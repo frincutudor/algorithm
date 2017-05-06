@@ -3,20 +3,26 @@
  */
 
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http) {
+app.controller('myCtrl', function ($scope, $http,$window) {
 
     $scope.click = function() {
 
+        
         var x = document.getElementById("insertionArea").value;
-        var json = "{\"insertionBody\":" + "\"" + x + "\"" + "}";
+        var json = "{\"huffmanBody\":" + "\"" + x + "\"" + "}";
 
-        $http.post("http://localhost:8080/algorithm/insertion", json)
+        $http.post("http://localhost:8080/algorithm/huffman", json)
             .then(function (response) {
                 $scope.content = response.data;
 
+                $window.canvasDraw(response.data);
 
             });
 
+
+
     };
 });
+
+
 

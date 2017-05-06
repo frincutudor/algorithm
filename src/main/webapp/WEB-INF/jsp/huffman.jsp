@@ -1,28 +1,31 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alex
-  Date: 28.03.2017
-  Time: 21:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link href="/resources/css/welcome-template.css" rel="stylesheet">
     <link href="/resources/css/template.css" rel="stylesheet">
+    <link href="/resources/css/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/huffman.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
 
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+
+    <script src="/resources/js/canvas/TweenLite.min.js"></script>
+    <script src="/resources/js/canvas/EasePack.min.js"></script>
+    <script src="/resources/js/canvas/rAF.js"></script>
+    <script src="/resources/js/canvas/demo-1.js"></script>
+    <script src="/resources/angular/test.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="/resources/js/huffman/huffman.js"></script>
+
 </head>
-<body>
-
-
 <body>
 
 
@@ -31,18 +34,19 @@
 
     <div class="row">
         <br>
+
+        <!-- TODO Fix dropwdown menu-->
         <ul>
-           <!--TODO: Add mappings for all jsp menus-->
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="/home/insertion">Insertion Sort</a>
+                    <a href="index.html">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="/home/huffman">Huffman</a>
+                    <a href="#">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
@@ -73,20 +77,23 @@
             </li>
         </ul>
 
-        <div class="title">
-            <h3>W</h3>
-            <h2>elcome to <h1>ALGORITHM SOLVER</h1></h2>
+        <!--TODO Arrange button , make this div look nice -->
+        <div id="center">
+            <div ng-app="myApp" ng-controller="myCtrl" >
+
+                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
+                <textarea id="insertionArea"></textarea>
+
+
+
+
+                <button id="button" type="button" ng-click="click()">Try it</button>
+                <!--TODO Convert JSON response to look nice -->
+                <canvas id="canvas" width=1000 height=600></canvas>
+                <p>{{content}}</p>
+            </div>
+
         </div>
-
-        <article class="container">
-
-            <blockquote>
-                <strong>Imagination</strong> is <em>more important</em> than <strong>knowledge</strong>
-            </blockquote>
-            <b>Einstein, A.</b>
-
-        </article>
-
 
 
         <div id="large-header" class="large-header">
@@ -101,11 +108,18 @@
 
 </div>
 
-
 <script src="/resources/js/canvas/TweenLite.min.js"></script>
 <script src="/resources/js/canvas/EasePack.min.js"></script>
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
+<script src="/resources/angular/huffman.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+<script src="/resources/js/huffman/huffman.js"></script>
+
 </body>
-</body>
+
 </html>

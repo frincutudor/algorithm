@@ -14,6 +14,8 @@ public class HuffmanCodeHelper {
     private String codedMessage;
     private PriorityQueue<HuffmanNode> PQ;
     private HuffmanNode rootNode;
+    private int size;
+
 
 
     public HuffmanCodeHelper(StringParser object) {
@@ -57,8 +59,9 @@ public class HuffmanCodeHelper {
         {
             HuffmanNode firstPop = PQ.poll();
             HuffmanNode secondPop = PQ.poll();
-            HuffmanNode parentNode = new HuffmanNode('\0',firstPop.freq+secondPop.freq,firstPop,secondPop);
+            HuffmanNode parentNode = new HuffmanNode('#',firstPop.freq+secondPop.freq,firstPop,secondPop);
             PQ.offer(parentNode);
+            size++;
         }
         rootNode = PQ.peek();
         return rootNode;
@@ -68,6 +71,12 @@ public class HuffmanCodeHelper {
         assert (PQ.size() != 0);
         return PQ;
     }
+
+    public String getTreeSize()
+    {
+        return String.valueOf(nodesVector.size()+size);
+    }
+
     public void iterateTree()
     {
         /**

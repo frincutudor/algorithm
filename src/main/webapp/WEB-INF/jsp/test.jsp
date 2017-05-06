@@ -1,21 +1,18 @@
+
+<!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="/resources/angular/test.js"></script>
-<link href="/resources/css/template.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
 <body>
-<div id="center">
-    <div ng-app="myApp" ng-controller="myCtrl">
-
-
-<textarea id="insertionArea">
-</textarea>
-
-
-        <button type="button" ng-click="click()">Try it</button>
-
-        <p>{{content}}</p>
-    </div>
-</div>
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+<script src
+<h4>Click to add a circle<br>Drag to move a circle.</h4>
+<canvas id="canvas" width=300 height=300></canvas>
 </body>
-
 </html>
