@@ -1,16 +1,13 @@
 package paproj.algorithms.Graphs.Algorithms.Kruskal;
 
-import paproj.algorithms.Graphs.Algorithms.Kruskal.Edge;
-import paproj.algorithms.Graphs.Algorithms.Kruskal.Vertex;
+import paproj.algorithms.Graphs.Helpers.Edge;
 
 import java.util.*;
-
 /**
  * Created by Joywalker on 5/3/2017.
  */
 public class Kruskal
 {
-    private HashMap<Vertex,ArrayList<Edge>> graph;
     public static Set<Edge> Kruskal(HashMap<Integer,ArrayList<Edge>> vertexArrayListHashMap) {
         /**
          * Algorithm :

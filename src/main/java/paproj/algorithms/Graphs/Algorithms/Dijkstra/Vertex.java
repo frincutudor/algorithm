@@ -2,30 +2,22 @@ package paproj.algorithms.Graphs.Algorithms.Dijkstra;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import paproj.algorithms.Graphs.Helpers.Edge;
 
 /**
  * Created by Joywalker on 4/29/2017.
  */
 public class Vertex implements Comparable<Vertex> {
-    public double distance = Double.POSITIVE_INFINITY;
+    double distance = Double.POSITIVE_INFINITY;
     public ArrayList<Edge> neighboursList;
-    public LinkedList<Vertex> shortestPathList;
+    LinkedList<Vertex> shortestPathList;
     private int vertexIndex;
 
-    public ArrayList<Edge> getNeighboursList() {
+    ArrayList<Edge> getNeighboursList() {
         return neighboursList;
     }
 
-    public LinkedList<Vertex> getShortestPathList() {
-        return shortestPathList;
-    }
-
-    public void setShortestPathList(LinkedList<Vertex> path)
-    {
-        this.shortestPathList = path;
-    }
-
-    public void addVertexToPath(Vertex visitedVertex)
+    void addVertexToPath(Vertex visitedVertex)
     {
         shortestPathList.add(visitedVertex);
     }
@@ -37,10 +29,8 @@ public class Vertex implements Comparable<Vertex> {
         shortestPathList = new LinkedList<>();
     }
 
+    public double getDistance() {return distance;}
     @Override
-    /**
-     *  This method will help the Queue sort the objects
-     */
     public int compareTo(Vertex other) {
         if(other.distance > this.distance)
             return -1;
