@@ -8,19 +8,21 @@ import java.util.ArrayList;
 public class InputParser {
 
 
-
-    public static ArrayList<Integer> inputParser(String stringToParse)
-    {
-        String strArray[] = new String[stringToParse.length()/2];
+    public static ArrayList<Integer> inputParser(String stringToParse) {
+        String strArray[] = new String[stringToParse.length() / 2];
         ArrayList<Integer> algorithmValues = new ArrayList<Integer>();
-        String parsedString=stringToParse.replaceAll("^ +| +$|( )+", "$1");
+        String parsedString = stringToParse.replaceAll("^ +| +$|( )+", "$1");
 
-        strArray =parsedString.split(" ");
+        strArray = parsedString.split(" ");
 
-        for(int i=0;i<strArray.length;i++)
+        for (int i = 0; i < strArray.length; i++)
             algorithmValues.add(Integer.parseInt(strArray[i]));
 
         return algorithmValues;
+    }
 
+    public static String[] lcsParser(String[] strings)
+    {
+        return strings;
     }
 }

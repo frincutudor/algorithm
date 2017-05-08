@@ -6,12 +6,14 @@ import org.springframework.web.servlet.ModelAndView;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanCodeHelper;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
+import paproj.helpers.commonhelpers.InputParser;
 import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.commonhelpers.JSONResponse;
 import paproj.helpers.jsonbody.HuffmanBody;
 
 import paproj.helpers.commonhelpers.Response;
 import paproj.helpers.jsonbody.InsertionBody;
+import paproj.helpers.jsonbody.LCSBody;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
@@ -77,9 +79,20 @@ public class AlgorithmController {
 
 
         return string.substring(1,string.length()-1);
-
-
+    }
+    @RequestMapping(value = "/home/huffman")
+    public ModelAndView LCSsolver()
+    {
+        return new ModelAndView("LCommonSubsequence.jsp");
     }
 
+    @RequestMapping(value = "/algorithm/LCSBody" , method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response LCSAlgorithm(@RequestBody LCSBody lcsBody)
+    {
+        Response response= new Response();
+        response.setResponse(InputParser.lcsParser());
+
+        return response;
+    }
 
 }

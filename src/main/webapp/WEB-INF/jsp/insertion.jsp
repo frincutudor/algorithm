@@ -77,10 +77,7 @@
         <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
         <textarea id="insertionArea">
         </textarea>
-
-
                 <button type="button" ng-click="click()">Try it</button>
-
 
                 <!--TODO Convert JSON response to look nice -->
                 <p>{{content}}</p>
