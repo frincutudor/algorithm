@@ -18,6 +18,7 @@ public class Kruskal
          * 4.Add to pathList of the verified node
          * 5.Get next edge
          */
+
         int graphSize = vertexArrayListHashMap.size();
         int finalListSize = finalList.size();
         PriorityQueue<Edge> edgesPQ = new PriorityQueue<>(graphSize - 1);

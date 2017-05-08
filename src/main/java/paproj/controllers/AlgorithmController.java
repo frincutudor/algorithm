@@ -8,6 +8,7 @@ import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
 import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.commonhelpers.JSONResponse;
+import paproj.helpers.jsonbody.DijsktraBody;
 import paproj.helpers.jsonbody.HuffmanBody;
 
 import paproj.helpers.commonhelpers.Response;
@@ -80,6 +81,15 @@ public class  AlgorithmController {
 
 
     }
+
+//    @RequestMapping(value="/algorithm/dijsktra",method = RequestMethod.POST)
+//    public String dijsktraSolver(@RequestBody DijsktraBody dijsktraBody)
+//    {
+//
+//
+//
+//        return null;
+//    }
 
 
 }

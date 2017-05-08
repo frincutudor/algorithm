@@ -1,5 +1,7 @@
 
 package paproj.helpers.commonhelpers;
+import paproj.algorithms.Graphs.Algorithms.Dijkstra.Edge;
+
 import java.util.ArrayList;
 
 /**
@@ -8,7 +10,7 @@ import java.util.ArrayList;
 public class InputParser {
 
 
-
+    //insertion sort
     public static ArrayList<Integer> inputParser(String stringToParse)
     {
         String strArray[] = new String[stringToParse.length()/2];
@@ -22,5 +24,23 @@ public class InputParser {
 
         return algorithmValues;
 
+    }
+
+    public static ArrayList<Edge> dijsktraInputParser(String[] input)
+    {
+        ArrayList<Edge> edges;
+        int index=0;
+        for(String string: input)
+        {
+            String[] helper = string.split(" ");
+            //edges.add(index,new Edge(Integer.valueOf(helper[0]),Integer.valueOf(helper[1]),Double.valueOf(helper[2])));
+
+
+        }
+
+
+
+
+        return null;
     }
 }
