@@ -25,7 +25,7 @@ import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 // TODO: Get rid of jsp . HTML Config
 @RestController
-public class AlgorithmController {
+public class  AlgorithmController {
 
     @RequestMapping(value="/algorithm")
     public ModelAndView algorithmHome()
