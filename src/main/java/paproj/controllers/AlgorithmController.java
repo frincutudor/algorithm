@@ -1,23 +1,32 @@
 package paproj.controllers;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanCodeHelper;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.GraphHelperImpl;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.Kruskal;
+import paproj.algorithms.Graphs.Helpers.Edge;
+import paproj.algorithms.Graphs.Helpers.GraphHelper;
 import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.commonhelpers.JSONResponse;
+import paproj.helpers.commonhelpers.KruskalObject;
 import paproj.helpers.jsonbody.HuffmanBody;
 
 import paproj.helpers.commonhelpers.Response;
 import paproj.helpers.jsonbody.InsertionBody;
+import paproj.helpers.jsonbody.KruskalBody;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 import static paproj.algorithms.sorting.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
+import static paproj.helpers.commonhelpers.InputParser.kruskalInputParser;
 
 /**
  * Created by frincutudor on 3/10/17.
@@ -39,6 +48,12 @@ public class  AlgorithmController {
     public ModelAndView home()
     {
         return new ModelAndView("welcome.jsp");
+    }
+
+    @RequestMapping(value="/home/kruskal")
+    public ModelAndView homeKruskal()
+    {
+        return new ModelAndView("kruskal.jsp");
     }
 
     @RequestMapping(value="/home/insertion")
@@ -76,8 +91,21 @@ public class  AlgorithmController {
 
 
         return string.substring(1,string.length()-1);
+    }
 
+    @RequestMapping(value="/algorithm/kruskal",method = RequestMethod.POST)
+    public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
+    {
+        KruskalObject kruskalObject=kruskalInputParser(kruskalBody.getKruskalBody());
+        GraphHelperImpl graphHelper = new GraphHelperImpl();
+        graphHelper.initGraph(kruskalObject.getNumberOfNodes());
+        for(Edge edge: kruskalObject.getEdges())
+        {
+            graphHelper.addEdge(edge.getSource(),edge.getDestination(),edge.getCost());
+        }
 
+        Set<Edge> finalSet = Kruskal.Kruskal(graphHelper.getGraph());
+        return JSONParser.JsonFormat(finalSet);
     }
 
 

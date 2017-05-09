@@ -1,34 +1,21 @@
 package paproj.helpers.commonhelpers;
 
 import com.google.gson.Gson;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.RamerDouglasPeucker.Point;
+import paproj.algorithms.Graphs.Helpers.Edge;
 
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  * Created by Joywalker on 4/27/2017.
  */
 public class JSONParser {
 
-    /*
-    private JsonParser jsonParser;
-    private JsonElement jsonElement;
-    private JsonObject parent;
-    private JsonArray childrens;
-    public JSONParser(String jsonString) {
-        jsonParser = new JsonParser();
-        jsonElement = jsonParser.parse(jsonString);
 
-        if (jsonElement.isJsonObject()) {
-            parent = jsonElement.getAsJsonObject();
-            childrens = parent.getAsJsonArray("left");
-            for (int i = 0; i < childrens.size(); i++) {
-                parent = childrens.get(i).getAsJsonObject();
-            }
-        }
-    }*/
     public static String JsonFormat(PriorityQueue<HuffmanNode> binaryTree)
     {
         return new Gson().toJson(binaryTree);
@@ -38,4 +25,10 @@ public class JSONParser {
     {
         return new Gson().toJson(points);
     }
+
+    public static String JsonFormat(Set<Edge> kruskal)
+    {
+        return new Gson().toJson(kruskal);
+    }
+
 }
