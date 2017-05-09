@@ -66,12 +66,11 @@ public class  AlgorithmController {
     @RequestMapping(value = "/algorithm/huffman" , method = RequestMethod.POST)
     public String huffmanSolver(@RequestBody HuffmanBody huffmanBody)
     {
-        JSONResponse response = new JSONResponse();
         StringParser parser=new StringParser(huffmanBody.getHuffmanBody());
         HuffmanCodeHelper huffmanCodeHelper = new HuffmanCodeHelper(parser);
         PriorityQueue<HuffmanNode> priorityQueue=huffmanCodeHelper.getQueue();
         String JSON =JSONParser.JsonFormat(priorityQueue);
-        StringBuffer stringBuffer = new StringBuffer(JSON);
+        StringBuilder stringBuffer = new StringBuilder(JSON);
         stringBuffer.insert(2,"\"nr\":\""+huffmanCodeHelper.getTreeSize()+"\",");
         String string = stringBuffer.toString();
 
