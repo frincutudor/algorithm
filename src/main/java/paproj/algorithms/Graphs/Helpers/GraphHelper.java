@@ -10,5 +10,4 @@ public interface GraphHelper {
 
     public void  initGraph(int nVertices);
     public void  addEdge(int source, int destination, double cost);
-
 }

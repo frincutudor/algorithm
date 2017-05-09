@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanCodeHelper;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.GraphHelperImpl;
 import paproj.algorithms.Graphs.Algorithms.Kruskal.Kruskal;
 import paproj.algorithms.Graphs.Helpers.Edge;
 import paproj.algorithms.Graphs.Helpers.GraphHelper;
@@ -96,7 +97,8 @@ public class AlgorithmController {
     public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
     {
         KruskalObject kruskalObject=kruskalInputParser(kruskalBody.getKruskalBody());
-        GraphHelper graphHelper = new GraphHelper(kruskalObject.getNumberOfNodes());
+        GraphHelperImpl graphHelper = new GraphHelperImpl();
+        graphHelper.initGraph(kruskalObject.getNumberOfNodes());
         for(Edge edge: kruskalObject.getEdges())
         {
             graphHelper.addEdge(edge.getSource(),edge.getDestination(),edge.getCost());
@@ -104,7 +106,6 @@ public class AlgorithmController {
 
         Set<Edge> finalSet = Kruskal.Kruskal(graphHelper.getGraph());
         return JSONParser.JsonFormat(finalSet);
-
     }
 
 
