@@ -1,4 +1,6 @@
 package paproj.algorithms.Graphs.Algorithms.Dijkstra;
+import paproj.algorithms.Graphs.Helpers.Edge;
+
 import java.util.*;
 
 /**
@@ -6,12 +8,10 @@ import java.util.*;
  */
 public class DijkstraShortestPath
 {
-    private int distances[];
     private PriorityQueue<Vertex> PQ;
-    private int nbVertices;
-    private Set<Vertex> visited;
+    private static Vertex source;
 
-    public static void DijkstraShortestPath(Vertex source){
+    public static void DijkstraShortestPath(Vertex _source){
 
         /**
          *  i.Take the current node
@@ -19,6 +19,7 @@ public class DijkstraShortestPath
          *  iii.Update distances to all the neighbours
          */
         PriorityQueue<Vertex> PQ = new PriorityQueue<Vertex>();
+        source = _source;
         source.distance = 0;
         PQ.add(source);
 
@@ -29,18 +30,17 @@ public class DijkstraShortestPath
             ArrayList<Edge> vertexNeighbours = u.getNeighboursList();
             for(Edge neighbour : vertexNeighbours)
             {
-               double oldDistance = vertexDistance;
-               double costToDestination = neighbour.getLength();
-               double newDistance = oldDistance + costToDestination;
+               double costToDestination = neighbour.getCost();
+               double newDistance = vertexDistance + costToDestination;
 
-                Vertex destination = neighbour.getDestination();
+                Vertex destination = neighbour.getTo();
                 if(destination.distance>newDistance){
                     // Remove the node and update it's distance
                     PQ.remove(destination);
                     destination.distance = newDistance;
 
-                    // Add shortest path to this vertex to the final path [source -> destination]
-                    destination.shortestPathList = new LinkedList<Vertex>(u.shortestPathList);
+                    // Add shortest path to this vertex at the final path [source -> destination]
+                    destination.shortestPathList = new LinkedList<>(u.shortestPathList);
                     destination.addVertexToPath(u);
 
                     //Add the node back to the Queue, with it's new distance
@@ -49,4 +49,6 @@ public class DijkstraShortestPath
             }
         }
     }
+
+
 }
