@@ -1,23 +1,31 @@
 package paproj.controllers;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanCodeHelper;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.Kruskal;
+import paproj.algorithms.Graphs.Helpers.Edge;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.GraphHelperImpl;
 import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.commonhelpers.JSONResponse;
+import paproj.helpers.commonhelpers.KruskalObject;
 import paproj.helpers.jsonbody.HuffmanBody;
 
 import paproj.helpers.commonhelpers.Response;
 import paproj.helpers.jsonbody.InsertionBody;
+import paproj.helpers.jsonbody.KruskalBody;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 import static paproj.algorithms.sorting.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
+import static paproj.helpers.commonhelpers.InputParser.kruskalInputParser;
 
 /**
  * Created by frincutudor on 3/10/17.
@@ -39,6 +47,12 @@ public class AlgorithmController {
     public ModelAndView home()
     {
         return new ModelAndView("welcome.jsp");
+    }
+
+    @RequestMapping(value="/home/kruskal")
+    public ModelAndView homeKruskal()
+    {
+        return new ModelAndView("kruskal.jsp");
     }
 
     @RequestMapping(value="/home/insertion")
@@ -66,18 +80,34 @@ public class AlgorithmController {
     @RequestMapping(value = "/algorithm/huffman" , method = RequestMethod.POST)
     public String huffmanSolver(@RequestBody HuffmanBody huffmanBody)
     {
-        JSONResponse response = new JSONResponse();
         StringParser parser=new StringParser(huffmanBody.getHuffmanBody());
         HuffmanCodeHelper huffmanCodeHelper = new HuffmanCodeHelper(parser);
         PriorityQueue<HuffmanNode> priorityQueue=huffmanCodeHelper.getQueue();
         String JSON =JSONParser.JsonFormat(priorityQueue);
-        StringBuffer stringBuffer = new StringBuffer(JSON);
+        StringBuilder stringBuffer = new StringBuilder(JSON);
         stringBuffer.insert(2,"\"nr\":\""+huffmanCodeHelper.getTreeSize()+"\",");
         String string = stringBuffer.toString();
 
 
         return string.substring(1,string.length()-1);
+    }
 
+    @RequestMapping(value="/algorithm/kruskal",method = RequestMethod.POST)
+    public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
+    {
+        KruskalObject kruskalObject=kruskalInputParser(kruskalBody.getKruskalBody());
+        GraphHelperImpl graphHelper = new GraphHelperImpl(kruskalObject.getNumberOfNodes());
+        graphHelper.initGraph();
+        for(Edge edge: kruskalObject.getEdges())
+        {
+            int source =  edge.getSource();
+            int destination = edge.getDestination();
+            double cost = edge.getCost();
+            graphHelper.addEdge(source,destination,cost);
+        }
+
+        Set<Edge> finalSet = Kruskal.Kruskal(graphHelper.getGraph());
+        return JSONParser.JsonFormat(finalSet);
 
     }
 
