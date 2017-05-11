@@ -7,12 +7,12 @@ import java.util.ArrayList;
 /**
  * Created by frincutudor on 5/8/17.
  */
-public class KruskalObject {
+public class GraphObject {
 
     int numberOfNodes;
     ArrayList<Edge> edges;
 
-    public KruskalObject(ArrayList<Edge> edges, int numberOfNodes) {
+    public GraphObject(ArrayList<Edge> edges, int numberOfNodes) {
         this.edges = edges;
         this.numberOfNodes=numberOfNodes;
     }

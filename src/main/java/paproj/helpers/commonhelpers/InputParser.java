@@ -1,6 +1,7 @@
 
 package paproj.helpers.commonhelpers;
 import paproj.algorithms.Graphs.Helpers.Edge;
+import paproj.algorithms.Graphs.Helpers.GraphHelper;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,7 @@ public class InputParser {
         return algorithmValues;
     }
 
-    public static KruskalObject kruskalInputParser(String[] input)
+    public static GraphObject graphInputParser(String[] input)
     {
         ArrayList<Edge> edges = new ArrayList<Edge>();
         int numberOfNodes=Integer.valueOf(input[0]);
@@ -33,9 +34,11 @@ public class InputParser {
         for(int i=1;i<input.length;i++)
         {
             String[] splitString=input[i].split(" ");
-            edges.add(new Edge(Integer.valueOf(splitString[0]),Integer.valueOf(splitString[1]),Double.valueOf(splitString[2])));
+            int source = Integer.valueOf(splitString[0]);
+            int destination = Integer.valueOf(splitString[1]);
+            double cost = Integer.valueOf(splitString[2]);
+            edges.add(new Edge(source,destination,cost));
         }
-        return new KruskalObject(edges,numberOfNodes);
-
+        return new GraphObject(edges,numberOfNodes);
     }
 }

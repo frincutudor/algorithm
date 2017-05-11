@@ -8,13 +8,10 @@ import java.util.*;
  */
 public class DijkstraShortestPath
 {
-    private int distances[];
     private PriorityQueue<Vertex> PQ;
-    private int nbVertices;
-    private Set<Vertex> visited;
-    private Vertex source;
+    private static Vertex source;
 
-    public void DijkstraShortestPath(Vertex _source){
+    public static void DijkstraShortestPath(Vertex _source){
 
         /**
          *  i.Take the current node
@@ -22,7 +19,7 @@ public class DijkstraShortestPath
          *  iii.Update distances to all the neighbours
          */
         PriorityQueue<Vertex> PQ = new PriorityQueue<Vertex>();
-        this.source = _source;
+        source = _source;
         source.distance = 0;
         PQ.add(source);
 
@@ -33,9 +30,8 @@ public class DijkstraShortestPath
             ArrayList<Edge> vertexNeighbours = u.getNeighboursList();
             for(Edge neighbour : vertexNeighbours)
             {
-               double oldDistance = vertexDistance;
                double costToDestination = neighbour.getCost();
-               double newDistance = oldDistance + costToDestination;
+               double newDistance = vertexDistance + costToDestination;
 
                 Vertex destination = neighbour.getTo();
                 if(destination.distance>newDistance){
@@ -43,8 +39,8 @@ public class DijkstraShortestPath
                     PQ.remove(destination);
                     destination.distance = newDistance;
 
-                    // Add shortest path to this vertex to the final path [source -> destination]
-                    destination.shortestPathList = new LinkedList<Vertex>(u.shortestPathList);
+                    // Add shortest path to this vertex at the final path [source -> destination]
+                    destination.shortestPathList = new LinkedList<>(u.shortestPathList);
                     destination.addVertexToPath(u);
 
                     //Add the node back to the Queue, with it's new distance
@@ -54,13 +50,5 @@ public class DijkstraShortestPath
         }
     }
 
-    public void printPathTo(Vertex destination)
-    {
-            //print the shortest path from source to this node
-            for(Vertex pathVertex : destination.shortestPathList) {
-                System.out.print(pathVertex.toString()+"->");
-            }
-            //add the destination node
-            System.out.println(destination);
-    }
+
 }

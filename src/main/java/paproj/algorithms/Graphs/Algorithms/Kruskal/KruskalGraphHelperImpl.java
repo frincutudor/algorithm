@@ -10,7 +10,7 @@ import java.util.HashMap;
 /**
  * Created by Joywalker on 5/9/17.
  */
-public class GraphHelperImpl implements GraphHelper {
+public class KruskalGraphHelperImpl implements GraphHelper {
 
     private HashMap<Integer, ArrayList<Edge>> graph;
     private int nVertices;

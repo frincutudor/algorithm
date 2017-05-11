@@ -20,12 +20,12 @@ public class Edge implements Comparable<Edge> {
     public int getSource() {return source;}
     public int getDestination() {return  destination;}
 
-    //Dijkstra
-    public Edge(Vertex _to, double cost) //add edge from current node to destination vertex
-    {
-        this.to = _to; // destination vertex
-        this.cost = cost; //cost of the destination
-    }
+
+        public Edge(Vertex _destination, double length) //add edge from current node to destination vertex
+        {
+            this.to = _destination; // destination vertex
+            this.cost = length; //cost of the destination
+        }
 
     public double getCost() {return this.cost;}
     public Vertex getTo() {return this.to;}
