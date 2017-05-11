@@ -14,8 +14,11 @@ public class GraphHelperImpl implements GraphHelper {
     private int nVertices;
     private ArrayList<Vertex> vertices;
 
-    public void initGraph(int _nVertices) {
+    public GraphHelperImpl(int _nVertices)
+    {
         this.nVertices = _nVertices;
+    }
+    public void initGraph() {
         vertices = new ArrayList<Vertex>(nVertices);
 
         for (int i = 0; i < nVertices + 1; i++) {

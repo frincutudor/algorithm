@@ -8,7 +8,7 @@ import java.util.HashMap;
  */
 public interface GraphHelper {
 
-    public void  initGraph(int nVertices);
+    public void  initGraph();
     public void  addEdge(int source, int destination, double cost);
 
 }

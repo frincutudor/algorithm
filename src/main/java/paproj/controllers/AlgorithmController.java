@@ -9,7 +9,7 @@ import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
 import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.StringParser;
 import paproj.algorithms.Graphs.Algorithms.Kruskal.Kruskal;
 import paproj.algorithms.Graphs.Helpers.Edge;
-import paproj.algorithms.Graphs.Helpers.GraphHelper;
+import paproj.algorithms.Graphs.Algorithms.Kruskal.GraphHelperImpl;
 import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.commonhelpers.JSONResponse;
 import paproj.helpers.commonhelpers.KruskalObject;
@@ -96,10 +96,14 @@ public class AlgorithmController {
     public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
     {
         KruskalObject kruskalObject=kruskalInputParser(kruskalBody.getKruskalBody());
-        GraphHelper graphHelper = new GraphHelper(kruskalObject.getNumberOfNodes());
+        GraphHelperImpl graphHelper = new GraphHelperImpl(kruskalObject.getNumberOfNodes());
+        graphHelper.initGraph();
         for(Edge edge: kruskalObject.getEdges())
         {
-            graphHelper.addEdge(edge.getSource(),edge.getDestination(),edge.getCost());
+            int source =  edge.getSource();
+            int destination = edge.getDestination();
+            double cost = edge.getCost();
+            graphHelper.addEdge(source,destination,cost);
         }
 
         Set<Edge> finalSet = Kruskal.Kruskal(graphHelper.getGraph());
