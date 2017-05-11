@@ -13,11 +13,12 @@ app.controller('myCtrl', function ($scope, $http,$window) {
         var json = {
             "kruskalBody":splitedX
         };
+        var nrNodes=parseInt(splitedX[0]);
         $http.post("http://localhost:8080/algorithm/kruskal", json)
             .then(function (response) {
                 $scope.content = response.data;
 
-                $window.canvasDraw(response.data);
+                $window.canvasDraw(response.data,nrNodes);
 
             });
 

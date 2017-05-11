@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.Algorithms.Kruskal;
+package paproj.algorithms.graphs.algorithms.kruskal;
 
 /**
  * Created by Joywalker on 5/6/2017.
@@ -17,7 +17,7 @@ public class UnionFind {
         this.count = unionSize;
         parent = new int[unionSize];
         rank = new byte[unionSize];
-        for(int i = 0; i < unionSize; i++)
+        for(int i = 1; i < unionSize; i++)
         {
             parent[i] = i;
             rank[i] = 0;

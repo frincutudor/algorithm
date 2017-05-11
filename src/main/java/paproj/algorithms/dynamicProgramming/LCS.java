@@ -1,4 +1,4 @@
-package paproj.algorithms.DynamicProgramming;
+package paproj.algorithms.dynamicProgramming;
 
 /**
  * Created by Joywalker on 5/7/2017.

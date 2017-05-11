@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.Algorithms.HuffmanCoding;
+package paproj.algorithms.graphs.algorithms.huffmanCoding;
 
 import java.util.ArrayList;
 

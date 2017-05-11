@@ -1,12 +1,7 @@
 
 function canvasDraw(jsonData) {
-<<<<<<< HEAD
     //var json={"nr":"11","freq":17,"chValue":"#","left":{"freq":7,"chValue":"#","left":{"freq":3,"chValue":"#","left":{"freq":1,"chValue":"M"},"right":{"freq":2,"chValue":"p"}},"right":{"freq":4,"chValue":"#","left":{"freq":2,"chValue":"a"},"right":{"freq":2,"chValue":"d"}}},"right":{"freq":10,"chValue":"#","left":{"freq":4,"chValue":"i"},"right":{"freq":6,"chValue":"s"}}};
-=======
    // var json={"nr":"11","freq":17,"chValue":"#","left":{"freq":7,"chValue":"#","left":{"freq":3,"chValue":"#","left":{"freq":1,"chValue":"M"},"right":{"freq":2,"chValue":"p"}},"right":{"freq":4,"chValue":"#","left":{"freq":2,"chValue":"a"},"right":{"freq":2,"chValue":"d"}}},"right":{"freq":10,"chValue":"#","left":{"freq":4,"chValue":"i"},"right":{"freq":6,"chValue":"s"}}};
->>>>>>> develop
-
-
 
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");

@@ -6,22 +6,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import paproj.algorithms.graphs.algorithms.dijkstra.DijkstraGraphHelperImpl;
 import paproj.algorithms.graphs.algorithms.dijkstra.DijkstraShortestPath;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanCodeHelper;
+import paproj.algorithms.graphs.algorithms.huffmanCoding.*;
 import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanNode;
 import paproj.algorithms.graphs.algorithms.huffmanCoding.StringParser;
-import paproj.algorithms.graphs.algorithms.dijkstra.DijkstraGraphHelperImpl;
 import paproj.algorithms.graphs.algorithms.kruskal.KruskalGraphHelperImpl;
 import paproj.algorithms.graphs.algorithms.kruskal.Kruskal;
 import paproj.algorithms.graphs.helpers.Edge;
 import paproj.helpers.commonhelpers.GraphObject;
+import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanCodeHelper;
+import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanNode;
+import paproj.algorithms.graphs.algorithms.huffmanCoding.StringParser;
+import paproj.algorithms.graphs.algorithms.kruskal.Kruskal;
+import paproj.algorithms.graphs.algorithms.kruskal.KruskalGraphHelperImpl;
 import paproj.helpers.commonhelpers.JSONParser;
 
+import paproj.helpers.jsonbody.DijkstraBody;
 import paproj.helpers.jsonbody.HuffmanBody;
 
 
 import paproj.helpers.commonhelpers.Response;
-import paproj.helpers.jsonbody.DijkstraBody;
 import paproj.helpers.jsonbody.InsertionBody;
 import paproj.helpers.jsonbody.KruskalBody;
 
@@ -99,9 +104,9 @@ public class  AlgorithmController {
     public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
     {
         GraphObject graphObject = graphInputParser(kruskalBody.getKruskalBody());
-        KruskalGraphHelperImpl graphHelper = new KruskalGraphHelperImpl();
-        graphHelper.initGraph(graphObject.getNumberOfNodes());
-        for(Edge edge: graphObject.getEdges())
+        KruskalGraphHelperImpl graphHelper = new KruskalGraphHelperImpl(graphObject.getNumberOfNodes());
+        graphHelper.initGraph();
+        for (Edge edge : graphObject.getEdges())
         {
             int source = edge.getSource();
             int destination = edge.getDestination();
@@ -125,8 +130,7 @@ public class  AlgorithmController {
         String[] input =dijkstraBody.getDijkstraBody();
         int inputSize= input.length;
         GraphObject graphObject = graphInputParser(input);
-        DijkstraGraphHelperImpl graphHelper = new DijkstraGraphHelperImpl();
-        graphHelper.initGraph(graphObject.getNumberOfNodes());
+        DijkstraGraphHelperImpl graphHelper = new DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
         for(Edge edge: graphObject.getEdges())
         {
             int source = edge.getSource();
@@ -138,7 +142,6 @@ public class  AlgorithmController {
 
 
         int index =Integer.valueOf(input[inputSize-1]);
-
         DijkstraShortestPath.DijkstraShortestPath(graphHelper.getVertex(index));
         String JSON = JSONParser.JsonFormat(graphHelper.generateDijkstraResponse());
         StringBuilder stringBuffer = new StringBuilder(JSON);

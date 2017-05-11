@@ -15,10 +15,13 @@ public class DijkstraGraphHelperImpl implements GraphHelper {
 
     private int nVertices;
     private ArrayList<Vertex> vertices;
-    private Map<Vertex,LinkedList<Vertex>> shortestPaths;
+    private Map<Vertex, LinkedList<Vertex>> shortestPaths;
 
-    public void initGraph(int _nVertices) {
-        this.nVertices = _nVertices;
+    public DijkstraGraphHelperImpl(int nVertices)
+    {
+        this.nVertices = nVertices;
+    }
+    public void initGraph() {
         vertices = new ArrayList<Vertex>(nVertices);
         shortestPaths = new HashMap<>(nVertices);
         for (int i = 0; i < nVertices + 1; i++) {

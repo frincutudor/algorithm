@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.Algorithms.RamerDouglasPeucker;
+package paproj.algorithms.graphs.algorithms.ramerDouglasPeucker;
 
 /**
  * Created by Joywalker on 4/28/2017.

@@ -1,5 +1,5 @@
-package paproj.algorithms.Graphs.Algorithms.Dijkstra;
-import paproj.algorithms.Graphs.Helpers.Edge;
+package paproj.algorithms.graphs.algorithms.dijkstra;
+import paproj.algorithms.graphs.helpers.Edge;
 
 import java.util.*;
 

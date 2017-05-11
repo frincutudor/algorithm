@@ -1,11 +1,9 @@
 package paproj.helpers.commonhelpers;
 
 import com.google.gson.Gson;
-import org.omg.CORBA.PUBLIC_MEMBER;
-import paproj.algorithms.Graphs.Algorithms.Dijkstra.Vertex;
-import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
-import paproj.algorithms.Graphs.Algorithms.RamerDouglasPeucker.Point;
-import paproj.algorithms.Graphs.Helpers.Edge;
+import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanNode;
+import paproj.algorithms.graphs.algorithms.ramerDouglasPeucker.Point;
+import paproj.algorithms.graphs.helpers.Edge;
 
 import java.util.*;
 

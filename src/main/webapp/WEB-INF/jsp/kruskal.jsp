@@ -89,7 +89,10 @@
 
                 <button id="button" type="button" ng-click="click()">Try it</button>
                 <!--TODO Convert JSON response to look nice -->
-                <canvas id="canvas" width=1000 height=600></canvas>
+                <canvas id="canvas" width=500 height=300></canvas>
+                <br>
+                <br>
+                <canvas id="canvas2" width=800 height=300></canvas>
                 <p>{{content}}</p>
             </div>
 
@@ -118,7 +121,7 @@
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
-<script src="/resources/js/huffman/huffman.js"></script>
+<script src="/resources/js/kruskal/kruskal.js"></script>
 
 </body>
 
