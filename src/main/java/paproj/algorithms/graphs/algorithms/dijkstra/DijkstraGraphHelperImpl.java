@@ -1,7 +1,7 @@
-package paproj.algorithms.Graphs.Algorithms.Dijkstra;
+package paproj.algorithms.graphs.algorithms.dijkstra;
 
-import paproj.algorithms.Graphs.Helpers.Edge;
-import paproj.algorithms.Graphs.Helpers.GraphHelper;
+import paproj.algorithms.graphs.helpers.Edge;
+import paproj.algorithms.graphs.helpers.GraphHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
