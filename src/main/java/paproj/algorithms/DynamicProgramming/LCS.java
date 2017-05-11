@@ -19,7 +19,6 @@ public class LCS {
                     lcsMatrix[i][j] = Math.max(lcsMatrix[i + 1][j], lcsMatrix[i][j + 1]);
             }
         }
-
         //Reconstructing the string consisting of the LCS
         int i = 0, j = 0;
         StringBuilder sb = new StringBuilder();
