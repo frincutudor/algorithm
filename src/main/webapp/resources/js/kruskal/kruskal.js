@@ -58,7 +58,7 @@ function canvasDraw(jsonData,nrNodes)
 
     /*TODO: finish documentation of functions*/
 
-
+    //TODO : draw graph in purple canvas (Kruskal Graph)
     function createCircles() {
         circles = [];
 
