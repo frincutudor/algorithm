@@ -1,6 +1,7 @@
 package paproj.controllers;
 
 import com.google.gson.JsonObject;
+import jdk.internal.util.xml.impl.Input;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +18,14 @@ import paproj.algorithms.Graphs.Algorithms.Kruskal.KruskalGraphHelperImpl;
 import paproj.algorithms.Graphs.Algorithms.Kruskal.Kruskal;
 import paproj.algorithms.Graphs.Helpers.Edge;
 import paproj.helpers.commonhelpers.GraphObject;
+import paproj.helpers.commonhelpers.InputParser;
 import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.commonhelpers.Response;
 import paproj.helpers.jsonbody.DijkstraBody;
 import paproj.helpers.jsonbody.HuffmanBody;
 import paproj.helpers.jsonbody.InsertionBody;
 import paproj.helpers.jsonbody.KruskalBody;
+import paproj.helpers.jsonbody.LCSBody;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -95,7 +98,6 @@ public class  AlgorithmController {
 
         return string.substring(1,string.length()-1);
     }
-
     @RequestMapping(value="/algorithm/kruskal",method = RequestMethod.POST)
     public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
     {
