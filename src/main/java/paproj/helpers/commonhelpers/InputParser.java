@@ -1,7 +1,7 @@
 
 package paproj.helpers.commonhelpers;
 
-import paproj.algorithms.Graphs.Algorithms.Dijkstra.Edge;
+
 
 import paproj.algorithms.Graphs.Helpers.Edge;
 import paproj.algorithms.Graphs.Helpers.GraphHelper;
@@ -35,7 +35,7 @@ public class InputParser {
         ArrayList<Edge> edges = new ArrayList<Edge>();
         int numberOfNodes=Integer.valueOf(input[0]);
 
-        for(int i=1;i<input.length;i++)
+        for(int i=1;i<input.length-1;i++)
         {
             String[] splitString=input[i].split(" ");
             int source = Integer.valueOf(splitString[0]);
