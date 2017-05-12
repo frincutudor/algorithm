@@ -1,8 +1,9 @@
-package algorithms.kruskal;
+package kruskalalgorithm;
 
-import helpers.Edge;
+import helperclasses.Edge;
 
 import java.util.*;
+
 /**
  * Created by Joywalker on 5/3/2017.
  */

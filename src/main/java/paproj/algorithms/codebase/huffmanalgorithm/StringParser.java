@@ -1,4 +1,4 @@
-package algorithms.huffmancoding;
+package huffmanalgorithm;
 
 import java.util.ArrayList;
 

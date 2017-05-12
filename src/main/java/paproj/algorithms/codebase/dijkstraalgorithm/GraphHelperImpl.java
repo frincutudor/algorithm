@@ -1,11 +1,10 @@
-package algorithms.dijkstra;
+package dijkstraalgorithm;
 
 
-import helpers.Edge;
-import helpers.GraphHelper;
+import helperclasses.Edge;
+import helperclasses.GraphHelper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by Joywalker on 5/9/17.

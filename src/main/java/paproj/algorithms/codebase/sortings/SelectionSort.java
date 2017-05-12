@@ -1,4 +1,4 @@
-package paproj.codebase.sorting;
+package sortings;
 
 import java.util.Vector;
 

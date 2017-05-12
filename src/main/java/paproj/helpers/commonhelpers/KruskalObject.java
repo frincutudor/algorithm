@@ -1,7 +1,7 @@
 package paproj.helpers.commonhelpers;
 
 
-import helpers.Edge;
+import helperclasses.Edge;
 
 import java.util.ArrayList;
 

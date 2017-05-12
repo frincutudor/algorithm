@@ -1,7 +1,7 @@
-package algorithms.kruskal;
+package kruskalalgorithm;
 
-import helpers.Edge;
-import helpers.GraphHelper;
+import helperclasses.Edge;
+import helperclasses.GraphHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,7 @@
-package helpers;
+package helperclasses;
 
-import algorithms.dijkstra.Vertex;
+
+import dijkstraalgorithm.Vertex;
 
 /**
  * Created by Joywalker on 5/3/2017.

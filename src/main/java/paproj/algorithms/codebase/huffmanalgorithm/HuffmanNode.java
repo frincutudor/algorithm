@@ -1,4 +1,4 @@
-package algorithms.huffmancoding;
+package huffmanalgorithm;
 
 /**
  * Created by Joywalker on 4/14/2017.
@@ -13,7 +13,7 @@ public class HuffmanNode implements Comparable<HuffmanNode>
     /*
       Constructor of the HuffmanNode
      */
-    HuffmanNode(char chValue,int freq,HuffmanNode left, HuffmanNode right)
+    HuffmanNode(char chValue, int freq, HuffmanNode left, HuffmanNode right)
     {
         this.freq = freq;
         this.chValue = chValue;

@@ -1,9 +1,11 @@
-package algorithms.dijkstra;
+package dijkstraalgorithm;
 
-import algorithms.dijkstra.Vertex;
-import helpers.Edge;
+import helperclasses.Edge;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  * Created by Joywalker on 4/29/2017.

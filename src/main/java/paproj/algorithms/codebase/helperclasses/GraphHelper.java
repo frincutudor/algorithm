@@ -1,7 +1,4 @@
-package helpers;
-
-import java.util.ArrayList;
-import java.util.HashMap;
+package helperclasses;
 
 /**
  * Created by frincutudor on 5/9/17.

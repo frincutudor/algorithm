@@ -1,11 +1,11 @@
 package paproj.controllers;
 
-import algorithms.huffmancoding.HuffmanCodeHelper;
-import algorithms.huffmancoding.HuffmanNode;
-import algorithms.huffmancoding.StringParser;
-import algorithms.kruskal.GraphHelperImpl;
-import algorithms.kruskal.Kruskal;
-import helpers.Edge;
+import helperclasses.Edge;
+import huffmanalgorithm.HuffmanCodeHelper;
+import huffmanalgorithm.HuffmanNode;
+import huffmanalgorithm.StringParser;
+import kruskalalgorithm.GraphHelperImpl;
+import kruskalalgorithm.Kruskal;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-import static paproj.codebase.sorting.InsertionSort.insertionSort;
+import static sortings.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 import static paproj.helpers.commonhelpers.InputParser.kruskalInputParser;
 
@@ -105,7 +105,6 @@ public class AlgorithmController {
 
         Set<Edge> finalSet = Kruskal.Kruskal(graphHelper.getGraph());
         return JSONParser.JsonFormat(finalSet);
-
     }
 
 }

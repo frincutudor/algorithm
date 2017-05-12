@@ -1,7 +1,7 @@
-package algorithms.dijkstra;
+package dijkstraalgorithm;
 
 
-import helpers.Edge;
+import helperclasses.Edge;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
