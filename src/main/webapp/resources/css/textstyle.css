@@ -1,0 +1,21 @@
+#text3
+{
+    background: white;
+    color: black;
+    width: 200px;
+    padding: 6px 15px 6px 35px;
+    transition: 500ms all ease;
+    border: 1px solid #333;
+    resize:vertical;
+    max-height:250px;
+    min-height:20px;
+}
+
+#text3:hover
+{
+
+    box-shadow: 12px 13px 0px rgba(204, 211, 51, 0.38),
+    -11px -14px 0px rgba(241, 96, 0, 0.28),
+    18px -24px 0px rgba(0, 0, 0, 0.34),
+    33px -6px 0px rgba(39, 74, 214, 0.28);
+}

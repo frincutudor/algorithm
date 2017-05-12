@@ -13,7 +13,6 @@
 
 }
 
-
 /*Canvas div*/
 .fullscreen-canvas {
     height: 100%;
@@ -57,6 +56,7 @@ li a:hover, .dropdown:hover .dropbtn {
 
 li.dropdown {
     display: inline-block;
+
 }
 
 .dropdown-content {
@@ -64,7 +64,7 @@ li.dropdown {
     position: absolute;
     background-color: #545454;
     min-width: 160px;
-    z-index: 5;
+    z-index: 6;
 }
 
 .dropdown-content a {
@@ -75,16 +75,18 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #a5a0a0}
+.dropdown-content a:hover {
+    background-color: #a5a0a0
+}
 
 .dropdown:hover .dropdown-content {
-    display: block ;
+    display: block;
     width: auto;
     height: auto;
 }
 
 /*Center div*/
-#center{
+#center {
     top: 50%;
     left: 50%;
     width: 60em;
@@ -92,23 +94,100 @@ li.dropdown {
     margin-top: -12em;
     margin-left: -30em;
     border: 1px black;
-    background-color:#fff79e;
+    background-color: #fff79e;
     position: absolute;
-    z-index: 5;
+    z-index: 2;
     opacity: 0.8;
+}
+
+/*Vertical split div*/
+#row  {
+    display: table-row;
+}
+
+#left, #right, #middle {
+    display: table-cell;
+
+}
+
+/*Vertical line div*/
+#menu
+{
+    position: absolute;
+    border-right: 1px solid black;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+
+}
+
+/*Button Style css*/
+.buttonStyle {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+    background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+    background-color:#ffec64;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:8px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:2px 35px;
+    text-decoration:none;
+    vertical-align: middle;
+}
+.buttonStyle:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+    background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+    background-color:#ffab23;
+}
+.buttonStyle:active {
+    position:relative;
+    top:1px;
+}
+
+
+/*Horizontal split div*/
+#first {
+    *display: inline-block;
+    width: 100%;
+    background-color: #aaaaff;
+    vertical-align: top;
+}
+
+#second {
+    *display: inline-block;
+    width: 100%;
+    background-color: green;
+    vertical-align: top;
 }
 
 /*Half-screen div*/
 
 .row {
-    width:100%;
-    height:50%;
+    width: 100%;
+    height: 50%;
     z-index: 10000000000;
 }
+
 .row div {
-    width:50%;
-    height:100%;
-    float:left;
+    width: 50%;
+    height: 100%;
+    float: left;
     z-index: 3;
 }
 

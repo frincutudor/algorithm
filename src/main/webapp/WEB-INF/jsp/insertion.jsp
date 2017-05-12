@@ -2,6 +2,7 @@
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/textstyle.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -72,18 +73,26 @@
 
         <!--TODO Arrange button , make this div look nice -->
         <div id="center">
-            <div ng-app="myApp" ng-controller="myCtrl">
+            <div id="row">
+                <div id="left">
+                    <div id="menu">
+                        <div ng-app="myApp" ng-controller="myCtrl">
+                            <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
 
-        <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-        <textarea id="insertionArea">
-        </textarea>
+                            <textarea id="text3"></textarea>
 
 
-                <button type="button" ng-click="click()">Try it</button>
+                            <button class="buttonStyle" ng-click="click()">Try it</button>
 
 
-                <!--TODO Convert JSON response to look nice -->
-                <p>{{content}}</p>
+                            <!--TODO Convert JSON response to look nice -->
+                            <p>{{content}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <h1>Instructions</h1>
             </div>
         </div>
 

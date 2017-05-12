@@ -3,6 +3,7 @@
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertion-template.css" rel="stylesheet">
     <link href="/resources/css/huffman.css" rel="stylesheet">
+    <link href="/resources/css/textstyle.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -19,7 +20,7 @@
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/test.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -79,20 +80,22 @@
 
         <!--TODO Arrange button , make this div look nice -->
         <div id="center">
-            <div ng-app="myApp" ng-controller="myCtrl" >
+            <div id="first">
+                <div ng-app="myApp" ng-controller="myCtrl">
 
-                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                <textarea id="insertionArea"></textarea>
+                    <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
+                    <textarea id="text3"></textarea>
 
 
-
-
-                <button id="button" type="button" ng-click="click()">Try it</button>
-                <!--TODO Convert JSON response to look nice -->
-                <canvas id="canvas" width=1000 height=600></canvas>
-                <p>{{content}}</p>
+                    <button id="button" type="button" ng-click="click()">Try it</button>
+                    <!--TODO Convert JSON response to look nice -->
+                    <canvas id="canvas" width=960 height=600></canvas>
+                    <p>{{content}}</p>
+                </div>
             </div>
-
+            <div id="second">
+                <h1>About Huffman</h1>
+            </div>
         </div>
 
 
@@ -114,7 +117,7 @@
 <script src="/resources/js/canvas/demo-1.js"></script>
 <script src="/resources/angular/huffman.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
