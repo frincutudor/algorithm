@@ -11,8 +11,6 @@
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
-<script src
-<h4>Click to add a circle<br>Drag to move a circle.</h4>
 <canvas id="canvas" width=300 height=300></canvas>
 </body>
 </html>

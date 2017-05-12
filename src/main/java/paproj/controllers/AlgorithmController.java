@@ -5,7 +5,6 @@ import helperclasses.Edge;
 import huffmanalgorithm.HuffmanCodeHelper;
 import huffmanalgorithm.HuffmanNode;
 import huffmanalgorithm.StringParser;
-import kruskalalgorithm.GraphHelperImpl;
 import kruskalalgorithm.Kruskal;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,15 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import paproj.algorithms.dynamicProgramming.LCS;
 import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
 
-import paproj.helpers.jsonbody.DijkstraBody;
-import paproj.helpers.commonhelpers.JSONParser;
-import paproj.helpers.jsonbody.HuffmanBody;
+import paproj.helpers.jsonbody.*;
 import paproj.helpers.commonhelpers.Response;
-import paproj.helpers.jsonbody.InsertionBody;
-import paproj.helpers.jsonbody.KruskalBody;
 
 import java.util.*;
 
@@ -92,6 +88,7 @@ public class AlgorithmController {
         String string = stringBuffer.toString();
         return string.substring(1,string.length()-1);
     }
+
     @RequestMapping(value="/algorithm/kruskal",method = RequestMethod.POST)
     public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
     {
@@ -122,7 +119,7 @@ public class AlgorithmController {
         String[] input =dijkstraBody.getDijkstraBody();
         int inputSize= input.length;
         GraphObject graphObject = graphInputParser(input);
-        dijkstraalgorithm.GraphHelperImpl graphHelper = new dijkstraalgorithm.GraphHelperImpl(graphObject.getNumberOfNodes());
+        dijkstraalgorithm.DijkstraGraphHelperImpl graphHelper = new dijkstraalgorithm.DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
         for(Edge edge: graphObject.getEdges())
         {
             int source = edge.getSource();
@@ -139,4 +136,20 @@ public class AlgorithmController {
         stringBuffer.insert(2,"\"nrVertices\":\""+graphHelper.getVertices().size()+"\",");
         return stringBuffer.toString();
     }
+
+    @RequestMapping(value = "/home/lcs")
+    public ModelAndView homeLCS()
+    {
+        return new ModelAndView("LCommonSubsequence.jsp");
+    }
+    @RequestMapping(value="/algorithm/LCommonSubsequence",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response longestCommonSubsequence(@RequestBody LCSBody lcsBody)
+    {
+        Response response = new Response();
+        String[] input = lcsBody.getLCSBody();
+        response.setResponse(LCS.LCS(input[0],input[1]));
+
+        return response;
+    }
+
 }
