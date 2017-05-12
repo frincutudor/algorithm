@@ -1,6 +1,6 @@
 package paproj.helpers.commonhelpers;
 
-import static paproj.algorithms.sorting.InsertionSort.insertionSort;
+import static sortings.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 

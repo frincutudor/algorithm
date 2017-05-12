@@ -1,4 +1,4 @@
-package paproj.algorithms.graphs.algorithms.ramerDouglasPeucker;
+package ramerdouglaspakardalgorithm;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package paproj.algorithms.graphs.helpers;
+package helperclasses;
 
 /**
  * Created by frincutudor on 5/9/17.

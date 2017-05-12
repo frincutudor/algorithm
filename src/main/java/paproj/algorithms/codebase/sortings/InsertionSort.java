@@ -1,4 +1,4 @@
-package paproj.algorithms.sorting;
+package sortings;
 
 import java.util.ArrayList;
 /**

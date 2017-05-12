@@ -1,4 +1,4 @@
-package paproj.algorithms.sorting;
+package sortings;
 
 import java.util.Vector;
 
@@ -7,8 +7,6 @@ import java.util.Vector;
  */
 
 //TODO : @AlexIonut -> Make JSP + JavaScript ( angular method ) for this algorithm (HINT: look at the insertion sort one )
-
-
 public class SelectionSort {
 
     // VectorToSort will be static, so we cannot change values

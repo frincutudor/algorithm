@@ -1,6 +1,7 @@
-package paproj.algorithms.graphs.algorithms.ramerDouglasPeucker;
+package ramerdouglaspakardalgorithm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Joywalker on 4/28/2017.

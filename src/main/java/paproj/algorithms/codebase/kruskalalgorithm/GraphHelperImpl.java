@@ -1,7 +1,7 @@
-package paproj.algorithms.graphs.algorithms.kruskal;
+package kruskalalgorithm;
 
-import paproj.algorithms.graphs.helpers.Edge;
-import paproj.algorithms.graphs.helpers.GraphHelper;
+import helperclasses.Edge;
+import helperclasses.GraphHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,11 +9,11 @@ import java.util.HashMap;
 /**
  * Created by Joywalker on 5/9/17.
  */
-public class KruskalGraphHelperImpl implements GraphHelper {
+public class GraphHelperImpl implements GraphHelper {
 
     private HashMap<Integer, ArrayList<Edge>> graph;
     private int nVertices;
-    public KruskalGraphHelperImpl(int _nVertices)
+    public GraphHelperImpl(int _nVertices)
     {
         this.nVertices = _nVertices;
     }

@@ -1,7 +1,12 @@
-package paproj.algorithms.graphs.algorithms.dijkstra;
-import paproj.algorithms.graphs.helpers.Edge;
+package dijkstraalgorithm;
 
-import java.util.*;
+import dijkstraalgorithm.Vertex;
+import helperclasses.Edge;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  * Created by Joywalker on 4/29/2017.

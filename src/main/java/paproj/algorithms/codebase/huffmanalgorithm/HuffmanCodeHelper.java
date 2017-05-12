@@ -1,4 +1,4 @@
-package paproj.algorithms.graphs.algorithms.huffmanCoding;
+package huffmanalgorithm;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;

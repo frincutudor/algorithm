@@ -1,13 +1,10 @@
-package paproj.algorithms.graphs;
+package sortings;
+
 import java.util.Vector;
 
 /**
  * Created by Joywalker on 4/6/2017.
  */
-
-
-
-
 public class AdjacencyList {
     private int nbOfNodes;
     private int nbEdges;

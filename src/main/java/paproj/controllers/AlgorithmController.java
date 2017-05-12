@@ -1,39 +1,32 @@
 package paproj.controllers;
 
+import dijkstraalgorithm.DijkstraShortestPath;
+import helperclasses.Edge;
+import huffmanalgorithm.HuffmanCodeHelper;
+import huffmanalgorithm.HuffmanNode;
+import huffmanalgorithm.StringParser;
+import kruskalalgorithm.GraphHelperImpl;
+import kruskalalgorithm.Kruskal;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import paproj.algorithms.graphs.algorithms.dijkstra.DijkstraGraphHelperImpl;
-import paproj.algorithms.graphs.algorithms.dijkstra.DijkstraShortestPath;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.*;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanNode;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.StringParser;
-import paproj.algorithms.graphs.algorithms.kruskal.KruskalGraphHelperImpl;
-import paproj.algorithms.graphs.algorithms.kruskal.Kruskal;
-import paproj.algorithms.graphs.helpers.Edge;
 import paproj.helpers.commonhelpers.GraphObject;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanCodeHelper;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanNode;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.StringParser;
-import paproj.algorithms.graphs.algorithms.kruskal.Kruskal;
-import paproj.algorithms.graphs.algorithms.kruskal.KruskalGraphHelperImpl;
 import paproj.helpers.commonhelpers.JSONParser;
 
 import paproj.helpers.jsonbody.DijkstraBody;
+import paproj.helpers.commonhelpers.JSONParser;
 import paproj.helpers.jsonbody.HuffmanBody;
-
-
 import paproj.helpers.commonhelpers.Response;
 import paproj.helpers.jsonbody.InsertionBody;
 import paproj.helpers.jsonbody.KruskalBody;
 
 import java.util.*;
 
-import static paproj.algorithms.sorting.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
+import static sortings.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 /**
@@ -42,7 +35,7 @@ import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 // TODO: Get rid of jsp . HTML Config
 @RestController
-public class  AlgorithmController {
+public class AlgorithmController {
 
     @RequestMapping(value="/algorithm")
     public ModelAndView algorithmHome()
@@ -97,14 +90,14 @@ public class  AlgorithmController {
         StringBuilder stringBuffer = new StringBuilder(JSON);
         stringBuffer.insert(2,"\"nrVertices\":\""+huffmanCodeHelper.getTreeSize()+"\",");
         String string = stringBuffer.toString();
-
         return string.substring(1,string.length()-1);
     }
     @RequestMapping(value="/algorithm/kruskal",method = RequestMethod.POST)
     public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
     {
-        GraphObject graphObject = graphInputParser(kruskalBody.getKruskalBody());
-        KruskalGraphHelperImpl graphHelper = new KruskalGraphHelperImpl(graphObject.getNumberOfNodes());
+        String[] kBody = kruskalBody.getKruskalBody();
+        GraphObject graphObject = graphInputParser(kBody);
+        kruskalalgorithm.GraphHelperImpl graphHelper = new kruskalalgorithm.GraphHelperImpl(graphObject.getNumberOfNodes());
         graphHelper.initGraph();
         for (Edge edge : graphObject.getEdges())
         {
@@ -126,11 +119,10 @@ public class  AlgorithmController {
     @RequestMapping(value="/algorithm/dijkstra",method = RequestMethod.POST)
     public String dijkstraSolver(@RequestBody DijkstraBody dijkstraBody)
     {
-
         String[] input =dijkstraBody.getDijkstraBody();
         int inputSize= input.length;
         GraphObject graphObject = graphInputParser(input);
-        DijkstraGraphHelperImpl graphHelper = new DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
+        dijkstraalgorithm.GraphHelperImpl graphHelper = new dijkstraalgorithm.GraphHelperImpl(graphObject.getNumberOfNodes());
         for(Edge edge: graphObject.getEdges())
         {
             int source = edge.getSource();
@@ -139,7 +131,6 @@ public class  AlgorithmController {
             graphHelper.addEdge(source,destination,cost);
         }
         //TODO : Get START NODE here
-
 
         int index =Integer.valueOf(input[inputSize-1]);
         DijkstraShortestPath.DijkstraShortestPath(graphHelper.getVertex(index));

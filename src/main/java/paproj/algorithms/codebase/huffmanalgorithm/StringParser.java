@@ -1,7 +1,6 @@
-package paproj.algorithms.graphs.algorithms.huffmanCoding;
+package huffmanalgorithm;
 
 import java.util.ArrayList;
-
 /**
  * Created by Joywalker on 4/9/2017.
  */

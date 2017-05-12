@@ -1,9 +1,9 @@
 package paproj.helpers.commonhelpers;
 
 import com.google.gson.Gson;
-import paproj.algorithms.graphs.algorithms.huffmanCoding.HuffmanNode;
-import paproj.algorithms.graphs.algorithms.ramerDouglasPeucker.Point;
-import paproj.algorithms.graphs.helpers.Edge;
+import helperclasses.Edge;
+import huffmanalgorithm.HuffmanNode;
+import ramerdouglaspakardalgorithm.Point;
 
 import java.util.*;
 
