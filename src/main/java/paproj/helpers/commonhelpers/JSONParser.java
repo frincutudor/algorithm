@@ -1,7 +1,7 @@
 package paproj.helpers.commonhelpers;
 
 import algorithms.huffmancoding.HuffmanNode;
-import algorithms.ramerDouglasPeucker.Point;
+import algorithms.ramerdouglaspakardalgorithm.Point;
 import com.google.gson.Gson;
 import helpers.Edge;
 

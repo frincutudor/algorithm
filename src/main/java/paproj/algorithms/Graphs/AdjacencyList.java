@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs;
+package paproj.codebase.Graphs;
 import java.util.Vector;
 
 /**

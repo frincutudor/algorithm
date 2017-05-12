@@ -1,4 +1,4 @@
-package algorithms.ramerDouglasPeucker;
+package algorithms.ramerdouglaspakardalgorithm;
 
 /**
  * Created by Joywalker on 4/28/2017.

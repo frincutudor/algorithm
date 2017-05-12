@@ -6,12 +6,10 @@ import algorithms.huffmancoding.StringParser;
 import algorithms.kruskal.GraphHelperImpl;
 import algorithms.kruskal.Kruskal;
 import helpers.Edge;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import paproj.helpers.commonhelpers.JSONParser;
-import paproj.helpers.commonhelpers.JSONResponse;
 import paproj.helpers.commonhelpers.KruskalObject;
 import paproj.helpers.jsonbody.HuffmanBody;
 
@@ -23,7 +21,7 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-import static paproj.algorithms.sorting.InsertionSort.insertionSort;
+import static paproj.codebase.sorting.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 import static paproj.helpers.commonhelpers.InputParser.kruskalInputParser;
 
