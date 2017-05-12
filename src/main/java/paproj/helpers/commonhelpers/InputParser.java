@@ -1,6 +1,5 @@
-
 package paproj.helpers.commonhelpers;
-import paproj.algorithms.Graphs.Helpers.Edge;
+import helpers.Edge;
 
 import java.util.ArrayList;
 

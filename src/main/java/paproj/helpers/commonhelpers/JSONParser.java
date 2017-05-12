@@ -1,10 +1,9 @@
 package paproj.helpers.commonhelpers;
 
+import algorithms.huffmancoding.HuffmanNode;
+import algorithms.ramerDouglasPeucker.Point;
 import com.google.gson.Gson;
-import org.omg.CORBA.PUBLIC_MEMBER;
-import paproj.algorithms.Graphs.Algorithms.HuffmanCoding.HuffmanNode;
-import paproj.algorithms.Graphs.Algorithms.RamerDouglasPeucker.Point;
-import paproj.algorithms.Graphs.Helpers.Edge;
+import helpers.Edge;
 
 import java.util.List;
 import java.util.PriorityQueue;

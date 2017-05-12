@@ -1,6 +1,6 @@
-package paproj.algorithms.Graphs.Algorithms.Kruskal;
+package algorithms.kruskal;
 
-import paproj.algorithms.Graphs.Helpers.Edge;
+import helpers.Edge;
 
 import java.util.*;
 /**

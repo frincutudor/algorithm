@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.Algorithms.Kruskal;
+package algorithms.kruskal;
 
 /**
  * Created by Joywalker on 5/6/2017.

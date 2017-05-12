@@ -1,4 +1,4 @@
-package paproj.algorithms.Graphs.Helpers;
+package helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;

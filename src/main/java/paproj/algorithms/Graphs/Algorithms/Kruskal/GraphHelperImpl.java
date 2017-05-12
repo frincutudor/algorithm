@@ -1,7 +1,7 @@
-package paproj.algorithms.Graphs.Algorithms.Kruskal;
+package algorithms.kruskal;
 
-import paproj.algorithms.Graphs.Helpers.Edge;
-import paproj.algorithms.Graphs.Helpers.GraphHelper;
+import helpers.Edge;
+import helpers.GraphHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
