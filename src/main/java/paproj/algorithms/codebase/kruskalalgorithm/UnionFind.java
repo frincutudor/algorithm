@@ -1,4 +1,5 @@
-package kruskalalgorithm;
+package paproj.algorithms.codebase.kruskalalgorithm;
+
 /**
  * Created by Joywalker on 5/6/2017.
  */

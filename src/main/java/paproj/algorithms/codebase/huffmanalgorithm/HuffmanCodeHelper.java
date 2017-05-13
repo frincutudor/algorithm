@@ -1,4 +1,7 @@
-package huffmanalgorithm;
+package paproj.algorithms.codebase.huffmanalgorithm;
+
+import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
+import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
 
 import java.util.ArrayList;
 import java.util.PriorityQueue;

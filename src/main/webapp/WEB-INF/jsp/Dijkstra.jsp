@@ -112,7 +112,7 @@
 <script src="/resources/js/canvas/EasePack.min.js"></script>
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
-<script src="/resources/angular/kruskal.js"></script>
+<script src="/resources/angular/dijkstra.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>

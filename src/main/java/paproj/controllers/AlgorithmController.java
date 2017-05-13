@@ -1,17 +1,20 @@
 package paproj.controllers;
 
-import dijkstraalgorithm.DijkstraShortestPath;
-import helperclasses.Edge;
-import huffmanalgorithm.HuffmanCodeHelper;
-import huffmanalgorithm.HuffmanNode;
-import huffmanalgorithm.StringParser;
-import kruskalalgorithm.Kruskal;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraGraphHelperImpl;
+import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraShortestPath;
+import paproj.algorithms.codebase.helperclasses.Edge;
+import paproj.algorithms.codebase.huffmanalgorithm.HuffmanCodeHelper;
+import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
+import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
+import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
+import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.dynamicProgramming.LCS;
 import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
@@ -21,8 +24,9 @@ import paproj.helpers.commonhelpers.Response;
 
 import java.util.*;
 
+import static paproj.algorithms.codebase.sortings.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
-import static sortings.InsertionSort.insertionSort;
+
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 /**
@@ -94,7 +98,7 @@ public class AlgorithmController {
     {
         String[] kBody = kruskalBody.getKruskalBody();
         GraphObject graphObject = graphInputParser(kBody);
-        kruskalalgorithm.GraphHelperImpl graphHelper = new kruskalalgorithm.GraphHelperImpl(graphObject.getNumberOfNodes());
+        GraphHelperImpl graphHelper = new GraphHelperImpl(graphObject.getNumberOfNodes());
         graphHelper.initGraph();
         for (Edge edge : graphObject.getEdges())
         {
@@ -119,7 +123,7 @@ public class AlgorithmController {
         String[] input =dijkstraBody.getDijkstraBody();
         int inputSize= input.length;
         GraphObject graphObject = graphInputParser(input);
-        dijkstraalgorithm.DijkstraGraphHelperImpl graphHelper = new dijkstraalgorithm.DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
+        DijkstraGraphHelperImpl graphHelper = new DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
         for(Edge edge: graphObject.getEdges())
         {
             int source = edge.getSource();

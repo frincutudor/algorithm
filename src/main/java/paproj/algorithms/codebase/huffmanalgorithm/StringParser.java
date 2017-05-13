@@ -1,4 +1,4 @@
-package huffmanalgorithm;
+package paproj.algorithms.codebase.huffmanalgorithm;
 
 import java.util.ArrayList;
 /**

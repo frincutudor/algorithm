@@ -1,4 +1,5 @@
-package huffmanalgorithm;
+package paproj.algorithms.codebase.huffmanalgorithm;
+
 /**
  * Created by Joywalker on 4/14/2017.
  */

@@ -1,6 +1,8 @@
-package dijkstraalgorithm;
+package paproj.algorithms.codebase.dijkstraalgorithm;
 
-import helperclasses.Edge;
+
+import paproj.algorithms.codebase.helperclasses.Edge;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 

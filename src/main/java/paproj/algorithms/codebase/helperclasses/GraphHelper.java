@@ -1,4 +1,4 @@
-package helperclasses;
+package paproj.algorithms.codebase.helperclasses;
 
 /**
  * Created by frincutudor on 5/9/17.

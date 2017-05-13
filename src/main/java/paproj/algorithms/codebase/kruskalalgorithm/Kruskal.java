@@ -1,6 +1,8 @@
-package kruskalalgorithm;
+package paproj.algorithms.codebase.kruskalalgorithm;
 
-import helperclasses.Edge;
+
+import paproj.algorithms.codebase.helperclasses.Edge;
+import paproj.algorithms.codebase.kruskalalgorithm.UnionFind;
 
 import java.util.*;
 /**

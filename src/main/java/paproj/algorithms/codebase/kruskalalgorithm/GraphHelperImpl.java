@@ -1,7 +1,7 @@
-package kruskalalgorithm;
+package paproj.algorithms.codebase.kruskalalgorithm;
 
-import helperclasses.Edge;
-import helperclasses.GraphHelper;
+import paproj.algorithms.codebase.helperclasses.Edge;
+import paproj.algorithms.codebase.helperclasses.GraphHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

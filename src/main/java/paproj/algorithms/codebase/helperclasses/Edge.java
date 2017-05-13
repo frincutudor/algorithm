@@ -1,6 +1,6 @@
-package helperclasses;
+package paproj.algorithms.codebase.helperclasses;
 
-import dijkstraalgorithm.Vertex;
+import paproj.algorithms.codebase.dijkstraalgorithm.Vertex;
 
 /**
  * Created by Joywalker on 5/3/2017.
