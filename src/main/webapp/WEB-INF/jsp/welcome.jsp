@@ -54,7 +54,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="home/lcs">Link 1</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
