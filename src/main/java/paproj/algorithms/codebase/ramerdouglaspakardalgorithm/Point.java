@@ -16,4 +16,10 @@ public class Point {
 
     public double getPointX() {return pointX;};
     public double getPointY() {return pointY;};
+
+
+    @Override
+    public String toString() {
+        return pointX + " " + pointY;
+    }
 }

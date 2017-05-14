@@ -8,13 +8,22 @@ import java.util.List;
  */
 public class RamerDouglasPBody {
 
-    public List<Point> rdpBody;
+   String rdpBody;
+   String epsilon;
 
-    public List<Point> getRdpBody() {
+    public String getEpsilon() {
+        return epsilon;
+    }
+
+    public void setEpsilon(String epsilon) {
+        this.epsilon = epsilon;
+    }
+
+    public String getRdpBody() {
         return rdpBody;
     }
 
-    public void setRdpBody(List<Point> rdpBody) {
+    public void setRdpBody(String rdpBody) {
         this.rdpBody = rdpBody;
     }
 }

@@ -12,6 +12,8 @@ ctx.lineWidth = 3;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.strokeStyle = '#ff0000';
+var index=0;
+
 
 canvas.addEventListener('mousedown', function(e) {
     ctx.beginPath();
@@ -27,7 +29,9 @@ canvas.addEventListener('mouseup', function() {
 var onPaint = function() {
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
-    circles.push({pointX:mouse.x,pointY:mouse.y});
+    var circle=mouse.x.toString()+" "+mouse.y.toString();
+    circles[index]=circle;
+    index++;
 };
 
 function returnCircles()
@@ -45,5 +49,6 @@ $("#clear").click( function()
     {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         circles=[];
+        index=0;
     }
 );

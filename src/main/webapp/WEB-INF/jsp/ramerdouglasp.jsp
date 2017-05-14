@@ -12,7 +12,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
-
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="/resources/js/canvas/TweenLite.min.js"></script>
+    <script src="/resources/js/canvas/EasePack.min.js"></script>
+    <script src="/resources/js/canvas/rAF.js"></script>
+    <script src="/resources/js/canvas/demo-1.js"></script>
+    <script src="/resources/angular/rdp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="/resources/js/rdp/ramerdouglaspack.js"></script>
+    <script src="/resources/js/rdp/drawalgorithm.js"></script>
 </head>
 <body>
 
@@ -73,7 +85,12 @@
 
 
                 <canvas id="myCanvas" width=300 height=300></canvas>
+                <canvas id="canvas" width=300 height=300></canvas>
+                <br>&nbsp;
+                <label>Set epsilon here</label>
+                <input id="input">
                 <button type="button" ng-click="click()">Try it!!</button>
+
                 <!--<button id="clear">Clear canvas</button>-->
 
 
@@ -107,6 +124,7 @@
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
 <script src="/resources/js/rdp/ramerdouglaspack.js"></script>
+<script src="/resources/js/rdp/drawalgorithm.js"></script>
 
 </body>
 

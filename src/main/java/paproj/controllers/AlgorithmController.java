@@ -1,6 +1,7 @@
 package paproj.controllers;
 
 
+import com.fasterxml.jackson.databind.ser.std.StdKeySerializers;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -163,12 +164,23 @@ public class AlgorithmController {
         return new ModelAndView("ramerdouglasp.jsp");
     }
 
+
+    //TODO:check if algorithm works
     @RequestMapping(value="/algorithm/rdp",method = RequestMethod.POST)
     public Response solveRdp(@RequestBody RamerDouglasPBody rdpBody)
     {
+        List<Point> points = new ArrayList<Point>() ;
+
         Response response= new Response();
-        List<Point> points=RamerDouglasPeuckerFilter(rdpBody.getRdpBody(),0.025);
-        response.setResponse(points.toString());
+        String[] input = rdpBody.getRdpBody().split(",");
+        for(int i=0;i<input.length;i++)
+        {
+            String[] coords=input[i].split("\\s+");
+            points.add(new Point(Double.valueOf(coords[0]),Double.valueOf(coords[1])));
+        }
+
+        List<Point> output=RamerDouglasPeuckerFilter(points,Double.valueOf(rdpBody.getEpsilon()));
+        response.setResponse(output.toString());
         return response;
     }
 

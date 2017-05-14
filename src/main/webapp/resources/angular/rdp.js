@@ -8,15 +8,18 @@ app.controller('myCtrl', function ($scope, $http,$window) {
 
     $scope.click = function() {
 
+        var x = document.getElementById("input").value;
+
         var json={
-            "rdpBody": $window.returnCircles()
+            "rdpBody": $window.returnCircles().toString(),
+            "epsilon":x
         };
 
         $http.post("http://localhost:8080/algorithm/rdp", json)
             .then(function (response) {
                 $scope.content = response.data;
 
-                //$window.canvasDraw(response.data,nrNodes);
+                $window.drawAlgorithm(response.data);
 
             });
 
