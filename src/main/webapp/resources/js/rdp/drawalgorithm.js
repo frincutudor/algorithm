@@ -25,7 +25,7 @@ function drawAlgorithm(jsonResponse)
 
     function drawLines() {
 
-
+        ctx.clearRect(0,0,cw,ch);
         ctx.strokeStyle = '#00d';
         ctx.lineWidth = 2;
         ctx.beginPath();
