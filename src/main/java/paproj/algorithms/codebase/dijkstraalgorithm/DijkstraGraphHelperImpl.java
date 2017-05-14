@@ -59,10 +59,12 @@ public class DijkstraGraphHelperImpl implements GraphHelper {
             ArrayList<Integer> vertexShortestPath = new ArrayList<>(size);
             for(Vertex pathVertex : vertex.shortestPathList)
             {
-                vertexShortestPath.add(pathVertex.getVertexIndex());
+                    vertexShortestPath.add(pathVertex.getVertexIndex());
             }
-            vertexShortestPath.add(vertex.getVertexIndex());
-            finalMap.put(vertexShortestPath,vertex.distance);
+            if(vertex.distance != Double.POSITIVE_INFINITY) {
+                vertexShortestPath.add(vertex.getVertexIndex());
+                finalMap.put(vertexShortestPath, vertex.distance);
+            }
         }
         return finalMap;
     }

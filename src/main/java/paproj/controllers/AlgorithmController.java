@@ -133,6 +133,7 @@ public class AlgorithmController {
         int inputSize= input.length;
         GraphObject graphObject = graphInputParser(input);
         DijkstraGraphHelperImpl graphHelper = new DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
+        graphHelper.initGraph();
         for(Edge edge: graphObject.getEdges())
         {
             int source = edge.getSource();
