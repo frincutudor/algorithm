@@ -19,9 +19,9 @@ import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
 import paproj.algorithms.dynamicProgramming.LCS;
 import paproj.algorithms.patternmatch.BoyerMoore;
+import paproj.algorithms.patternmatch.KMP;
 import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
-
 import paproj.helpers.commonhelpers.PatternMatchRespone;
 import paproj.helpers.jsonbody.*;
 import paproj.helpers.commonhelpers.Response;
@@ -207,5 +207,27 @@ public class AlgorithmController {
         return response;
     }
 
+
+    @RequestMapping(value = "/home/kmp")
+    public ModelAndView homeKmp()
+    {
+        return new ModelAndView("kmp.jsp");
+    }
+
+    @RequestMapping(value="/algorithm/kmp",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public PatternMatchRespone solveKMP(@RequestBody KMPBody kmpBody)
+    {
+        PatternMatchRespone response = new PatternMatchRespone();
+        String[] input = kmpBody.getKmpBody().split("\\s+");
+        String pattern=input[0];
+        String text=input[1];
+
+        KMP kmp =new KMP(pattern);
+        response.setPattern(pattern);
+        response.setText(text);
+        response.setPosition(kmp.search(text));
+
+        return response;
+    }
 
 }
