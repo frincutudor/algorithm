@@ -48,6 +48,12 @@ function returnCircles()
 $("#clear").click( function()
     {
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        var canvas2 = document.getElementById("canvas");
+        var context = canvas2.getContext("2d");
+        var cw = canvas2.width;
+        var ch = canvas2.height;
+        context.clearRect(0,0,cw,ch);
+
         circles=[];
         index=0;
     }

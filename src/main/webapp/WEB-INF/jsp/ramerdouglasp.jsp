@@ -90,6 +90,7 @@
                 <label>Set epsilon here</label>
                 <input id="input">
                 <button type="button" ng-click="click()">Try it!!</button>
+                <button id="clear">Clear</button>
 
                 <!--<button id="clear">Clear canvas</button>-->
 

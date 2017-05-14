@@ -47,6 +47,7 @@ function drawAlgorithm(jsonResponse)
 
     }
 
+
     drawLines();
 
 }
