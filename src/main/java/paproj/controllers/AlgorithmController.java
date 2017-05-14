@@ -18,9 +18,11 @@ import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
 import paproj.algorithms.dynamicProgramming.LCS;
+import paproj.algorithms.patternmatch.BoyerMoore;
 import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
 
+import paproj.helpers.commonhelpers.PatternMatchRespone;
 import paproj.helpers.jsonbody.*;
 import paproj.helpers.commonhelpers.Response;
 
@@ -156,6 +158,27 @@ public class AlgorithmController {
         response.setResponse(LCS.LCS(input[0],input[1]));
 
         return response;
+    }
+    @RequestMapping(value = "/home/boyer/moore")
+    public ModelAndView homeBoyerMoore()
+    {
+        return new ModelAndView("boyermoore.jsp");
+    }
+
+    @RequestMapping(value="/algorithm/boyer/moore",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public PatternMatchRespone solveBoyerMoore(@RequestBody BoyerMooreBody bmBody)
+    {
+      PatternMatchRespone response = new PatternMatchRespone();
+      String[] input = bmBody.getBmBody().split("\\s+");
+      String pattern=input[0];
+      String text=input[1];
+
+      BoyerMoore boyerMoore =new BoyerMoore(pattern);
+      response.setPattern(pattern);
+      response.setText(text);
+      response.setPosition(boyerMoore.search(text));
+
+      return response;
     }
 
     @RequestMapping(value = "/home/rdp")
