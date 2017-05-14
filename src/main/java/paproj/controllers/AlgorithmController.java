@@ -16,9 +16,11 @@ import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.dynamicProgramming.LCS;
+import paproj.algorithms.patternmatch.RabinKarp;
 import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
 
+import paproj.helpers.commonhelpers.PatternMatchRespone;
 import paproj.helpers.jsonbody.*;
 import paproj.helpers.commonhelpers.Response;
 
@@ -152,6 +154,28 @@ public class AlgorithmController {
         Response response = new Response();
         String[] input = lcsBody.getLCSBody();
         response.setResponse(LCS.LCS(input[0],input[1]));
+
+        return response;
+    }
+
+    @RequestMapping(value = "/home/rabin/karp")
+    public ModelAndView homeRabinKarp()
+    {
+        return new ModelAndView("rabinkarp.jsp");
+    }
+
+    @RequestMapping(value="/algorithm/rabin/karp",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public PatternMatchRespone solveBoyerMoore(@RequestBody RabinKarpBody rkBody)
+    {
+        PatternMatchRespone response = new PatternMatchRespone();
+        String[] input = rkBody.getRkBody().split("\\s+");
+        String pattern=input[0];
+        String text=input[1];
+
+        RabinKarp rabinKarp =new RabinKarp(pattern);
+        response.setPattern(pattern);
+        response.setText(text);
+        response.setPosition(rabinKarp.search(text));
 
         return response;
     }
