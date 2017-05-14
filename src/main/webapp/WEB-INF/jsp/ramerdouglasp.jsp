@@ -66,15 +66,15 @@
         </ul>
 
         <!--TODO Arrange button , make this div look nice -->
-        <div id="center">
+
             <div ng-app="myApp" ng-controller="myCtrl" >
 
                 <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
 
 
                 <canvas id="myCanvas" width=300 height=300></canvas>
-                <button id="button">Click here</button>
-                <button id="clear">Clear canvas</button>
+                <button type="button" ng-click="click()">Try it!!</button>
+                <!--<button id="clear">Clear canvas</button>-->
 
 
                   <p>{{content}}</p>
@@ -84,7 +84,6 @@
 
 
 
-        </div>
         <div id="large-header" class="large-header">
 
 
@@ -101,7 +100,7 @@
 <script src="/resources/js/canvas/EasePack.min.js"></script>
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
-<script src="/resources/angular/huffman.js"></script>
+<script src="/resources/angular/rdp.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>

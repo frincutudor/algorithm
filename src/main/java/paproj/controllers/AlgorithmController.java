@@ -15,6 +15,7 @@ import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
 import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
+import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
 import paproj.algorithms.dynamicProgramming.LCS;
 import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
@@ -26,7 +27,7 @@ import java.util.*;
 
 import static paproj.algorithms.codebase.sortings.InsertionSort.insertionSort;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
-
+import static paproj.algorithms.codebase.ramerdouglaspakardalgorithm.RamerDouglasPeucker.RamerDouglasPeuckerFilter;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 
 /**
@@ -160,6 +161,15 @@ public class AlgorithmController {
     public ModelAndView homeRamerDouglasPeuker()
     {
         return new ModelAndView("ramerdouglasp.jsp");
+    }
+
+    @RequestMapping(value="/algorithm/rdp",method = RequestMethod.POST)
+    public Response solveRdp(@RequestBody RamerDouglasPBody rdpBody)
+    {
+        Response response= new Response();
+        List<Point> points=RamerDouglasPeuckerFilter(rdpBody.getRdpBody(),0.025);
+        response.setResponse(points.toString());
+        return response;
     }
 
 

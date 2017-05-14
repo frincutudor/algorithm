@@ -27,22 +27,23 @@ canvas.addEventListener('mouseup', function() {
 var onPaint = function() {
     ctx.lineTo(mouse.x, mouse.y);
     ctx.stroke();
-    circles.push({x:mouse.x,y:mouse.y});
+    circles.push({pointX:mouse.x,pointY:mouse.y});
 };
 
 function returnCircles()
 {
     return circles;
 }
-
-$("#button").click( function()
-    {
-        alert(returnCircles());
-    }
-);
+//
+// $("#button").click( function()
+//     {
+//         alert(returnCircles());
+//     }
+// );
 
 $("#clear").click( function()
     {
         ctx.clearRect(0,0,canvas.width,canvas.height);
+        circles=[];
     }
 );
