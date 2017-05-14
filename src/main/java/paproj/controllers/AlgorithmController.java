@@ -1,7 +1,6 @@
 package paproj.controllers;
 
 
-import com.fasterxml.jackson.databind.ser.std.StdKeySerializers;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +15,9 @@ import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
 import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
+
 import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
-import paproj.algorithms.dynamicProgramming.LCS;
+
 
 import paproj.algorithms.patternmatch.BoyerMoore;
 import paproj.algorithms.patternmatch.KMP;
@@ -25,8 +25,6 @@ import paproj.helpers.commonhelpers.GraphObject;
 import paproj.helpers.commonhelpers.JSONParser;
 
 import paproj.algorithms.patternmatch.RabinKarp;
-import paproj.helpers.commonhelpers.GraphObject;
-import paproj.helpers.commonhelpers.JSONParser;
 
 import paproj.helpers.commonhelpers.PatternMatchRespone;
 import paproj.helpers.jsonbody.*;
@@ -35,6 +33,7 @@ import paproj.helpers.commonhelpers.Response;
 import java.util.*;
 
 import static paproj.algorithms.codebase.sortings.InsertionSort.insertionSort;
+import static paproj.algorithms.dynamicprograming.LongestCommonSubsequence.lcsSolver;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
 import static paproj.algorithms.codebase.ramerdouglaspakardalgorithm.RamerDouglasPeucker.RamerDouglasPeuckerFilter;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
@@ -154,14 +153,15 @@ public class AlgorithmController {
     @RequestMapping(value = "/home/lcs")
     public ModelAndView homeLCS()
     {
-        return new ModelAndView("LCommonSubsequence.jsp");
+        return new ModelAndView("lcs.jsp");
     }
-    @RequestMapping(value="/algorithm/LCommonSubsequence",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value="/algorithm/lcs",method = RequestMethod.POST)
     public Response longestCommonSubsequence(@RequestBody LCSBody lcsBody)
     {
         Response response = new Response();
-        String[] input = lcsBody.getLCSBody();
-        response.setResponse(LCS.LCS(input[0],input[1]));
+
+        String[] input = lcsBody.getLcsBody().split("\\s+");
+        response.setResponse(lcsSolver(input[0],input[1]));
 
         return response;
     }

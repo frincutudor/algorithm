@@ -1,10 +1,11 @@
-package paproj.algorithms.dynamicProgramming;
-/**
- * Created by Joywalker on 5/7/2017.
- */
-public class LCS {
+package paproj.algorithms.dynamicprograming;
 
-    public static String LCS(String first, String second) {
+/**
+ * Created by frincutudor on 5/13/17.
+ */
+public class LongestCommonSubsequence {
+
+    public static String lcsSolver(String first, String second) {
         int firstLen = first.length();
         int secondLen = second.length();
 
@@ -18,7 +19,7 @@ public class LCS {
                     lcsMatrix[i][j] = Math.max(lcsMatrix[i + 1][j], lcsMatrix[i][j + 1]);
             }
         }
-        //Reconstructing the string consisting of the LCS
+        //Reconstructing the string consisting of the lcsAlgorithm
         int i = 0, j = 0;
         StringBuilder sb = new StringBuilder();
         while (i < firstLen && j < secondLen) {

@@ -5,13 +5,13 @@ package paproj.helpers.jsonbody;
  */
 public class LCSBody {
 
-    String[] LCSBody;
+    String lcsBody;
 
-    public String[] getLCSBody() {
-        return LCSBody;
+    public String getLcsBody() {
+        return lcsBody;
     }
 
-    public void setLCSBody(String[] lcsBody) {
-        this.LCSBody = lcsBody;
+    public void setLcsBody(String lcsBody) {
+        this.lcsBody = lcsBody;
     }
 }
