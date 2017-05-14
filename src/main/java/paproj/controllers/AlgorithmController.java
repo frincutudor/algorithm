@@ -156,4 +156,11 @@ public class AlgorithmController {
         return response;
     }
 
+    @RequestMapping(value = "/home/rdp")
+    public ModelAndView homeRamerDouglasPeuker()
+    {
+        return new ModelAndView("ramerdouglasp.jsp");
+    }
+
+
 }
