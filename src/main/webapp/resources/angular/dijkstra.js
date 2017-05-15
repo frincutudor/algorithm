@@ -3,7 +3,7 @@
  */
 
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http,$window) {
+app.controller('myCtrl', function ($scope, $http) {
 
     $scope.click = function() {
 
@@ -14,11 +14,14 @@ app.controller('myCtrl', function ($scope, $http,$window) {
             "dijkstraBody":splitedX
         };
         $http.post("http://localhost:8080/algorithm/dijkstra", json)
-            .then(function (response) {
-                $scope.content = response.data;
+                .then(function (response) {
+                    $scope.content = response.data;
 
-                $window.canvasDraw(response.data);
+                    //$window.canvasDraw(response.data);
 
-            });
+                });
+
+
+
     };
 });
