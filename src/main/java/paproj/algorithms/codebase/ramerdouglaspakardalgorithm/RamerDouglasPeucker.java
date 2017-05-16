@@ -30,7 +30,7 @@ public class RamerDouglasPeucker {
             // select furthest point as the middle point for the next execution
             if (furthestPointDistance > epsilon) {
                 //split points list in 2, and recursively call the algorithm
-                List<Point> firstHalf = RamerDouglasPeuckerFilter(points.subList(2, furthestPointIndex+1), epsilon);
+                List<Point> firstHalf = RamerDouglasPeuckerFilter(points.subList(1, furthestPointIndex), epsilon);
                 List<Point> secondHalf = RamerDouglasPeuckerFilter(points.subList(furthestPointIndex, points.size()), epsilon);
                 /**
                  * Initialize the final list with filtered points.
