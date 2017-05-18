@@ -11,7 +11,7 @@ app.controller('myCtrl', function ($scope, $http,$window) {
         var x = document.getElementById("huffmanArea").value;
         var json = "{\"huffmanBody\":" + "\"" + x + "\"" + "}";
 
-        $http.post("http://localhost:8081/algorithm/huffman", json)
+        $http.post("http://localhost:8080/algorithm/huffman", json)
             .then(function (response) {
                 $scope.content = response.data;
 

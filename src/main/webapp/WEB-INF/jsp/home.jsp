@@ -36,70 +36,52 @@
     <div class="codrops-top clearfix">
     </div><!--/ Codrops top bar -->
     <header class="clearfix">
-        <h1>Expanding Overlay Effect<span>Revealing content using CSS clip</span></h1>
+        <h1>Welcome to ALGORITHM SOLVER<span>Project made by : Frincu Tudor , Candea Ionut , Razvant Alexandru</span></h1>
 
     </header>
     <div class="main">
 
         <ul id="rb-grid" class="rb-grid clearfix">
-            <li class="icon-clima-1 rb-span-2">
-                <h3>Lisbon</h3><span class="rb-temp">21°C</span>
+            <li class="rb-span-2">
+                <h3>Ramer Douglas Peuker</h3><span class="rb-temp"> Divide et impera</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
-                    <%--<div id="center">--%>
-                    <%--<div ng-app="myApp" ng-controller="myCtrl" >--%>
-
-                    <%--<!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->--%>
-                    <%--<textarea id="insertionArea"></textarea>--%>
-
-
-                    <%--<button id="button" type="button" ng-click="click()">Try it</button>--%>
-                    <%--<!--TODO Convert JSON response to look nice -->--%>
-                    <%--<canvas id="canvas" width=1000 height=600></canvas>--%>
-                    <%--<p>{{content}}</p>--%>
-                    <%--</div>--%>
-
-                    <%--</div>--%>
-
-
-                    <%--<div id="large-header" class="large-header">--%>
-                    <%--<canvas id="demo-canvas"></canvas>--%>
-                    <%--</div>--%>
-
 
                 </div>
             </li>
-            <li class="icon-clima-2">
+            <li >
                 <h3>Huffman</h3><span class="rb-temp"> Greedy</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
 
+                        <div id="large-header" class="large-header">
+                            <canvas id="demo-canvas"></canvas>
+
+                        </div>
+                        <div id="header">
+
+                            </div>
                             <div id="first">
                                 <div ng-app="myApp" ng-controller="myCtrl">
 
                                     <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
                                     <textarea id="huffmanArea"></textarea>
-
-
                                     <button id="button" type="button" ng-click="click()">Try it</button>
                                     <!--TODO Convert JSON response to look nice -->
-                                    <canvas id="canvas" width=500 height=600></canvas>
                                     <p>{{content}}</p>
                                 </div>
                             </div>
                             <div id="second">
-                                    <h1>About this</h1>
+                                <canvas id="canvas" width=500 height=600></canvas>
+
                                 </div>
                             </div>
-                    <div id="large-header" class="large-header">
-                        <canvas id="demo-canvas"></canvas>
 
-                    </div>
                 </div>
             </li>
-            <li class="icon-clima-1">
-                <h3>Belgrade</h3><span class="rb-temp">15°C</span>
+            <li>
+                <h3>Backpack problem</h3><span class="rb-temp">NP-completitudine</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -108,8 +90,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-4">
-                <h3>Moscow</h3><span class="rb-temp">2°C</span>
+            <li>
+                <h3>Kruskal</h3><span class="rb-temp">Greedy</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -124,8 +106,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-1">
-                <h3>New Delhi</h3><span class="rb-temp">17°C</span>
+            <li >
+                <h3>Dijsktra</h3><span class="rb-temp">Greedy</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -141,8 +123,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-1">
-                <h3>Tel Aviv</h3><span class="rb-temp">23°C</span>
+            <li >
+                <h3>Boyer Moore</h3><span class="rb-temp">Patter match</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -158,8 +140,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-2">
-                <h3>Cairo</h3><span class="rb-temp">21°C</span>
+            <li>
+                <h3>Rabin Karp</h3><span class="rb-temp">Patter match</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -174,8 +156,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-11">
-                <h3>New York</h3><span class="rb-temp">3°C</span>
+            <li>
+                <h3>KMP</h3><span class="rb-temp">Pattern match</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -191,8 +173,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-2 rb-span-2">
-                <h3>San Francisco</h3><span class="rb-temp">15°C</span>
+            <li class="rb-span-2">
+                <h3>Longest common Sequence</h3><span class="rb-temp">Programare dinamica</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -208,8 +190,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-2">
-                <h3>Tokyo</h3><span class="rb-temp">8°C</span>
+            <li>
+                <h3>Quick Hull</h3><span class="rb-temp">Divide et impera</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -224,8 +206,8 @@
                     </div>
                 </div>
             </li>
-            <li class="icon-clima-4 rb-span-4">
-                <h3>Sydney</h3><span class="rb-temp">25°C</span>
+            <li class="rb-span-4">
+                <h3>Dynamic time warping</h3><span class="rb-temp">Programare dinamica</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
@@ -270,6 +252,7 @@
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
 <script src="/resources/angular/huffman.js"></script>
+<script src="/resources/js/jqueryscripts.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="/resources/js/huffman/huffman.js"></script>
 

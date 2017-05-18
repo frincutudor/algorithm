@@ -186,7 +186,7 @@
 /*TODO: FIX color after last draft*/
 
 /* Overlay Columns */
-.rb-grid li:nth-child(1) .rb-week > div:nth-child(1) { background: #3399CC; }
+.rb-grid li:nth-child(1) .rb-week > div:nth-child(1) { background: #0099CC; }
 .rb-grid li:nth-child(1) .rb-week > div:nth-child(2) { background: #2D87B4; }
 .rb-grid li:nth-child(1) .rb-week > div:nth-child(3) { background: #297AA3; }
 .rb-grid li:nth-child(1) .rb-week > div:nth-child(4) { background: #256E93; }
