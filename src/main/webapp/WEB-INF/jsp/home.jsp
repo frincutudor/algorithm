@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expanding Overlay Effect</title>
-    <meta name="description" content="Expanding Overlay Effect: Revealing content using CSS clip" />
-    <meta name="keywords" content="css, css3, clip, rect(), overlay, expand, fixed, effect, responsive" />
-    <meta name="author" content="Codrops" />
+    <meta name="description" content="Expanding Overlay Effect: Revealing content using CSS clip"/>
+    <meta name="keywords" content="css, css3, clip, rect(), overlay, expand, fixed, effect, responsive"/>
+    <meta name="author" content="Codrops"/>
     <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/resources/css/ui/default.css" />
-    <link rel="stylesheet" type="text/css" href="/resources/css/ui/climacons.css" />
-    <link rel="stylesheet" type="text/css" href="/resources/css/ui/component.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/ui/default.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/css/ui/climacons.css"/>
+    <link rel="stylesheet" type="text/css" href="/resources/css/ui/component.css"/>
     <script src="/resources/js/ui/modernizr.custom.js"></script>
     <script src="/resources/js/jquery/jquery-3.2.1.min.js"></script>
     <script src="/resources/js/jquery/jquery-3.2.1.js"></script>
@@ -29,15 +29,12 @@
     <script src="/resources/angular/huffman.js"></script>
 
 
-
-
-
 </head>
 <body>
 <div class="container">
     <!-- Codrops top bar -->
     <div class="codrops-top clearfix">
-          </div><!--/ Codrops top bar -->
+    </div><!--/ Codrops top bar -->
     <header class="clearfix">
         <h1>Expanding Overlay Effect<span>Revealing content using CSS clip</span></h1>
 
@@ -49,32 +46,25 @@
                 <h3>Lisbon</h3><span class="rb-temp">21°C</span>
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
-                        <%--<div id="center">--%>
-                                <%--<div ng-app="myApp" ng-controller="myCtrl" >--%>
+                    <%--<div id="center">--%>
+                    <%--<div ng-app="myApp" ng-controller="myCtrl" >--%>
 
-                                    <%--<!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->--%>
-                                    <%--<textarea id="insertionArea"></textarea>--%>
-
-
+                    <%--<!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->--%>
+                    <%--<textarea id="insertionArea"></textarea>--%>
 
 
-                                    <%--<button id="button" type="button" ng-click="click()">Try it</button>--%>
-                                    <%--<!--TODO Convert JSON response to look nice -->--%>
-                                    <%--<canvas id="canvas" width=1000 height=600></canvas>--%>
-                                    <%--<p>{{content}}</p>--%>
-                                <%--</div>--%>
+                    <%--<button id="button" type="button" ng-click="click()">Try it</button>--%>
+                    <%--<!--TODO Convert JSON response to look nice -->--%>
+                    <%--<canvas id="canvas" width=1000 height=600></canvas>--%>
+                    <%--<p>{{content}}</p>--%>
+                    <%--</div>--%>
 
-                            <%--</div>--%>
-
-
+                    <%--</div>--%>
 
 
-                            <%--<div id="large-header" class="large-header">--%>
-                                        <%--<canvas id="demo-canvas"></canvas>--%>
-                            <%--</div>--%>
-
-
-
+                    <%--<div id="large-header" class="large-header">--%>
+                    <%--<canvas id="demo-canvas"></canvas>--%>
+                    <%--</div>--%>
 
 
                 </div>
@@ -84,28 +74,26 @@
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
-                        <div id="center">
-                            <div ng-app="myApp" ng-controller="myCtrl" >
 
-                                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                                <textarea id="huffmanArea"></textarea>
+                            <div id="first">
+                                <div ng-app="myApp" ng-controller="myCtrl">
+
+                                    <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
+                                    <textarea id="huffmanArea"></textarea>
 
 
-
-
-                                <button id="button" type="button" ng-click="click()">Try it</button>
-                                <!--TODO Convert JSON response to look nice -->
-                                <canvas id="canvas" width=500 height=600></canvas>
-                                <p>{{content}}</p>
+                                    <button id="button" type="button" ng-click="click()">Try it</button>
+                                    <!--TODO Convert JSON response to look nice -->
+                                    <canvas id="canvas" width=500 height=600></canvas>
+                                    <p>{{content}}</p>
+                                </div>
                             </div>
-
-
-
-                            <div id="large-header" class="large-header">
-                                <canvas id="demo-canvas"></canvas>
+                            <div id="second">
+                                    <h1>About this</h1>
+                                </div>
                             </div>
-
-                        </div>
+                    <div id="large-header" class="large-header">
+                        <canvas id="demo-canvas"></canvas>
 
                     </div>
                 </div>
@@ -141,7 +129,8 @@
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
-                        <div><span class="rb-city">New Delhi</span><span class="icon-clima-1"></span><span>17°C</span></div>
+                        <div><span class="rb-city">New Delhi</span><span class="icon-clima-1"></span><span>17°C</span>
+                        </div>
                         <div><span>Mon</span><span class="icon-clima-1"></span><span>18°C</span></div>
                         <div><span>Tue</span><span class="icon-clima-8"></span><span>19°C</span></div>
                         <div><span>Wed</span><span class="icon-clima-8"></span><span>16°C</span></div>
@@ -157,7 +146,8 @@
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
-                        <div><span class="rb-city">Tel Aviv</span><span class="icon-clima-1"></span><span>22°C</span></div>
+                        <div><span class="rb-city">Tel Aviv</span><span class="icon-clima-1"></span><span>22°C</span>
+                        </div>
                         <div><span>Mon</span><span class="icon-clima-1"></span><span>23°C</span></div>
                         <div><span>Tue</span><span class="icon-clima-2"></span><span>22°C</span></div>
                         <div><span>Wed</span><span class="icon-clima-2"></span><span>22°C</span></div>
@@ -189,7 +179,8 @@
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
-                        <div><span class="rb-city">New York</span><span class="icon-clima-11"></span><span>3°C</span></div>
+                        <div><span class="rb-city">New York</span><span class="icon-clima-11"></span><span>3°C</span>
+                        </div>
                         <div><span>Mon</span><span class="icon-clima-11"></span><span>3°C</span></div>
                         <div><span>Tue</span><span class="icon-clima-11"></span><span>-1°C</span></div>
                         <div><span>Wed</span><span class="icon-clima-11"></span><span>-2°C</span></div>
@@ -205,7 +196,8 @@
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
-                        <div><span class="rb-city">San Francisco</span><span class="icon-clima-2"></span><span>15°C</span></div>
+                        <div><span class="rb-city">San Francisco</span><span
+                                class="icon-clima-2"></span><span>15°C</span></div>
                         <div><span>Mon</span><span class="icon-clima-2"></span><span>16°C</span></div>
                         <div><span>Tue</span><span class="icon-clima-2"></span><span>14°C</span></div>
                         <div><span>Wed</span><span class="icon-clima-2"></span><span>13°C</span></div>
@@ -237,7 +229,8 @@
                 <div class="rb-overlay">
                     <span class="rb-close">close</span>
                     <div class="rb-week">
-                        <div><span class="rb-city">Sydney</span><span class="icon-clima-4"></span><span>28°C</span></div>
+                        <div><span class="rb-city">Sydney</span><span class="icon-clima-4"></span><span>28°C</span>
+                        </div>
                         <div><span></span><span class="icon-clima-4"></span><span></span></div>
                         <div><span>Tue</span><span class="icon-clima-4"></span><span>26°C</span></div>
                         <div><span>Wed</span><span class="icon-clima-2"></span><span>27°C</span></div>
@@ -258,7 +251,7 @@
 <script src="/resources/js/ui/jquery.fittext.js"></script>
 <script src="/resources/js/ui/boxgrid.js"></script>
 <script>
-    $(function() {
+    $(function () {
 
         Boxgrid.init();
 
@@ -266,8 +259,8 @@
     });
 </script>
 <script>
-    $(document).ready( function() {
-        $(".rb-week").on("click", function() {
+    $(document).ready(function () {
+        $(".rb-week").on("click", function () {
             $(this).load("huffman.jsp");
         });
     });
