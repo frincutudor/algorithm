@@ -1,6 +1,6 @@
 (function() {
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var width, height,largeHeader,canvas, ctx, points, target, animateHeader = true;
 
     // Main
     initHeader();
@@ -12,8 +12,8 @@
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
 
-        largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height+'px';
+         largeHeader = document.getElementById('large-header');
+         largeHeader.style.height = height+'px';
 
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
@@ -110,6 +110,8 @@
         for(var i in points) {
             shiftPoint(points[i]);
         }
+        largeHeader.style.height=0+'px';
+        largeHeader.style.width=0+'px';
     }
 
     function animate() {

@@ -277,4 +277,10 @@ public class AlgorithmController {
         return response;
     }
 
+    @RequestMapping(value = "/home/test")
+    public ModelAndView homeTest()
+    {
+        return new ModelAndView("home.jsp");
+    }
+
 }
