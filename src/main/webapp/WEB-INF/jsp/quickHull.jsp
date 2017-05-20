@@ -40,7 +40,7 @@
                 <textarea id="quickHullArea"></textarea>
                 <button id="button" type="button" ng-click="click()">Try it</button>
                 <!--TODO Convert JSON response to look nice -->
-                <canvas id="canvas" width=1000 height=600></canvas>
+                <canvas id="canvas" width=1000 height=200></canvas>
                 <p>{{content}}</p>
             </div>
         </div>

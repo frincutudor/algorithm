@@ -286,8 +286,9 @@ public class AlgorithmController {
     }
 
     @RequestMapping(value="/algorithm/hull",method = RequestMethod.POST)
-    public String quickHullSolver(@RequestBody QuickHullBody qHullBody)
+    public Response quickHullSolver(@RequestBody QuickHullBody qHullBody)
     {
+        Response response = new Response();
         String[] hullBody = qHullBody.getHullValues();
         ArrayList<Point> points = new ArrayList<>();
         for(String coords : hullBody)
@@ -299,6 +300,7 @@ public class AlgorithmController {
             points.add(M);
         }
         ArrayList<Point> result = ConvexHull.QuickHull(points);
-        return JSONParser.JsonFormat(result);
+        response.setResponse(JSONParser.JsonFormat(result));
+        return  response;
     }
 }

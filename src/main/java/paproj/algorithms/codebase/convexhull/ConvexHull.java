@@ -21,20 +21,17 @@ public class ConvexHull {
             return (ArrayList<Point>) points.clone();
 
         int minPointIndex = -1, maxPointIndex = -1;
-        double leftestX = Double.MIN_VALUE;
-        double rightestX = Double.MAX_VALUE;
-
-        for (int i = 0; i < listSize; i++) {
-            double xCoord = points.get(i).X;
-            if (xCoord > leftestX) {
-                leftestX = xCoord;
-                maxPointIndex = i;
-            }
-
-            if (xCoord < rightestX) {
-                rightestX = xCoord;
-                minPointIndex = i;
-            }
+        double leftestX = Double.MAX_VALUE;
+        double rightestX = Double.MIN_VALUE;
+        for (int i = 0; i < points.size(); i++) {
+              if (points.get(i).X < leftestX) {
+                  leftestX = points.get(i).X;
+                  minPointIndex = i;
+              }
+              if (points.get(i).X > rightestX) {
+                  rightestX = points.get(i).X;
+                  maxPointIndex = i;
+              }
         }
         Point A = points.get(minPointIndex);
         Point B = points.get(maxPointIndex);
@@ -55,14 +52,15 @@ public class ConvexHull {
                 rightSide.add(check);
         }
 
-        hull(A,B,leftSide,convexHull);
-        hull(B,A,rightSide,convexHull);
+        hull(A,B,rightSide,convexHull);
+        hull(B,A,leftSide,convexHull);
 
         return convexHull;
     }
 
     private static void hull(Point A, Point B, ArrayList<Point> pointsSet, ArrayList<Point> hull)
     {
+        //set position to insert new found point, between the 2 known points
         int insertPosition = hull.indexOf(B);
         if (pointsSet.size() == 0)
             return;
@@ -74,6 +72,7 @@ public class ConvexHull {
             return;
         }
 
+        // find furthest point from the line
         double dist = Double.MIN_VALUE;
         int furthestPoint = -1;
         for (int i = 0; i < pointsSet.size(); i++)
@@ -87,10 +86,10 @@ public class ConvexHull {
             }
         }
         Point P = pointsSet.get(furthestPoint);
-        hull.add(insertPosition, P);
         pointsSet.remove(furthestPoint);
+        hull.add(insertPosition, P);
 
-        // Determine who's to the left of AP
+        // Check points on the left side of A to P line
         ArrayList<Point> leftSetAP = new ArrayList<Point>();
         for (int i = 0; i < pointsSet.size(); i++)
         {
@@ -100,7 +99,7 @@ public class ConvexHull {
                 leftSetAP.add(M);
             }
         }
-        // Points on the leftside of PB line
+        // Check points on the left side of P to B line
         ArrayList<Point> leftSetPB = new ArrayList<Point>();
         for (int i = 0; i < pointsSet.size(); i++)
         {
@@ -110,6 +109,8 @@ public class ConvexHull {
                 leftSetPB.add(M);
             }
         }
+
+        // recursively iterate and eliminate non needed points
         hull(A, P, leftSetAP, hull);
         hull(P, B, leftSetPB, hull);
     }
