@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import paproj.algorithms.codebase.convexhull.ConvexHull;
 import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraGraphHelperImpl;
 import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraShortestPath;
 import paproj.algorithms.codebase.helperclasses.Edge;
@@ -16,7 +17,7 @@ import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 
-import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
+import paproj.algorithms.codebase.helperclasses.Point;
 
 
 import paproj.algorithms.patternmatch.BoyerMoore;
@@ -32,6 +33,7 @@ import paproj.helpers.commonhelpers.Response;
 
 import java.util.*;
 
+import static paproj.algorithms.codebase.convexhull.ConvexHull.QuickHull;
 import static paproj.algorithms.codebase.sortings.InsertionSort.insertionSort;
 import static paproj.algorithms.dynamicprograming.LongestCommonSubsequence.lcsSolver;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
@@ -259,4 +261,26 @@ public class AlgorithmController {
         return response;
     }
 
+    @RequestMapping(value = "/home/hull")
+    public ModelAndView homeQuickHull()
+    {
+        return new ModelAndView("quickHull.jsp");
+    }
+
+    @RequestMapping(value="/algorithm/hull",method = RequestMethod.POST)
+    public String quickHullSolver(@RequestBody QuickHullBody qHullBody)
+    {
+        String[] hullBody = qHullBody.getHullValues();
+        ArrayList<Point> points = new ArrayList<>();
+        for(String coords : hullBody)
+        {
+            String[] coordinates = coords.split("\\s+");
+            int x = Integer.valueOf(coordinates[0]);
+            int y = Integer.valueOf(coordinates[1]);
+            Point M = new Point(x,y);
+            points.add(M);
+        }
+        ArrayList<Point> result = ConvexHull.QuickHull(points);
+        return JSONParser.JsonFormat(result);
+    }
 }

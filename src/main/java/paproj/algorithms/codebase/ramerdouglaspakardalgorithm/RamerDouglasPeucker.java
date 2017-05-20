@@ -1,7 +1,6 @@
 package paproj.algorithms.codebase.ramerdouglaspakardalgorithm;
 
-import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.LineEquation;
-import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
+import paproj.algorithms.codebase.helperclasses.Point;
 
 import java.util.ArrayList;
 import java.util.List;

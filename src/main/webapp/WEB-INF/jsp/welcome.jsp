@@ -49,7 +49,7 @@
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
                     <a href="/home/rdp">Ramer Douglas Peucker</a>
-                    <a href="#">Link 2</a>
+                    <a href="/home/hull">Quick Hull</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>

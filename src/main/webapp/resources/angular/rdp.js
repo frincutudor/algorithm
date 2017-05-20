@@ -1,8 +1,6 @@
 /**
  * Created by frincutudor on 5/14/17.
  */
-
-
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope, $http,$window) {
 

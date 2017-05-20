@@ -1,8 +1,5 @@
 package paproj.helpers.jsonbody;
 
-import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
-import java.util.List;
-
 /**
  * Created by frincutudor on 5/14/17.
  */
