@@ -10,6 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 import paproj.algorithms.codebase.convexhull.ConvexHull;
 import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraGraphHelperImpl;
 import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraShortestPath;
+import paproj.algorithms.codebase.dijkstraalgorithm.DijkstraWrapper;
+import paproj.algorithms.codebase.dijkstraalgorithm.DijktraResponse;
 import paproj.algorithms.codebase.helperclasses.Edge;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanCodeHelper;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
@@ -129,7 +131,7 @@ public class AlgorithmController {
         return new ModelAndView("Dijkstra.jsp");
     }
     @RequestMapping(value="/algorithm/dijkstra",method = RequestMethod.POST)
-    public String dijkstraSolver(@RequestBody DijkstraBody dijkstraBody)
+    public DijktraResponse dijkstraSolver(@RequestBody DijkstraBody dijkstraBody)
     {
         String[] input =dijkstraBody.getDijkstraBody();
         int inputSize= input.length;
@@ -147,10 +149,26 @@ public class AlgorithmController {
 
         int index =Integer.valueOf(input[inputSize-1]);
         DijkstraShortestPath.DijkstraShortestPath(graphHelper.getVertex(index));
-        String JSON = JSONParser.JsonFormat(graphHelper.generateDijkstraResponse());
-        StringBuilder stringBuffer = new StringBuilder(JSON);
-        stringBuffer.insert(2,"\"nrVertices\":\""+graphHelper.getVertices().size()+"\",");
-        return stringBuffer.toString();
+
+        Map<ArrayList<Integer>,Double> wrapperMap=graphHelper.generateDijkstraResponse();
+        ArrayList<DijkstraWrapper> wrapper = new ArrayList<DijkstraWrapper>();
+
+        for(Map.Entry<ArrayList<Integer>,Double> entry : wrapperMap.entrySet())
+        {
+                wrapper.add(new DijkstraWrapper(entry.getValue(),entry.getKey()));
+        }
+
+//        String JSON = JSONParser.JsonFormat(graphHelper.generateDijkstraResponse());
+//        StringBuilder stringBuffer = new StringBuilder(JSON);
+//        //stringBuffer.insert(2,"\"nrVertices\":\""+graphHelper.getVertices().size()+"\",");
+//
+
+        DijktraResponse response = new DijktraResponse();
+        response.setNrNodes(graphHelper.getVertices().size());
+        response.setOutput(wrapper);
+        return response;
+
+
     }
 
     @RequestMapping(value = "/home/lcs")

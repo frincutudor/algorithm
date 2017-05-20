@@ -46,7 +46,6 @@ public class LineEquation {
     {
         double denominator = Math.abs(this.A*M.getPointX() + B*M.getPointY() + C);
         double nominator = Math.sqrt(Math.pow(A,2) + Math.pow(B,2));
-        double result = denominator/nominator;
-        return result;
+        return denominator/nominator;
     }
 }

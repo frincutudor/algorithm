@@ -17,6 +17,7 @@
     <script src="/resources/js/canvas/rAF.js"></script>
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/dijkstra.js"></script>
+    <script src="/resources/angular/test.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
@@ -87,6 +88,7 @@
 
                 <button id="button" type="button" ng-click="click()">Try it</button>
                 <!--TODO Convert JSON response to look nice -->
+
                 <canvas id="canvas" width=1000 height=600></canvas>
                 <p>{{content}}</p>
             </div>
