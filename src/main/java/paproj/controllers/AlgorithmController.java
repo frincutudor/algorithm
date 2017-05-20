@@ -288,19 +288,19 @@ public class AlgorithmController {
     @RequestMapping(value="/algorithm/hull",method = RequestMethod.POST)
     public Response quickHullSolver(@RequestBody QuickHullBody qHullBody)
     {
-        Response response = new Response();
-        String[] hullBody = qHullBody.getHullValues();
-        ArrayList<Point> points = new ArrayList<>();
-        for(String coords : hullBody)
+        ArrayList<Point> points = new ArrayList<Point>() ;
+
+        Response response= new Response();
+        String[] input = qHullBody.getHullValues().split(",");
+        for(int i=0;i<input.length;i++)
         {
-            String[] coordinates = coords.split("\\s+");
-            int x = Integer.valueOf(coordinates[0]);
-            int y = Integer.valueOf(coordinates[1]);
-            Point M = new Point(x,y);
-            points.add(M);
+            String[] coords=input[i].split("\\s+");
+            Double X = Double.valueOf(coords[0]);
+            Double Y = Double.valueOf(coords[1]);
+            points.add(new Point(X,Y));
         }
         ArrayList<Point> result = ConvexHull.QuickHull(points);
-        response.setResponse(JSONParser.JsonFormat(result));
+        response.setResponse(result.toString());
         return  response;
     }
 }

@@ -3,18 +3,17 @@
  */
 
 var app = angular.module('hullModule', []);
-app.controller('hullController', function ($scope, $http) {
+app.controller('hullController', function ($scope, $http,$window) {
 
     $scope.click = function() {
-
-
-        var x = document.getElementById("quickHullArea").value;
-        var splitedX =x.split(/\n/);
-        var json = {
-            "hullValues":splitedX};
+        var json =
+            {
+             "hullValues:":$window.returnDots().toString()
+            }
         $http.post("http://localhost:8080/algorithm/hull", json)
             .then(function (response) {
                 $scope.content = response.data;
+                $window.drawHull(response.data);
             });
     };
 });

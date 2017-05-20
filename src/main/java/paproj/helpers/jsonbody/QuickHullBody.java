@@ -5,6 +5,6 @@ package paproj.helpers.jsonbody;
  */
 public class QuickHullBody
 {
-    private String[] hullValues;
-    public String[] getHullValues() {return hullValues;}
+    private String hullValues;
+    public String getHullValues() {return hullValues;}
 }
