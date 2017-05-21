@@ -1,5 +1,5 @@
 /**
- * Created by frincutudor on 5/21/17.
+ * Created by Joywalker on 5/21/17.
  */
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');

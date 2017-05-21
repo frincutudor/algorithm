@@ -3,11 +3,10 @@
  */
 function drawHull(jsonResponse)
 {
-    /**@Author Joywalker
-     *         5/20/2017
-     * @param json = response in String format, from the input Canvas.
-     * @param circles = dots array.
-     * @function drawLines = draw lines between selected points.
+    /**
+     *  Method to draw lines between points.
+     *  json = string of the algorithm response
+     *  circles = array of points
      */
     var json=jsonResponse
     var string =json.response.slice(1,-1).split(",");
