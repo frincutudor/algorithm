@@ -2,7 +2,7 @@
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
 
-    <link href="/resources/css/convexHull.css" rel="stylesheet">
+    <link href="/resources/css/rdp.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -17,14 +17,13 @@
     <script src="/resources/js/canvas/EasePack.min.js"></script>
     <script src="/resources/js/canvas/rAF.js"></script>
     <script src="/resources/js/canvas/demo-1.js"></script>
-    <script src="/resources/angular/quickhull.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
-    <script src="/resources/js/quickhull/setHullCoordinates.js"></script>
-    <script src="/resources/js/quickhull/drawHull.js"></script>
+
 </head>
 <body>
 
@@ -79,23 +78,30 @@
 
         <!--TODO Arrange button , make this div look nice -->
 
-        <div ng-app="hullModule" ng-controller="hullController" >
+        <div ng-app="myApp" ng-controller="myCtrl" >
 
             <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
 
-            <canvas id="inputCanvas" width=300 height=300></canvas>
-            <canvas id="outputCanvas" width=300 height=300></canvas>
+
+            <canvas id="myCanvas" width=300 height=300></canvas>
+            <canvas id="canvas" width=300 height=300></canvas>
+
             <button type="button" ng-click="click()">Try it!!</button>
             <button id="clear">Clear</button>
 
             <!--<button id="clear">Clear canvas</button>-->
 
+
             <p>{{content}}</p>
+
+
         </div>
 
 
 
         <div id="large-header" class="large-header">
+
+
             <canvas id="demo-canvas"></canvas>
 
 
@@ -109,14 +115,17 @@
 <script src="/resources/js/canvas/EasePack.min.js"></script>
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
-<script src="/resources/angular/quickhull.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
-<script src="/resources/js/quickhull/drawHull.js"></script>
-<script src="/resources/js/quickhull/setHullCoordinates.js"></script>
+<script src="/resources/js/qh/points.js"></script>
+<script src="/resources/angular/quickhull.js"></script>
+<script src="/resources/js/qh/drawHull.js"></script>
+
+
 
 </body>
 

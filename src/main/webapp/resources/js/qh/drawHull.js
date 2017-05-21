@@ -3,6 +3,7 @@
  */
 function drawHull(jsonResponse)
 {
+
     var json=jsonResponse
     var string =json.response.slice(1,-1).split(",");
     var circles=[];
@@ -18,7 +19,7 @@ function drawHull(jsonResponse)
         circles.push({x:coords[1],y:coords[2]});
     }
 
-    var canvas = document.getElementById("outputCanvas");
+    var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     var cw = canvas.width;
     var ch = canvas.height;

@@ -282,16 +282,16 @@ public class AlgorithmController {
     @RequestMapping(value = "/home/hull")
     public ModelAndView homeQuickHull()
     {
-        return new ModelAndView("quickHull.jsp");
+        return new ModelAndView("qhull.jsp");
     }
 
     @RequestMapping(value="/algorithm/hull",method = RequestMethod.POST)
-    public Response quickHullSolver(@RequestBody QuickHullBody qHullBody)
+    public Response quickHullSolver(@RequestBody QuickHullBody hullValues)
     {
         ArrayList<Point> points = new ArrayList<Point>() ;
 
         Response response= new Response();
-        String[] input = qHullBody.getHullValues().split(",");
+        String[] input = hullValues.getHullValues().split(",");
         for(int i=0;i<input.length;i++)
         {
             String[] coords=input[i].split("\\s+");
