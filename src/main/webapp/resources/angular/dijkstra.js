@@ -3,7 +3,7 @@
  */
 
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http) {
+app.controller('myCtrl', function ($scope, $http,$window) {
 
     $scope.click = function() {
 
@@ -17,7 +17,7 @@ app.controller('myCtrl', function ($scope, $http) {
                 .then(function (response) {
                     $scope.content = response.data;
 
-                    //$window.canvasDraw(response.data);
+                    $window.canvasDraw(response.data);
 
                 });
 

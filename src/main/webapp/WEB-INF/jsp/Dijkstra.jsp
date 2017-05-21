@@ -2,6 +2,7 @@
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/huffman.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -17,12 +18,13 @@
     <script src="/resources/js/canvas/rAF.js"></script>
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/dijkstra.js"></script>
-    <script src="/resources/angular/test.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+    <script src="/resources/js/dijkstra/pathdraw.js"></script>
 
 </head>
 <body>
@@ -118,6 +120,7 @@
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+<script src="/resources/js/dijkstra/pathdraw.js"></script>
 
 </body>
 
