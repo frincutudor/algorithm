@@ -7,7 +7,7 @@ app.controller('myCtrl', function ($scope, $http) {
 
     $scope.click = function() {
 
-        var x = document.getElementById("insertionArea").value;
+        var x = document.getElementById("text3").value;
         var json = "{\"insertionBody\":" + "\"" + x + "\"" + "}";
 
         $http.post("http://localhost:8080/algorithm/insertion", json)
