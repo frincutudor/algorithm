@@ -3,7 +3,12 @@
  */
 function drawHull(jsonResponse)
 {
-
+    /**@Author Joywalker
+     *         5/20/2017
+     * @param json = response in String format, from the input Canvas.
+     * @param circles = dots array.
+     * @function drawLines = draw lines between selected points.
+     */
     var json=jsonResponse
     var string =json.response.slice(1,-1).split(",");
     var circles=[];
@@ -27,21 +32,22 @@ function drawHull(jsonResponse)
     function drawLines() {
 
         ctx.clearRect(0,0,cw,ch);
-        ctx.strokeStyle = '#00d';
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#F4D871'; // props Stefan
+        ctx.lineWidth = 3;
         ctx.beginPath();
 
-
+        var x1,y1,x2,y2;
         for (var i = 0; i < circles.length-1; i++)
         {
-            var x1 = circles[i].x;
-            var y1 = circles[i].y;
-            var x2 = circles[i+1].x;
-            var y2 = circles[i+1].y;
+            x1 = circles[i].x;
+            y1 = circles[i].y;
+            x2 = circles[i+1].x;
+            y2 = circles[i+1].y;
             ctx.moveTo(x1,y1);
             ctx.lineTo(x2,y2);
-
         }
+        ctx.moveTo(circles[circles.length-1].x,circles[circles.length-1].y);
+        ctx.lineTo(circles[0].x,circles[0].y);
         ctx.stroke();
     }
     drawLines();

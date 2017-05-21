@@ -6,9 +6,10 @@ var ctx = canvas.getContext('2d');
 
 var mouse = {x: 0, y: 0};
 var circles=[];
-canvas.addEventListener('mousemove', function(e) {
-    mouse.x = e.pageX - this.offsetLeft;
-    mouse.y = e.pageY - this.offsetTop;
+canvas.addEventListener('mousedown', function(e) {
+    var rect = canvas.getBoundingClientRect();
+    mouse.x = e.pageX - rect.left;
+    mouse.y = e.pageY - rect.top;
 }, false);
 
 ctx.lineWidth = 3;
@@ -18,35 +19,31 @@ ctx.strokeStyle = '#ff0000';
 var index=0;
 
 
-canvas.addEventListener('mousedown', function(e) {
-    ctx.beginPath();
-    ctx.moveTo(mouse.x, mouse.y);
+canvas.addEventListener('mousedown', getPosition,false);
 
-    canvas.addEventListener('mousemove', onPaint, false);
-}, false);
+function getPosition(event)
+{
+    var x = event.x;
+    var y = event.y;
 
-canvas.addEventListener('mouseup', function() {
-    canvas.removeEventListener('mousemove', onPaint, false);
-}, false);
+    var canvas = document.getElementById("myCanvas");
 
-var onPaint = function() {
-    ctx.lineTo(mouse.x, mouse.y);
-    ctx.stroke();
-    var circle=mouse.x.toString()+" "+mouse.y.toString();
-    circles[index]=circle;
+    x -= canvas.offsetLeft;
+    y -= canvas.offsetTop;
+
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(x,y,2,2);
+    var point = x.toString() + " " + y.toString();
+    circles[index] = point;
     index++;
-};
+}
+
+
 
 function returnCircles()
 {
     return circles;
 }
-//
-// $("#button").click( function()
-//     {
-//         alert(returnCircles());
-//     }
-// );
 
 $("#clear").click( function()
     {

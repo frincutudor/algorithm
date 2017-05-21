@@ -30,10 +30,8 @@
 
 <div class="fullscreen">
 
-
     <div class="row">
         <br>
-
         <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
@@ -81,20 +79,13 @@
         <div ng-app="myApp" ng-controller="myCtrl" >
 
             <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-
-
             <canvas id="myCanvas" width=300 height=300></canvas>
             <canvas id="canvas" width=300 height=300></canvas>
 
-            <button type="button" ng-click="click()">Try it!!</button>
-            <button id="clear">Clear</button>
+            <button type="button" ng-click="click()">Draw Convex Hull</button>
+            <button id="clear">Clear Canvas</button>
 
             <!--<button id="clear">Clear canvas</button>-->
-
-
-            <p>{{content}}</p>
-
-
         </div>
 
 
