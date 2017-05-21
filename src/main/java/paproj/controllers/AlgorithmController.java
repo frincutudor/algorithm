@@ -21,6 +21,7 @@ import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.codebase.ramerdouglaspakardalgorithm.Point;
 
 
+import paproj.algorithms.dynamicprograming.DTWObject;
 import paproj.algorithms.patternmatch.BoyerMoore;
 import paproj.algorithms.patternmatch.KMP;
 import paproj.helpers.commonhelpers.GraphObject;
@@ -39,7 +40,7 @@ import static paproj.algorithms.dynamicprograming.LongestCommonSubsequence.lcsSo
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
 import static paproj.algorithms.codebase.ramerdouglaspakardalgorithm.RamerDouglasPeucker.RamerDouglasPeuckerFilter;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
-
+import static paproj.algorithms.dynamicprograming.DTW.DTW;
 /**
  * Created by frincutudor on 3/10/17.
  */
@@ -275,6 +276,38 @@ public class AlgorithmController {
         response.setPosition(rabinKarp.search(text));
 
         return response;
+    }
+
+    @RequestMapping(value = "/home/dtw")
+    public ModelAndView homeDynamicTimeWarping()
+    {
+        return new ModelAndView("dtw.jsp");
+    }
+
+    @RequestMapping(value="/algorithm/dtw",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public DTWObject solveDynamicTimeWarping(@RequestBody DTWBody dtwBody)
+    {
+        PatternMatchRespone response = new PatternMatchRespone();
+        String[] input = dtwBody.getDtwBody().split("\\s+");
+        String seq1=input[0];
+        String seq2=input[1];
+        String[] s1= seq1.split("\\s+");
+        String[] s2= seq2.split("\\s+");
+        int i=0;
+        float[] floatSeq1 = new float[100];
+        float[] floatSeq2 = new float[100];
+        for(String s : s1){
+            floatSeq1[i] = Float.parseFloat(s);
+            i++;
+        }
+        i=0;
+        for(String s : s2){
+            floatSeq2[i] = Float.parseFloat(s);
+            i++;
+        }
+
+
+        return DTW(floatSeq1,floatSeq2);
     }
 
 }
