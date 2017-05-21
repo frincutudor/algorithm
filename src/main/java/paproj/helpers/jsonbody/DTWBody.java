@@ -5,13 +5,13 @@ package paproj.helpers.jsonbody;
  */
 public class DTWBody {
 
-    String dtwBody;
+    String[] dtwBody;
 
-    public String getDtwBody() {
+    public String[] getDtwBody() {
         return dtwBody;
     }
 
-    public void setDtwBody(String dtwBody) {
+    public void setDtwBody(String[] dtwBody) {
         this.dtwBody = dtwBody;
     }
 }

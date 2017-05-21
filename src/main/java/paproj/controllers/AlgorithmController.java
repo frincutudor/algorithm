@@ -288,14 +288,14 @@ public class AlgorithmController {
     public DTWObject solveDynamicTimeWarping(@RequestBody DTWBody dtwBody)
     {
         PatternMatchRespone response = new PatternMatchRespone();
-        String[] input = dtwBody.getDtwBody().split("\\s+");
+        String[] input = dtwBody.getDtwBody();
         String seq1=input[0];
         String seq2=input[1];
         String[] s1= seq1.split("\\s+");
         String[] s2= seq2.split("\\s+");
         int i=0;
-        float[] floatSeq1 = new float[100];
-        float[] floatSeq2 = new float[100];
+        float[] floatSeq1 = new float[s1.length];
+        float[] floatSeq2 = new float[s2.length];
         for(String s : s1){
             floatSeq1[i] = Float.parseFloat(s);
             i++;

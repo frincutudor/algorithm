@@ -11,8 +11,10 @@ app.controller('myCtrl', function ($scope, $http) {
     $scope.click = function() {
 
         var x = document.getElementById("dtwArea").value;
-        var json = "{\"dtwBody\":" + "\"" + x + "\"" + "}";
-
+        var splitedX =x.split(/\n/);
+        var json = {
+            "dtwBody":splitedX
+        };
         $http.post("http://localhost:8080/algorithm/dtw", json)
             .then(function (response) {
                 $scope.content = response.data;
