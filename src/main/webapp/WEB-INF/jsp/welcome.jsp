@@ -55,7 +55,7 @@
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
                     <a href="/home/lcs">Longest common subsequence</a>
-                    <a href="#">Link 2</a>
+                    <a href="/home/dtw">DTW</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
