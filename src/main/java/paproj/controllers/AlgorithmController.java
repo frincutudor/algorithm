@@ -311,29 +311,32 @@ public class AlgorithmController {
     }
 
     @RequestMapping(value="/algorithm/dtw",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public DTWObject solveDynamicTimeWarping(@RequestBody DTWBody dtwBody)
-    {
+    public DTWObject solveDynamicTimeWarping(@RequestBody DTWBody dtwBody) {
         PatternMatchRespone response = new PatternMatchRespone();
         String[] input = dtwBody.getDtwBody();
-        String seq1=input[0];
-        String seq2=input[1];
-        String[] s1= seq1.split("\\s+");
-        String[] s2= seq2.split("\\s+");
-        int i=0;
+        String seq1 = input[0];
+        String seq2 = input[1];
+        String[] s1 = seq1.split("\\s+");
+        String[] s2 = seq2.split("\\s+");
+        int i = 0;
         float[] floatSeq1 = new float[s1.length];
         float[] floatSeq2 = new float[s2.length];
-        for(String s : s1){
+        for (String s : s1) {
             floatSeq1[i] = Float.parseFloat(s);
             i++;
         }
-        i=0;
-        for(String s : s2){
+        i = 0;
+        for (String s : s2) {
             floatSeq2[i] = Float.parseFloat(s);
             i++;
         }
 
 
-        return DTW(floatSeq1,floatSeq2);
+        return DTW(floatSeq1, floatSeq2);
     }
-
+    @RequestMapping(value = "/home/test")
+    public ModelAndView homeTest()
+    {
+        return new ModelAndView("home.jsp");
+    }
 }
