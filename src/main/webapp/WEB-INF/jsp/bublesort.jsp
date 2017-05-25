@@ -96,7 +96,7 @@
                     <br>
                     <br>
                     <p style="font-family: Neucha; font-size: 22px"><label>Result: </label>
-                        {{content.response}}</p>
+                        {{content.solution}}</p>
                 </div>
             </div>
             <div id="right">

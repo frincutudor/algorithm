@@ -23,6 +23,7 @@ import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.codebase.helperclasses.Point;
 
 
+import paproj.algorithms.codebase.sortings.BubbleSortObject;
 import paproj.algorithms.codebase.sortings.SelectionSortObject;
 import paproj.algorithms.dynamicprograming.DTWObject;
 import paproj.algorithms.patternmatch.BoyerMoore;
@@ -360,8 +361,8 @@ public class AlgorithmController {
     }
 
     @RequestMapping(value = "/algorithm/bubblesort", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Response bubbleSortSolver(@RequestBody BubbleSortBody bsBody) {
-        Response response = new Response();
+    public BubbleSortObject bubbleSortSolver(@RequestBody BubbleSortBody bsBody) {
+
         String[] input = bsBody.getBsBody().split("\\s+");
         int[] value=new int[input.length];
         int i=0;
@@ -372,9 +373,15 @@ public class AlgorithmController {
         }
 
 
-        response.setResponse(bubbleSort(value).toString());
-
-        return response;
+        int[] solution=bubbleSort(value);
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        for(int integer:solution)
+        {
+            list.add(integer);
+        }
+        BubbleSortObject object = new BubbleSortObject();
+        object.setSolution(list);
+        return object;
     }
 
     @RequestMapping(value = "/home/selection")

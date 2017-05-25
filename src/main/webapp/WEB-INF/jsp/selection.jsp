@@ -90,13 +90,15 @@
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" ng-click="click()" style="position: absolute; right: 70%">Try
-                        it
+
+                    <button class="buttonStyle" ng-click="click()" style="position: absolute; right: 70%">Try it
                     </button>
+
+                     <%--<button ng-click="click()"></button>--%>
                     <br>
                     <br>
                     <p style="font-family: Neucha; font-size: 22px"><label>Result: </label>
-                        {{content.response}}</p>
+                        {{content.vector}}</p>
                 </div>
             </div>
             <div id="right">
