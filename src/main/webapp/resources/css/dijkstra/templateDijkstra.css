@@ -1,4 +1,4 @@
-#centerKruskal{
+#centerDijkstra{
     top: 50%;
     left: 45%;
     width: 70em;
@@ -11,14 +11,14 @@
     z-index: 5;
     opacity: 0.8;
 }
-#leftKruskal {
+#leftDijkstra {
     display: inline-block;
     width: 58%;
     height: 100%;
     z-index: 5;
 }
 
-#rightKruskal{
+#rightDijkstra{
     display: inline-block;
     width: 35%;
     height: 100%;

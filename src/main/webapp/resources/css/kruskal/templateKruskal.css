@@ -1,8 +1,8 @@
-#centerHuffman{
+#centerKruskal{
     top: 50%;
     left: 45%;
     width: 70em;
-    height: 50em;
+    height: 65em;
     margin-top: -12em;
     margin-left: -30em;
     border: 1px black;
@@ -11,14 +11,14 @@
     z-index: 5;
     opacity: 0.8;
 }
-#leftHuffman {
+#leftKruskal {
     display: inline-block;
     width: 58%;
     height: 100%;
     z-index: 5;
 }
 
-#rightHuffman{
+#rightKruskal{
     display: inline-block;
     width: 35%;
     height: 100%;

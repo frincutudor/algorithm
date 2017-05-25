@@ -3,6 +3,11 @@
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
     <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/templateKruskal.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/bookmark.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/accordion.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/buttonStyle.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/paper.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -34,8 +39,6 @@
 
     <div class="row">
         <br>
-
-        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
@@ -78,26 +81,63 @@
         </ul>
 
 
-        <div id="center">
-            <div id="left">
+        <div id="centerKruskal">
+            <div id="leftKruskal">
+                <div id="paper">
+                    <div id="paper-content">
+
+
+                        <textarea autofocus id="autofocus"></textarea>
+                    </div>
+                </div>
+
                 <div ng-app="myApp" ng-controller="myCtrl">
-
-
-                    <textarea id="kruskalArea"></textarea>
-
-
-                    <button id="button" type="button" ng-click="click()">Try it</button>
-                    <!--TODO Convert JSON response to look nice -->
-                    <canvas id="canvas2" width=800 height=300></canvas>
+                    <button class="buttonStyle" type="button" style="position: absolute; right: 70%" ng-click="click()">
+                        Try it
+                    </button>
+                    <canvas id="canvas2" width=635 height=300 style="position: absolute; top: 250px"></canvas>
                     <br>
                     <br>
-                    <canvas id="canvas" width=500 height=300></canvas>
+                    <canvas id="canvas" width=635 height=430 style="position: absolute; top: 570px"></canvas>
                     <p>{{content}}</p>
                 </div>
             </div>
 
-            <div id="right"><h1>Instructions</h1></div>
+            <div id="rightKruskal">
+                <div id="bookmark"></div>
+                <div id="left2"></div>
+                <section class="ac-container">
+                    <input id="ac-1" name="accordion-1" type="checkbox"/>
+                    <label for="ac-1">Instructions</label>
+                    <article class="ac-small">
+                        <p>Some content... </p>
+                    </article>
+                    <input id="ac-2" name="accordion-1" type="checkbox"/>
+                    <label for="ac-2">What it is</label>
+                    <article class="ac-large">
+                        <p>Kruskal's algorithm is a minimum-spanning-tree algorithm which finds an edge of the least
+                            possible weight that connects any two trees in the forest. It is a greedy algorithm in
+                            graph theory as it finds a minimum spanning tree for a connected weighted graph adding
+                            increasing cost arcs at each step. This means it finds a subset of the edges that forms a
+                            tree that includes every vertex, where the total weight of all the edges in the tree is
+                            minimized. If the graph is not connected, then it finds a minimum spanning forest (a minimum
+                            spanning tree for each connected component).<br>
+                            <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">For more information, please
+                                visit the following link</a></p>
+                    </article>
+                    <input id="ac-3" name="accordion-1" type="checkbox"/>
+                    <label for="ac-3">How it works</label>
+                    <article class="ac-large">
+                        <p>A demo for Kruskal's algorithm based on Euclidean distance.<br>
+                            <a title="By Shiyu Ji (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons"
+                               href="https://commons.wikimedia.org/wiki/File%3AKruskalDemo.gif"><img width="256"
+                                                                                                     alt="KruskalDemo"
+                                                                                                     src="https://upload.wikimedia.org/wikipedia/commons/b/bb/KruskalDemo.gif"/></a><br>
+                        </p>
+                    </article>
+                </section>
 
+            </div>
         </div>
 
 

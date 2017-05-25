@@ -8,7 +8,7 @@ app.controller('myCtrl', function ($scope, $http,$window) {
     $scope.click = function() {
 
 
-        var x = document.getElementById("dijkstraArea").value;
+        var x = document.getElementById("autofocus").value;
         var splitedX =x.split(/\n/);
         var json = {
             "dijkstraBody":splitedX
