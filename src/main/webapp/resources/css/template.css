@@ -13,6 +13,76 @@
 
 }
 
+/*Button Style css*/
+.buttonStyle {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+    background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+    background-color:#ffec64;
+    -moz-border-radius:13px;
+    -webkit-border-radius:13px;
+    border-radius:8px;
+    border:1px solid #ffaa22;
+    display:inline-block;
+    cursor:pointer;
+    color:#333333;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:2px 35px;
+    text-decoration:none;
+    vertical-align: middle;
+    top: 410px;
+}
+.buttonStyle:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+    background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+    background-color:#ffab23;
+}
+.buttonStyle:active {
+    position:absolute;
+    right: 45%;
+    top: 409px;
+}
+
+/*Vertical split div*/
+#row2  {
+    display: table-row;
+    z-index: 5;
+}
+
+#left, #right {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+}
+
+#left2{
+    display: inline-block;
+    width: 5%;
+    height: 100%;
+    z-index: 5;
+}
+
+/*Vertical line div*/
+#menu
+{
+    position: absolute;
+    border-right: 1px solid black;
+    top: 0;
+    bottom: 0;
+    text-align: center;}
+
 
 /*Canvas div*/
 .fullscreen-canvas {
@@ -64,7 +134,7 @@ li.dropdown {
     position: absolute;
     background-color: #545454;
     min-width: 160px;
-    z-index: 5;
+    z-index: 10000000000;
 }
 
 .dropdown-content a {
@@ -109,7 +179,7 @@ li.dropdown {
     width:50%;
     height:100%;
     float:left;
-    z-index: 3;
+    z-index: 10000000000;
 }
 
 /*Canvas stuff*/

@@ -1,0 +1,26 @@
+#centerHuffman{
+    top: 50%;
+    left: 45%;
+    width: 70em;
+    height: 50em;
+    margin-top: -12em;
+    margin-left: -30em;
+    border: 1px black;
+    background-color:#fff79e;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.8;
+}
+#leftHuffman {
+    display: inline-block;
+    width: 58%;
+    height: 100%;
+    z-index: 5;
+}
+
+#rightHuffman{
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    z-index: 5;
+}

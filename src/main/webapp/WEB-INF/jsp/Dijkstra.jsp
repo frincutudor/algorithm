@@ -1,8 +1,8 @@
 <html>
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
-    <link href="/resources/css/insertion-template.css" rel="stylesheet">
-    <link href="/resources/css/huffman.css" rel="stylesheet">
+    <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>

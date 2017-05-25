@@ -1,8 +1,13 @@
 <html>
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
-    <link href="/resources/css/insertion-template.css" rel="stylesheet">
-    <link href="/resources/css/huffman.css" rel="stylesheet">
+    <link href="/resources/css/huffman/templateHuffman.css" rel="stylesheet">
+    <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
+    <link href="/resources/css/huffman/paper.css" rel="stylesheet">
+    <link href="/resources/css/huffman/buttonStyle.css" rel="stylesheet">
+    <link href="/resources/css/huffman/accordion.css" rel="stylesheet">
+    <link href="/resources/css/huffman/bookmark.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -19,7 +24,7 @@
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/test.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -34,8 +39,6 @@
 
     <div class="row">
         <br>
-
-        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
@@ -77,31 +80,61 @@
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
-        <div id="center">
-            <div ng-app="myApp" ng-controller="myCtrl" >
 
-                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                <textarea id="insertionArea"></textarea>
-
+        <div id="centerHuffman">
+            <div id="leftHuffman">
+                <div id="paper">
+                    <div id="paper-content">
 
 
-
-                <button id="button" type="button" ng-click="click()">Try it</button>
-                <!--TODO Convert JSON response to look nice -->
-                <canvas id="canvas" width=1000 height=600></canvas>
-                <p>{{content}}</p>
+                        <textarea autofocus id="autofocus"></textarea>
+                    </div>
+                </div>
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <button class="buttonStyle" type="button" style="position:absolute; right: 70%" ng-click="click()">
+                        Try it
+                    </button>
+                    <canvas id="canvas" width=635 height=550 style="position: absolute; top: 245px"></canvas>
+                    <p>{{content.response}}</p>
+                </div>
             </div>
-
+            <div id="rightHuffman">
+                <div id="bookmark"></div>
+                <div id="left2"></div>
+                <section class="ac-container">
+                    <input id="ac-1" name="accordion-1" type="checkbox"/>
+                    <label for="ac-1">Instructions</label>
+                    <article class="ac-small">
+                        <p>Some content... </p>
+                    </article>
+                    <input id="ac-2" name="accordion-1" type="checkbox"/>
+                    <label for="ac-2">What it is</label>
+                    <article class="ac-small">
+                        <p>In computer science and information theory, a Huffman code is a particular type of optimal
+                            prefix code that is commonly used for lossless data compression.<br>
+                            <a href="https://en.wikipedia.org/wiki/Huffman_coding">For more information, please
+                                visit the following link</a></p>
+                    </article>
+                    <input id="ac-3" name="accordion-1" type="checkbox"/>
+                    <label for="ac-3">How it works</label>
+                    <article class="ac-large">
+                        <p>Huffman tree generated from the exact frequencies of the text "this is an example of a
+                            huffman tree".The output from Huffman's algorithm can be viewed as a variable-length code
+                            table for
+                            encoding a source symbol (such as a character in a file)<br>
+                            <a title="By Meteficha (Own work) [Public domain], via Wikimedia Commons"
+                               href="https://commons.wikimedia.org/wiki/File%3AHuffman_tree_2.svg"><img width="300"
+                                                                                                        alt="Huffman tree 2"
+                                                                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Huffman_tree_2.svg/512px-Huffman_tree_2.svg.png"/></a><br>
+                        </p>
+                    </article>
+                </section>
+            </div>
         </div>
-
-
         <div id="large-header" class="large-header">
 
 
             <canvas id="demo-canvas"></canvas>
-
-
         </div>
     </div>
 
@@ -114,7 +147,7 @@
 <script src="/resources/js/canvas/demo-1.js"></script>
 <script src="/resources/angular/huffman.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
