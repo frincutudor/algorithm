@@ -19,7 +19,7 @@
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/test.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -77,24 +77,26 @@
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
+
         <div id="center">
-            <div ng-app="myApp" ng-controller="myCtrl" >
-
-                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                <textarea id="kruskalArea"></textarea>
+            <div id="left">
+                <div ng-app="myApp" ng-controller="myCtrl">
 
 
+                    <textarea id="kruskalArea"></textarea>
 
 
-                <button id="button" type="button" ng-click="click()">Try it</button>
-                <!--TODO Convert JSON response to look nice -->
-                <canvas id="canvas" width=500 height=300></canvas>
-                <br>
-                <br>
-                <canvas id="canvas2" width=800 height=300></canvas>
-                <p>{{content}}</p>
+                    <button id="button" type="button" ng-click="click()">Try it</button>
+                    <!--TODO Convert JSON response to look nice -->
+                    <canvas id="canvas2" width=800 height=300></canvas>
+                    <br>
+                    <br>
+                    <canvas id="canvas" width=500 height=300></canvas>
+                    <p>{{content}}</p>
+                </div>
             </div>
+
+            <div id="right"><h1>Instructions</h1></div>
 
         </div>
 
@@ -117,7 +119,7 @@
 <script src="/resources/js/canvas/demo-1.js"></script>
 <script src="/resources/angular/kruskal.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
