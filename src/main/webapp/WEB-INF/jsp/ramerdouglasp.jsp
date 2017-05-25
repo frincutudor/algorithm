@@ -1,8 +1,12 @@
 <html>
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
-
+    <link href="/resources/css/RDP/templateRDP.css" rel="stylesheet">
+    <link href="/resources/css/RDP/buttonStyle.css" rel="stylesheet">
+    <link href="/resources/css/RDP/paper.css" rel="stylesheet">
+    <link href="/resources/css/RDP/bookmark.css" rel="stylesheet">
     <link href="/resources/css/rdp.css" rel="stylesheet">
+    <link href="/resources/css/RDP/accordion.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -19,7 +23,7 @@
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/rdp.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -34,8 +38,6 @@
 
     <div class="row">
         <br>
-
-        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
@@ -77,29 +79,69 @@
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
+        <div id="centerRDP">
+            <div id="leftRDP">
+                <div id="paper">
+                    <div id="paper-content">
+                        <label style="position: absolute; left: 10%; font-family: Handlee, cursive; font-size: 25px">Set
+                            epsilon
+                            here: </label>
+                        <textarea autofocus style="position: absolute; left: 40%" id="autofocus"></textarea>
+                    </div>
+                </div>
 
-            <div ng-app="myApp" ng-controller="myCtrl" >
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <button class="buttonStyle" style="position: absolute; right: 70%" ng-click="click()">Try it!!
+                    </button>
+                    <button id="clear" style="position: absolute; right: 95%; top: 211px">Clear</button>
+                    <p>{{content.data}}</p>
+                    <canvas id="myCanvas" width=630 height=500 style="position: absolute; top: 250px"></canvas>
+                    <br>
+                    <canvas id="canvas" width=630 height=469 style="position: absolute; top: 760px;"></canvas>
 
-                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-
-
-                <canvas id="myCanvas" width=300 height=300></canvas>
-                <canvas id="canvas" width=300 height=300></canvas>
-                <br>&nbsp;
-                <label>Set epsilon here</label>
-                <input id="input">
-                <button type="button" ng-click="click()">Try it!!</button>
-                <button id="clear">Clear</button>
-
-                <!--<button id="clear">Clear canvas</button>-->
-
-
-                  <p>{{content}}</p>
-
-
+                </div>
             </div>
-
+            <div id="rightRDP">
+                <div id="bookmark"></div>
+                <div id="left2"></div>
+                <section class="ac-container">
+                    <input id="ac-1" name="accordion-1" type="checkbox"/>
+                    <label for="ac-1">Instructions</label>
+                    <article class="ac-small">
+                        <p>Some content... </p>
+                    </article>
+                    <input id="ac-2" name="accordion-1" type="checkbox"/>
+                    <label for="ac-2">What it is</label>
+                    <article class="ac-medium">
+                        <p>The purpose of the algorithm is, given a curve composed of line segments (which is also
+                            called a Polyline in some contexts), to find a similar curve with fewer points. The
+                            algorithm defines 'dissimilar' based on the maximum distance between the original curve and
+                            the simplified curve (i.e., the Hausdorff distance between the curves). The simplified curve
+                            consists of a subset of the points that defined the original curve.<br>
+                            <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">For
+                                more information, please
+                                visit the following link</a></p>
+                    </article>
+                    <input id="ac-3" name="accordion-1" type="checkbox"/>
+                    <label for="ac-3">How it works</label>
+                    <article class="ac-large">
+                        <p>Simplifying a piecewise linear curve with the Douglas Peucker algorithm.<br>
+                            <a title="By Mysid [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons"
+                               href="https://commons.wikimedia.org/wiki/File%3ADouglas-Peucker_animated.gif"><img
+                                    width="256" alt="Douglas-Peucker animated"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/3/30/Douglas-Peucker_animated.gif"/></a>
+                            <br>
+                            The effect of varying epsilon in a parametric implementation of RDP.
+                            <br>
+                            <a title="By Christian.marie (Own work) [CC0], via Wikimedia Commons"
+                               href="https://commons.wikimedia.org/wiki/File%3ARDP%2C_varying_epsilon.gif"><img
+                                    width="256" alt="RDP, varying epsilon"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/RDP%2C_varying_epsilon.gif/512px-RDP%2C_varying_epsilon.gif"/></a>
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
 
 
         <div id="large-header" class="large-header">
@@ -120,7 +162,7 @@
 <script src="/resources/js/canvas/demo-1.js"></script>
 <script src="/resources/angular/rdp.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>

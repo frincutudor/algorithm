@@ -93,14 +93,14 @@
                 </div>
 
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" type="button" style="position: absolute; right: 70%" ng-click="click()">
+                    <button class="buttonStyle" type="button" style="position: absolute; right: 85%" ng-click="click()">
                         Try it
                     </button>
                     <canvas id="canvas2" width=635 height=300 style="position: absolute; top: 250px"></canvas>
                     <br>
                     <br>
                     <canvas id="canvas" width=635 height=430 style="position: absolute; top: 570px"></canvas>
-                    <p>{{content}}</p>
+                    <p>{{content.data}}</p>
                 </div>
             </div>
 

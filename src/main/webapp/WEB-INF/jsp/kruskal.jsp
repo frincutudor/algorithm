@@ -99,7 +99,7 @@
                     <br>
                     <br>
                     <canvas id="canvas" width=635 height=430 style="position: absolute; top: 570px"></canvas>
-                    <p>{{content}}</p>
+                    <p>{{content.data}}</p>
                 </div>
             </div>
 
