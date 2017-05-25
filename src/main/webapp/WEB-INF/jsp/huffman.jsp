@@ -1,9 +1,14 @@
 <html>
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
-    <link href="/resources/css/insertion-template.css" rel="stylesheet">
-    <link href="/resources/css/huffman.css" rel="stylesheet">
-    <link href="/resources/css/textstyle.css" rel="stylesheet">
+    <link href="/resources/css/huffman/templateHuffman.css" rel="stylesheet">
+    <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
+    <link href="/resources/css/huffman/paper.css" rel="stylesheet">
+    <link href="/resources/css/huffman/buttonStyle.css" rel="stylesheet">
+    <link href="/resources/css/huffman/accordion.css" rel="stylesheet">
+    <link href="/resources/css/huffman/bookmark.css" rel="stylesheet">
+
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -35,8 +40,6 @@
 
     <div class="row">
         <br>
-
-        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
@@ -78,39 +81,63 @@
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
-        <div id="center">
-            <div id="row">
-                <div id="left">
-                    <div id="menu">
-                        <div ng-app="myApp" ng-controller="myCtrl">
-
-                            <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                            <textarea id="text3"></textarea>
 
 
-                            <button class="buttonStyle" type="button" ng-click="click()">Try it</button>
-                            <!--TODO Convert JSON response to look nice -->
-                            <canvas id="canvas" width=480 height=800></canvas>
-                            <p>{{content}}</p>
-                        </div>
+        <div id="centerHuffman">
+            <div id="leftHuffman">
+                <div id="paper">
+                    <div id="paper-content">
+
+
+                        <textarea autofocus id="autofocus"></textarea>
                     </div>
                 </div>
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <button class="buttonStyle" type="button" style="position:absolute; right: 70%" ng-click="click()">
+                        Try it
+                    </button>
+                    <canvas id="canvas" width=635 height=550 style="position: absolute; top: 245px"></canvas>
+                    <p>{{content.response}}</p>
+                </div>
             </div>
-            <div id="right">
-                <h1 align="center">Instructions</h1>
-                <h2 align="center">Write your instructions</h2>
-            </div>
+            <div id="rightHuffman">
+                <div id="bookmark"></div>
+                <div id="left2"></div>
+                <section class="ac-container">
+                    <input id="ac-1" name="accordion-1" type="checkbox"/>
+                    <label for="ac-1">Instructions</label>
+                    <article class="ac-small">
+                        <p>Some content... </p>
+                    </article>
+                    <input id="ac-2" name="accordion-1" type="checkbox"/>
+                    <label for="ac-2">What it is</label>
+                    <article class="ac-small">
+                        <p>In computer science and information theory, a Huffman code is a particular type of optimal
+                            prefix code that is commonly used for lossless data compression.<br>
+                            <a href="https://en.wikipedia.org/wiki/Huffman_coding">For more information, please
+                                visit the following link</a></p>
+                    </article>
+                    <input id="ac-3" name="accordion-1" type="checkbox"/>
+                    <label for="ac-3">How it works</label>
+                    <article class="ac-large">
+                        <p>Huffman tree generated from the exact frequencies of the text "this is an example of a
+                            huffman tree".The output from Huffman's algorithm can be viewed as a variable-length code
+                            table for
+                            encoding a source symbol (such as a character in a file)<br>
+                            <a title="By Meteficha (Own work) [Public domain], via Wikimedia Commons"
+                               href="https://commons.wikimedia.org/wiki/File%3AHuffman_tree_2.svg"><img width="300"
+                                                                                                        alt="Huffman tree 2"
+                                                                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Huffman_tree_2.svg/512px-Huffman_tree_2.svg.png"/></a><br>
+                        </p>
+                    </article>
+                </section>
 
+            </div>
         </div>
-
-
         <div id="large-header" class="large-header">
 
 
             <canvas id="demo-canvas"></canvas>
-
-
         </div>
     </div>
 

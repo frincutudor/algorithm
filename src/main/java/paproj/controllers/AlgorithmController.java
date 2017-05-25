@@ -16,6 +16,7 @@ import paproj.algorithms.codebase.helperclasses.Edge;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanCodeHelper;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
 import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
+import paproj.algorithms.codebase.knapsackproblem.KnapsackObject;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 
@@ -43,6 +44,8 @@ import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
 import static paproj.algorithms.codebase.ramerdouglaspakardalgorithm.RamerDouglasPeucker.RamerDouglasPeuckerFilter;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 import static paproj.algorithms.dynamicprograming.DTW.DTW;
+import static paproj.algorithms.codebase.knapsackproblem.Knapsack.Knapsack;
+
 /**
  * Created by frincutudor on 3/10/17.
  */
@@ -51,75 +54,67 @@ import static paproj.algorithms.dynamicprograming.DTW.DTW;
 @RestController
 public class AlgorithmController {
 
-    @RequestMapping(value="/algorithm")
-    public ModelAndView algorithmHome()
-    {
+    @RequestMapping(value = "/algorithm")
+    public ModelAndView algorithmHome() {
 
         return new ModelAndView("welcome.jsp");
 
     }
 
-    @RequestMapping(value="/home")
-    public ModelAndView home()
-    {
+    @RequestMapping(value = "/home")
+    public ModelAndView home() {
         return new ModelAndView("welcome.jsp");
     }
 
-    @RequestMapping(value="/home/kruskal")
-    public ModelAndView homeKruskal()
-    {
+    @RequestMapping(value = "/home/kruskal")
+    public ModelAndView homeKruskal() {
         return new ModelAndView("kruskal.jsp");
     }
 
 
-    @RequestMapping(value="/home/insertion")
-    public ModelAndView homeInsertion()
-    {
+    @RequestMapping(value = "/home/insertion")
+    public ModelAndView homeInsertion() {
         return new ModelAndView("insertion.jsp");
     }
 
-    @RequestMapping(value = "/algorithm/insertion" , method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Response insertionSolver(@RequestBody InsertionBody insertionBody)
-    {
-        Response response= new Response();
-        ArrayList<Integer> listToSort=inputParser(insertionBody.getInsertionBody());
+    @RequestMapping(value = "/algorithm/insertion", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response insertionSolver(@RequestBody InsertionBody insertionBody) {
+        Response response = new Response();
+        ArrayList<Integer> listToSort = inputParser(insertionBody.getInsertionBody());
         response.setResponse(insertionSort(listToSort).toString());
 
         return response;
     }
 
     @RequestMapping(value = "/home/huffman")
-    public ModelAndView homeHuffman()
-    {
+    public ModelAndView homeHuffman() {
         return new ModelAndView("huffman.jsp");
     }
+
     //TODO:clean
-    @RequestMapping(value = "/algorithm/huffman" , method = RequestMethod.POST)
-    public String huffmanSolver(@RequestBody HuffmanBody huffmanBody)
-    {
-        StringParser parser=new StringParser(huffmanBody.getHuffmanBody());
+    @RequestMapping(value = "/algorithm/huffman", method = RequestMethod.POST)
+    public String huffmanSolver(@RequestBody HuffmanBody huffmanBody) {
+        StringParser parser = new StringParser(huffmanBody.getHuffmanBody());
         HuffmanCodeHelper huffmanCodeHelper = new HuffmanCodeHelper(parser);
-        PriorityQueue<HuffmanNode> priorityQueue=huffmanCodeHelper.getQueue();
-        String JSON =JSONParser.JsonFormat(priorityQueue);
+        PriorityQueue<HuffmanNode> priorityQueue = huffmanCodeHelper.getQueue();
+        String JSON = JSONParser.JsonFormat(priorityQueue);
         StringBuilder stringBuffer = new StringBuilder(JSON);
-        stringBuffer.insert(2,"\"nrVertices\":\""+huffmanCodeHelper.getTreeSize()+"\",");
+        stringBuffer.insert(2, "\"nrVertices\":\"" + huffmanCodeHelper.getTreeSize() + "\",");
         String string = stringBuffer.toString();
-        return string.substring(1,string.length()-1);
+        return string.substring(1, string.length() - 1);
     }
 
-    @RequestMapping(value="/algorithm/kruskal",method = RequestMethod.POST)
-    public String kruskalSolver(@RequestBody KruskalBody kruskalBody)
-    {
+    @RequestMapping(value = "/algorithm/kruskal", method = RequestMethod.POST)
+    public String kruskalSolver(@RequestBody KruskalBody kruskalBody) {
         String[] kBody = kruskalBody.getKruskalBody();
         GraphObject graphObject = graphInputParser(kBody);
         GraphHelperImpl graphHelper = new GraphHelperImpl(graphObject.getNumberOfNodes());
         graphHelper.initGraph();
-        for (Edge edge : graphObject.getEdges())
-        {
+        for (Edge edge : graphObject.getEdges()) {
             int source = edge.getSource();
             int destination = edge.getDestination();
             double cost = edge.getCost();
-            graphHelper.addEdge(source,destination,cost);
+            graphHelper.addEdge(source, destination, cost);
         }
 
         Set<Edge> finalSet = Kruskal.Kruskal(graphHelper.getGraph());
@@ -127,36 +122,33 @@ public class AlgorithmController {
     }
 
     @RequestMapping(value = "/home/dijkstra")
-    public ModelAndView homeDijkstra()
-    {
+    public ModelAndView homeDijkstra() {
         return new ModelAndView("Dijkstra.jsp");
     }
-    @RequestMapping(value="/algorithm/dijkstra",method = RequestMethod.POST)
-    public DijktraResponse dijkstraSolver(@RequestBody DijkstraBody dijkstraBody)
-    {
-        String[] input =dijkstraBody.getDijkstraBody();
-        int inputSize= input.length;
+
+    @RequestMapping(value = "/algorithm/dijkstra", method = RequestMethod.POST)
+    public DijktraResponse dijkstraSolver(@RequestBody DijkstraBody dijkstraBody) {
+        String[] input = dijkstraBody.getDijkstraBody();
+        int inputSize = input.length;
         GraphObject graphObject = graphInputParser(input);
         DijkstraGraphHelperImpl graphHelper = new DijkstraGraphHelperImpl(graphObject.getNumberOfNodes());
         graphHelper.initGraph();
-        for(Edge edge: graphObject.getEdges())
-        {
+        for (Edge edge : graphObject.getEdges()) {
             int source = edge.getSource();
             int destination = edge.getDestination();
             double cost = edge.getCost();
-            graphHelper.addEdge(source,destination,cost);
+            graphHelper.addEdge(source, destination, cost);
         }
         //TODO : Get START NODE here
 
-        int index =Integer.valueOf(input[inputSize-1]);
+        int index = Integer.valueOf(input[inputSize - 1]);
         DijkstraShortestPath.DijkstraShortestPath(graphHelper.getVertex(index));
 
-        Map<ArrayList<Integer>,Double> wrapperMap=graphHelper.generateDijkstraResponse();
+        Map<ArrayList<Integer>, Double> wrapperMap = graphHelper.generateDijkstraResponse();
         ArrayList<DijkstraWrapper> wrapper = new ArrayList<DijkstraWrapper>();
 
-        for(Map.Entry<ArrayList<Integer>,Double> entry : wrapperMap.entrySet())
-        {
-                wrapper.add(new DijkstraWrapper(entry.getValue(),entry.getKey()));
+        for (Map.Entry<ArrayList<Integer>, Double> entry : wrapperMap.entrySet()) {
+            wrapper.add(new DijkstraWrapper(entry.getValue(), entry.getKey()));
         }
 
 //        String JSON = JSONParser.JsonFormat(graphHelper.generateDijkstraResponse());
@@ -173,84 +165,77 @@ public class AlgorithmController {
     }
 
     @RequestMapping(value = "/home/lcs")
-    public ModelAndView homeLCS()
-    {
+    public ModelAndView homeLCS() {
         return new ModelAndView("lcs.jsp");
     }
-    @RequestMapping(value="/algorithm/lcs",method = RequestMethod.POST)
-    public Response longestCommonSubsequence(@RequestBody LCSBody lcsBody)
-    {
+
+    @RequestMapping(value = "/algorithm/lcs", method = RequestMethod.POST)
+    public Response longestCommonSubsequence(@RequestBody LCSBody lcsBody) {
         Response response = new Response();
 
         String[] input = lcsBody.getLcsBody().split("\\s+");
-        response.setResponse(lcsSolver(input[0],input[1]));
+        response.setResponse(lcsSolver(input[0], input[1]));
 
         return response;
     }
+
     @RequestMapping(value = "/home/boyer/moore")
-    public ModelAndView homeBoyerMoore()
-    {
+    public ModelAndView homeBoyerMoore() {
         return new ModelAndView("boyermoore.jsp");
     }
 
-    @RequestMapping(value="/algorithm/boyer/moore",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public PatternMatchRespone solveBoyerMoore(@RequestBody BoyerMooreBody bmBody)
-    {
-      PatternMatchRespone response = new PatternMatchRespone();
-      String[] input = bmBody.getBmBody().split("\\s+");
-      String pattern=input[0];
-      String text=input[1];
+    @RequestMapping(value = "/algorithm/boyer/moore", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public PatternMatchRespone solveBoyerMoore(@RequestBody BoyerMooreBody bmBody) {
+        PatternMatchRespone response = new PatternMatchRespone();
+        String[] input = bmBody.getBmBody().split("\\s+");
+        String pattern = input[0];
+        String text = input[1];
 
-      BoyerMoore boyerMoore =new BoyerMoore(pattern);
-      response.setPattern(pattern);
-      response.setText(text);
-      response.setPosition(boyerMoore.search(text));
+        BoyerMoore boyerMoore = new BoyerMoore(pattern);
+        response.setPattern(pattern);
+        response.setText(text);
+        response.setPosition(boyerMoore.search(text));
 
-      return response;
+        return response;
     }
 
     @RequestMapping(value = "/home/rdp")
-    public ModelAndView homeRamerDouglasPeuker()
-    {
+    public ModelAndView homeRamerDouglasPeuker() {
         return new ModelAndView("ramerdouglasp.jsp");
     }
 
 
     //TODO:check if algorithm works
-    @RequestMapping(value="/algorithm/rdp",method = RequestMethod.POST)
-    public Response solveRdp(@RequestBody RamerDouglasPBody rdpBody)
-    {
-        List<Point> points = new ArrayList<Point>() ;
+    @RequestMapping(value = "/algorithm/rdp", method = RequestMethod.POST)
+    public Response solveRdp(@RequestBody RamerDouglasPBody rdpBody) {
+        List<Point> points = new ArrayList<Point>();
 
-        Response response= new Response();
+        Response response = new Response();
         String[] input = rdpBody.getRdpBody().split(",");
-        for(int i=0;i<input.length;i++)
-        {
-            String[] coords=input[i].split("\\s+");
-            points.add(new Point(Double.valueOf(coords[0]),Double.valueOf(coords[1])));
+        for (int i = 0; i < input.length; i++) {
+            String[] coords = input[i].split("\\s+");
+            points.add(new Point(Double.valueOf(coords[0]), Double.valueOf(coords[1])));
         }
 
-        List<Point> output=RamerDouglasPeuckerFilter(points,Double.valueOf(rdpBody.getEpsilon()));
+        List<Point> output = RamerDouglasPeuckerFilter(points, Double.valueOf(rdpBody.getEpsilon()));
         response.setResponse(output.toString());
         return response;
     }
 
 
     @RequestMapping(value = "/home/kmp")
-    public ModelAndView homeKmp()
-    {
+    public ModelAndView homeKmp() {
         return new ModelAndView("kmp.jsp");
     }
 
-    @RequestMapping(value="/algorithm/kmp",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public PatternMatchRespone solveKMP(@RequestBody KMPBody kmpBody)
-    {
+    @RequestMapping(value = "/algorithm/kmp", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public PatternMatchRespone solveKMP(@RequestBody KMPBody kmpBody) {
         PatternMatchRespone response = new PatternMatchRespone();
         String[] input = kmpBody.getKmpBody().split("\\s+");
-        String pattern=input[0];
-        String text=input[1];
+        String pattern = input[0];
+        String text = input[1];
 
-        KMP kmp =new KMP(pattern);
+        KMP kmp = new KMP(pattern);
         response.setPattern(pattern);
         response.setText(text);
         response.setPosition(kmp.search(text));
@@ -259,20 +244,18 @@ public class AlgorithmController {
     }
 
     @RequestMapping(value = "/home/rabin/karp")
-    public ModelAndView homeRabinKarp()
-    {
+    public ModelAndView homeRabinKarp() {
         return new ModelAndView("rabinkarp.jsp");
     }
 
-    @RequestMapping(value="/algorithm/rabin/karp",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public PatternMatchRespone solveBoyerMoore(@RequestBody RabinKarpBody rkBody)
-    {
+    @RequestMapping(value = "/algorithm/rabin/karp", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public PatternMatchRespone solveBoyerMoore(@RequestBody RabinKarpBody rkBody) {
         PatternMatchRespone response = new PatternMatchRespone();
         String[] input = rkBody.getRkBody().split("\\s+");
-        String pattern=input[0];
-        String text=input[1];
+        String pattern = input[0];
+        String text = input[1];
 
-        RabinKarp rabinKarp =new RabinKarp(pattern);
+        RabinKarp rabinKarp = new RabinKarp(pattern);
         response.setPattern(pattern);
         response.setText(text);
         response.setPosition(rabinKarp.search(text));
@@ -305,12 +288,12 @@ public class AlgorithmController {
         return  response;
     }
     @RequestMapping(value = "/home/dtw")
-    public ModelAndView homeDynamicTimeWarping()
-    {
+    public ModelAndView homeDynamicTimeWarping() {
         return new ModelAndView("dtw.jsp");
     }
 
-    @RequestMapping(value="/algorithm/dtw",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+
+    @RequestMapping(value = "/algorithm/dtw", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public DTWObject solveDynamicTimeWarping(@RequestBody DTWBody dtwBody) {
         PatternMatchRespone response = new PatternMatchRespone();
         String[] input = dtwBody.getDtwBody();
@@ -334,9 +317,38 @@ public class AlgorithmController {
 
         return DTW(floatSeq1, floatSeq2);
     }
-    @RequestMapping(value = "/home/test")
-    public ModelAndView homeTest()
-    {
-        return new ModelAndView("home.jsp");
+
+
+    @RequestMapping(value = "/home/knapsack")
+    public ModelAndView homeKnapsackProblem() {
+        return new ModelAndView("knapsack.jsp");
+    }
+
+    @RequestMapping(value = "/algorithm/knapsack", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public KnapsackObject solveKnapsackProblem(@RequestBody KnapsackBody kBody) {
+
+        String[] input = kBody.getKBody();
+        String nObjects = input[0];
+        String tWeight = input[1];
+        String[] s1 = nObjects.split("\\s+");
+        String[] s2 = tWeight.split("\\s+");
+
+        int m = s1.length;
+        int n = s2.length;
+
+        int i = 0;
+        for (String s : s1) {
+            m = Integer.parseInt(s);
+            i++;
+        }
+        i = 0;
+        for (String s : s2) {
+            n = Integer.parseInt(s);
+            i++;
+        }
+
+
+        return Knapsack(m, n);
+
     }
 }

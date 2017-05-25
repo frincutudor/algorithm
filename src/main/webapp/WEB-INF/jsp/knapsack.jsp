@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Alex
+  Date: 21.05.2017
+  Time: 23:41
+  To change this template use File | Settings | File Templates.
+--%>
 <html>
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
@@ -16,7 +23,7 @@
     <script src="/resources/js/canvas/EasePack.min.js"></script>
     <script src="/resources/js/canvas/rAF.js"></script>
     <script src="/resources/js/canvas/demo-1.js"></script>
-    <script src="/resources/angular/kmp.js"></script>
+    <script src="/resources/angular/knapsack.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
@@ -75,8 +82,7 @@
             <div ng-app="myApp" ng-controller="myCtrl">
 
                 <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                <textarea id="kmpArea">
-        </textarea>
+                <textarea id="knapsackArea"></textarea>
                 <button type="button" ng-click="click()">Try it</button>
 
                 <!--TODO Convert JSON response to look nice -->
@@ -101,8 +107,9 @@
 <script src="/resources/js/canvas/EasePack.min.js"></script>
 <script src="/resources/js/canvas/rAF.js"></script>
 <script src="/resources/js/canvas/demo-1.js"></script>
-<script src="/resources/angular/kmp.js"></script>
+<script src="/resources/angular/knapsack.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 </body>
 
 </html>

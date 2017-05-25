@@ -7,8 +7,8 @@ app.controller('myCtrl', function ($scope, $http,$window) {
 
     $scope.click = function() {
 
-        
-        var x = document.getElementById("text3").value;
+        var x = document.getElementById("autofocus").value;
+
         var json = "{\"huffmanBody\":" + "\"" + x + "\"" + "}";
 
         $http.post("http://localhost:8080/algorithm/huffman", json)
