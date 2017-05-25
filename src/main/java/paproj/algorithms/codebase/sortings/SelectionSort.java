@@ -1,5 +1,6 @@
 package paproj.algorithms.codebase.sortings;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -12,28 +13,24 @@ public class SelectionSort {
     // VectorToSort will be static, so we cannot change values
     private static Vector<Integer> vectorToSort;
 
-    private static Vector<Integer> selectionSort(Vector<Integer> vectorToSort)
+    public static int[] selectionSort(int[] arr)
     {
-        int vectorSize=vectorToSort.size();
-        int j,i,aux,min,minat;
-        for(i = 0; i < vectorSize -1;i++)
+
+        for (int i = 0; i < arr.length - 1; i++)
         {
-            minat = i;
-            min = vectorToSort.get(i);
-            for(j = i+1 ;j<vectorSize;j++)
-            {
-                if(min > vectorToSort.get(j))
-                {
-                    minat = j;
-                    min = vectorToSort.get(j);
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++){
+                if (arr[j] < arr[index]){
+                    index = j;//searching for lowest index
                 }
             }
-            aux = vectorToSort.get(i);
-            vectorToSort.set(i,minat);
-            vectorToSort.set(minat,aux);
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
         }
 
-        return vectorToSort;
+
+        return arr;
     }
 
 

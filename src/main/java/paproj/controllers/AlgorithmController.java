@@ -48,6 +48,7 @@ import static paproj.helpers.commonhelpers.InputParser.inputParser;
 import static paproj.algorithms.dynamicprograming.DTW.DTW;
 import static paproj.algorithms.codebase.knapsackproblem.Knapsack.Knapsack;
 import static paproj.algorithms.codebase.sortings.BubbleSort.bubbleSort;
+import static paproj.algorithms.codebase.sortings.SelectionSort.selectionSort;
 
 /**
  * Created by frincutudor on 3/10/17.
@@ -394,15 +395,15 @@ public class AlgorithmController {
 
         SelectionSortObject object = new SelectionSortObject();
         String[] input = bsBody.getSelectionBody().split("\\s+");
-        Vector<Integer> vector = new Vector<Integer>();
+        int[] integers = new int[input.length];
+        int i=0;
         for(String s:input)
         {
-            vector.add(Integer.parseInt(s));
+            integers[i]=Integer.parseInt(s);
+            i++;
         }
 
-        object.setVector(vector);
-
-
+        object.setVector(selectionSort(integers));
         return object;
     }
 }

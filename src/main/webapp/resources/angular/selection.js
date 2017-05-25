@@ -11,7 +11,7 @@ app.controller('myCtrl', function ($scope, $http) {
         var x = document.getElementById("autofocus").value;
         var json = "{\"selectionBody\":" + "\"" + x + "\"" + "}";
 
-        $http.post("http://localhost:8081/algorithm/selection", json)
+        $http.post("http://localhost:8080/algorithm/selection", json)
             .then(function (response) {
 
                 $scope.content = response.data;

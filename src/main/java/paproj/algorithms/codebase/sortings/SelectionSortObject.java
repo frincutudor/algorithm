@@ -7,13 +7,13 @@ import java.util.Vector;
  */
 public class SelectionSortObject {
 
-    Vector<Integer> vector;
+    int[] vector;
 
-    public Vector<Integer> getVector() {
+    public int[] getVector() {
         return vector;
     }
 
-    public void setVector(Vector<Integer> vector) {
+    public void setVector(int[] vector) {
         this.vector = vector;
     }
 }

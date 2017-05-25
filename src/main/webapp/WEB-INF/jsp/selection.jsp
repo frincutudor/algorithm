@@ -91,7 +91,7 @@
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
 
-                    <button class="buttonStyle" ng-click="click()" style="position: absolute; right: 70%">Try it
+                    <button  ng-click="click()" style="position: absolute; right: 70%">Try it
                     </button>
 
                      <%--<button ng-click="click()"></button>--%>
