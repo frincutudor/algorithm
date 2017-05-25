@@ -2,11 +2,13 @@
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/RDP/templateRDP.css" rel="stylesheet">
-    <link href="/resources/css/RDP/buttonStyle.css" rel="stylesheet">
     <link href="/resources/css/RDP/paper.css" rel="stylesheet">
     <link href="/resources/css/RDP/bookmark.css" rel="stylesheet">
     <link href="/resources/css/rdp.css" rel="stylesheet">
     <link href="/resources/css/RDP/accordion.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -81,23 +83,22 @@
 
         <div id="centerRDP">
             <div id="leftRDP">
-                <div id="paper">
-                    <div id="paper-content">
-                        <label style="position: absolute; left: 10%; font-family: Handlee, cursive; font-size: 25px">Set
-                            epsilon
-                            here: </label>
-                        <textarea autofocus style="position: absolute; left: 40%" id="autofocus"></textarea>
-                    </div>
-                </div>
-
+                <canvas id="myCanvas" width=630 height=500 style="position: absolute; top: 10px"></canvas>
+                <canvas id="canvas" width=630 height=469 style="position: absolute; top: 520px;"></canvas>
+                <label style="position:absolute; top:1030px; font-family: Handlee, cursive; font-size: 25px">Set
+                    epsilon
+                    here: </label>
+                <input style="position: absolute; top: 1030px; left: 180px" id="input">
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" style="position: absolute; right: 70%" ng-click="click()">Try it!!
+                    <button type="button" class="btn btn-warning btn-lg" id="clear"
+                            style="position: absolute; right: 82%; top: 1070px">Clear
                     </button>
-                    <button id="clear" style="position: absolute; right: 95%; top: 211px">Clear</button>
+                    <button type="button" class="btn btn-warning btn-lg"
+                            style="position: absolute; top: 1070px; right: 92%" ng-click="click()">Try it!!
+                    </button>
                     <p>{{content.data}}</p>
-                    <canvas id="myCanvas" width=630 height=500 style="position: absolute; top: 250px"></canvas>
                     <br>
-                    <canvas id="canvas" width=630 height=469 style="position: absolute; top: 760px;"></canvas>
+
 
                 </div>
             </div>
@@ -145,15 +146,9 @@
 
 
         <div id="large-header" class="large-header">
-
-
             <canvas id="demo-canvas"></canvas>
-
-
         </div>
     </div>
-
-
 </div>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="/resources/js/canvas/TweenLite.min.js"></script>

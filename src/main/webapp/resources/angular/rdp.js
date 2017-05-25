@@ -6,7 +6,7 @@ app.controller('myCtrl', function ($scope, $http,$window) {
 
     $scope.click = function() {
 
-        var x = document.getElementById("autofocus").value;
+        var x = document.getElementById("input").value;
 
         var json={
             "rdpBody": $window.returnCircles().toString(),

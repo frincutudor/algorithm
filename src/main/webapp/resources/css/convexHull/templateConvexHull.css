@@ -1,24 +1,24 @@
-#centerRDP {
+#centerConvexHull {
     top: 50%;
-    left: 45%;
-    width: 80em;
-    height: 85em;
+    left: 50%;
+    width: 70em;
+    height: 60em;
     margin-top: -12em;
     margin-left: -35em;
     border: 1px black;
-    background-color:#fff79e;
+    background-color: #fff79e;
     position: absolute;
     z-index: 5;
     opacity: 0.8;
 }
-#leftRDP {
+#leftConvexHull {
     display: inline-block;
     width: 58%;
     height: 100%;
     z-index: 5;
 }
 
-#rightRDP {
+#rightConvexHull {
     display: inline-block;
     width: 35%;
     height: 100%;

@@ -1,6 +1,7 @@
 <html>
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
+    <link href="/resources/css/convexHull/templateConvexHull.css">
 
     <link href="/resources/css/rdp.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
@@ -19,7 +20,7 @@
     <script src="/resources/js/canvas/demo-1.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -74,28 +75,21 @@
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
+        <div id="centerConvexHull">
+            <div id="leftConvexHull">
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <canvas id="myCanvas" width=300 height=300></canvas>
+                    <canvas id="canvas" width=300 height=300></canvas>
 
-        <div ng-app="myApp" ng-controller="myCtrl" >
+                    <button type="button" ng-click="click()">Draw Convex Hull</button>
+                    <button id="clear">Clear Canvas</button>
+                </div>
 
-            <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-            <canvas id="myCanvas" width=300 height=300></canvas>
-            <canvas id="canvas" width=300 height=300></canvas>
-
-            <button type="button" ng-click="click()">Draw Convex Hull</button>
-            <button id="clear">Clear Canvas</button>
-
-            <!--<button id="clear">Clear canvas</button>-->
-        </div>
-
-
-
-        <div id="large-header" class="large-header">
-
-
-            <canvas id="demo-canvas"></canvas>
-
-
+                <!--<button id="clear">Clear canvas</button>-->
+            </div>
+            <div id="large-header" class="large-header">
+                <canvas id="demo-canvas"></canvas>
+            </div>
         </div>
     </div>
 
@@ -108,14 +102,13 @@
 <script src="/resources/js/canvas/demo-1.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
 <script src="/resources/js/qh/points.js"></script>
 <script src="/resources/angular/quickhull.js"></script>
 <script src="/resources/js/qh/drawHull.js"></script>
-
 
 
 </body>
