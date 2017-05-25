@@ -5,9 +5,11 @@
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
     <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
     <link href="/resources/css/huffman/paper.css" rel="stylesheet">
-    <link href="/resources/css/huffman/buttonStyle.css" rel="stylesheet">
     <link href="/resources/css/huffman/accordion.css" rel="stylesheet">
     <link href="/resources/css/huffman/bookmark.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
@@ -93,10 +95,11 @@
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" type="button" style="position:absolute; right: 70%" ng-click="click()">
+                    <button type="button" class="btn btn-warning btn-lg"
+                            style="position: absolute; top: 220px; right: 70%" ng-click="click()">
                         Try it
                     </button>
-                    <canvas id="canvas" width=635 height=550 style="position: absolute; top: 245px"></canvas>
+                    <canvas id="canvas" width=635 height=550 style="position: absolute; top: 275px"></canvas>
                     <p>{{content.response}}</p>
                 </div>
             </div>

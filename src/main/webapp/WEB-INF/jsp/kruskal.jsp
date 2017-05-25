@@ -6,8 +6,10 @@
     <link href="/resources/css/kruskal/templateKruskal.css" rel="stylesheet">
     <link href="/resources/css/kruskal/bookmark.css" rel="stylesheet">
     <link href="/resources/css/kruskal/accordion.css" rel="stylesheet">
-    <link href="/resources/css/kruskal/buttonStyle.css" rel="stylesheet">
     <link href="/resources/css/kruskal/paper.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -92,13 +94,15 @@
                 </div>
 
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" type="button" style="position: absolute; right: 70%" ng-click="click()">
+                    <button type="button" class="btn btn-warning btn-lg"
+                            style="position: absolute; top: 220px; right: 70%"
+                            ng-click="click()">
                         Try it
                     </button>
-                    <canvas id="canvas2" width=635 height=300 style="position: absolute; top: 250px"></canvas>
+                    <canvas id="canvas2" width=635 height=300 style="position: absolute; top: 280px"></canvas>
                     <br>
                     <br>
-                    <canvas id="canvas" width=635 height=430 style="position: absolute; top: 570px"></canvas>
+                    <canvas id="canvas" width=635 height=430 style="position: absolute; top: 600px"></canvas>
                     <p>{{content.data}}</p>
                 </div>
             </div>

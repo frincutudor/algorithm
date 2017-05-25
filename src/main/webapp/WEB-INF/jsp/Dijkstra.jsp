@@ -5,9 +5,11 @@
     <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
     <link href="/resources/css/dijkstra/accordion.css" rel="stylesheet">
     <link href="/resources/css/dijkstra/bookmark.css" rel="stylesheet">
-    <link href="/resources/css/dijkstra/buttonStyle.css" rel="stylesheet">
     <link href="/resources/css/dijkstra/paper.css" rel="stylesheet">
     <link href="/resources/css/dijkstra/templateDijkstra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -44,7 +46,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
+                    <a href="/home/">home</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
@@ -93,13 +95,14 @@
                 </div>
 
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" type="button" style="position: absolute; right: 85%" ng-click="click()">
+                    <button type="button" class="btn btn-warning btn-lg" style="position: absolute; top: 220px; right: 70%"
+                            ng-click="click()">
                         Try it
                     </button>
-                    <canvas id="canvas2" width=635 height=300 style="position: absolute; top: 250px"></canvas>
+                    <canvas id="canvas2" width=635 height=300 style="position: absolute; top: 270px"></canvas>
                     <br>
                     <br>
-                    <canvas id="canvas" width=635 height=430 style="position: absolute; top: 570px"></canvas>
+                    <canvas id="canvas" width=635 height=410 style="position: absolute; top: 590px"></canvas>
                     <p>{{content.data}}</p>
                 </div>
             </div>

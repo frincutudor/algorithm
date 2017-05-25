@@ -3,13 +3,15 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Neucha');
     </style>
-    <link href="/resources/css/template.css" rel="stylesheet">
-
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/fontStyle.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/accordion.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/paper.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/bookmark.css" rel="stylesheet">
+    <link href="/resources/css/template.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
@@ -79,18 +81,16 @@
             </li>
         </ul>
         <div id="center">
-
             <div id="row2">
-
                 <div id="paper">
                     <div id="paper-content">
                         <textarea autofocus id="autofocus"></textarea>
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" ng-click="click()" style="position: absolute; right: 70%">Try
-                        it
-                    </button>
+                    <button type="button" class="btn btn-warning btn-lg"
+                            style="position: absolute; top: 410px; right: 70%">Try
+                        it</button>
                     <br>
                     <br>
                     <p style="font-family: Neucha; font-size: 22px"><label>Result: </label>
