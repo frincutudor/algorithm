@@ -36,9 +36,5 @@ public class SelectionSort {
         return vectorToSort;
     }
 
-    /*public static Vector<Integer> printSortedVector()
-    {
-        //review this
-        return vectorToSort;
-    }*/
+
 }

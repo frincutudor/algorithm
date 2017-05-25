@@ -23,6 +23,7 @@ import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 import paproj.algorithms.codebase.helperclasses.Point;
 
 
+import paproj.algorithms.codebase.sortings.SelectionSortObject;
 import paproj.algorithms.dynamicprograming.DTWObject;
 import paproj.algorithms.patternmatch.BoyerMoore;
 import paproj.algorithms.patternmatch.KMP;
@@ -374,5 +375,27 @@ public class AlgorithmController {
         response.setResponse(bubbleSort(value).toString());
 
         return response;
+    }
+
+    @RequestMapping(value = "/home/selection")
+    public ModelAndView homeSelectionSort() {
+        return new ModelAndView("selection.jsp");
+    }
+
+    @RequestMapping(value = "/algorithm/selection", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public SelectionSortObject selectionSortSolver(@RequestBody SelectionSortBody bsBody) {
+
+        SelectionSortObject object = new SelectionSortObject();
+        String[] input = bsBody.getSelectionBody().split("\\s+");
+        Vector<Integer> vector = new Vector<Integer>();
+        for(String s:input)
+        {
+            vector.add(Integer.parseInt(s));
+        }
+
+        object.setVector(vector);
+
+
+        return object;
     }
 }
