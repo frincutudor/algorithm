@@ -45,6 +45,7 @@ import static paproj.algorithms.codebase.ramerdouglaspakardalgorithm.RamerDougla
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 import static paproj.algorithms.dynamicprograming.DTW.DTW;
 import static paproj.algorithms.codebase.knapsackproblem.Knapsack.Knapsack;
+import static paproj.algorithms.codebase.sortings.BubbleSort.bubbleSort;
 
 /**
  * Created by frincutudor on 3/10/17.
@@ -332,7 +333,7 @@ public class AlgorithmController {
         String tWeight = input[1];
         String[] s1 = nObjects.split("\\s+");
         String[] s2 = tWeight.split("\\s+");
-
+    //TODO: bad implementation n,m and s1,s2 will fix after knapsac review
         int m = s1.length;
         int n = s2.length;
 
@@ -350,5 +351,28 @@ public class AlgorithmController {
 
         return Knapsack(m, n);
 
+    }
+
+    @RequestMapping(value = "/home/bubblesort")
+    public ModelAndView homeBubbleSort() {
+        return new ModelAndView("bublesort.jsp");
+    }
+
+    @RequestMapping(value = "/algorithm/bubblesort", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Response bubbleSortSolver(@RequestBody BubbleSortBody bsBody) {
+        Response response = new Response();
+        String[] input = bsBody.getBsBody().split("\\s+");
+        int[] value=new int[input.length];
+        int i=0;
+        for(String s:input)
+        {
+            value[i]=Integer.parseInt(s);
+            i++;
+        }
+
+
+        response.setResponse(bubbleSort(value).toString());
+
+        return response;
     }
 }

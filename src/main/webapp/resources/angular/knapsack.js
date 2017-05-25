@@ -8,7 +8,7 @@ app.controller('myCtrl', function ($scope, $http) {
         var json = {
             "kBody":splitedX
         };
-        $http.post("http://localhost:8080/algorithm/knapsack", json)
+        $http.post("http://localhost:8081/algorithm/knapsack", json)
             .then(function (response) {
                 $scope.content = response.data;
 
