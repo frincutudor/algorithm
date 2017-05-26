@@ -101,7 +101,7 @@
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>
                     <article class="ac-medium">
-                        <p>In computer science, the Boyer–Moore string search algorithm is an efficient string searching
+                        <p>In computer science, the Boyer Moore string search algorithm is an efficient string searching
                             algorithm that is the standard benchmark for practical string search literature. The
                             algorithm preprocesses the string being searched for (the pattern), but not the string being
                             searched in (the text). It is thus well-suited for applications in which the pattern is much
