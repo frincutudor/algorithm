@@ -1,0 +1,26 @@
+#centerBM {
+    top: 50%;
+    left: 50%;
+    width: 70em;
+    height: 60em;
+    margin-top: -12em;
+    margin-left: -35em;
+    border: 1px black;
+    background-color: #fff79e;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.8;
+}
+#leftBM{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+}
+
+#rightBM{
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    z-index: 5;
+}

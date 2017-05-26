@@ -2,6 +2,14 @@
 <head>
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
+    <link href="/resources/css/BoyerMoore/templateBoyerM.css" rel="stylesheet">
+    <link href="/resources/css/BoyerMoore/paper.css" rel="stylesheet">
+    <link href="/resources/css/BoyerMoore/accordion.css" rel="stylesheet">
+    <link href="/resources/css/BoyerMoore/bookmark.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -64,31 +72,66 @@
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
-        <div id="center">
-            <div ng-app="myApp" ng-controller="myCtrl">
 
-                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                <textarea id="bmArea">
-        </textarea>
-                <button type="button" ng-click="click()">Try it</button>
+        <div id="centerBM">
+            <div id="leftBM">
+                <div id="paper">
+                    <div id="paper-content">
+                        <textarea id="bmArea"></textarea>
+                    </div>
+                </div>
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <button type="button" class="btn btn-warning btn-lg"
+                            style="position: absolute; top: 410px; right: 75%" ng-click="click()">Try it
+                    </button>
+                    <p style="font-family: Neucha; position:absolute; top: 455px; font-size: 22px">
+                        <label>Result: </label>
+                        {{content}}</p>
+                </div>
+            </div>
+            <div id="rightBM">
+                <div id="bookmark"></div>
+                <div id="left2"></div>
+                <section class="ac-container">
+                    <input id="ac-1" name="accordion-1" type="checkbox"/>
+                    <label for="ac-1">Instructions</label>
+                    <article class="ac-small">
+                        <p>Some content... </p>
+                    </article>
+                    <input id="ac-2" name="accordion-1" type="checkbox"/>
+                    <label for="ac-2">What it is</label>
+                    <article class="ac-medium">
+                        <p>In computer science, the Boyer–Moore string search algorithm is an efficient string searching
+                            algorithm that is the standard benchmark for practical string search literature. The
+                            algorithm preprocesses the string being searched for (the pattern), but not the string being
+                            searched in (the text). It is thus well-suited for applications in which the pattern is much
+                            shorter than the text or where it persists across multiple searches.<br>
+                            <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string_search_algorithm">For more
+                                information, please
+                                visit the following link</a></p>
+                    </article>
+                    <input id="ac-3" name="accordion-1" type="checkbox"/>
+                    <label for="ac-3">How it works</label>
+                    <article class="ac-large">
+                        <br>
+                        A N P A N M A N - <br>
+                        P A N - - - - - - <br>
+                        - P A N - - - - - <br>
+                        - - P A N - - - - <br>
+                        - - - P A N - - - <br>
+                        - - - - P A N - - <br>
+                        - - - - - P A N -
+                        <br>
+                        <p>Alignments of pattern PAN to text ANPANMAN, from k=3 to k=8. A match occurs at k=5.</p>
 
-                <!--TODO Convert JSON response to look nice -->
-                <p>{{content}}</p>
+                    </article>
+                </section>
             </div>
         </div>
-
-
         <div id="large-header" class="large-header">
-
-
             <canvas id="demo-canvas"></canvas>
-
-
         </div>
     </div>
-
-
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="/resources/js/canvas/TweenLite.min.js"></script>
