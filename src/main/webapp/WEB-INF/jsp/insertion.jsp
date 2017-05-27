@@ -28,6 +28,7 @@
     <script src="/resources/js/canvas/rAF.js"></script>
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/test.js"></script>
+    <script src="/resources/angular/insertion.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
@@ -44,33 +45,33 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
+                    <a href="#">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/huffman">Huffman</a>
+                    <a href="/home/kruskal">Kruskal </a>
+                    <a href="/home/dijkstra">Dijkstra</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
+                    <a href="/home/rdp">Ramer Douglas Peucker</a>
+                    <a href="/home/hull">Quick Hull</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/rabin/karp">Rabin Karp</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">MP</a>
                 <div class="dropdown-content">
@@ -91,10 +92,8 @@
                     <button type="button" class="btn btn-warning btn-lg"
                             style="position: absolute; top: 410px; right: 70%">Try
                         it</button>
-                    <br>
-                    <br>
-                    <p style="font-family: Neucha; font-size: 22px"><label>Result: </label>
-                        {{content.response}}</p>
+                    <p style="font-family: Neucha; position: absolute; top: 410px; font-size: 22px"><label>Result: </label>
+                        {{content}}</p>
                 </div>
             </div>
             <div id="right">

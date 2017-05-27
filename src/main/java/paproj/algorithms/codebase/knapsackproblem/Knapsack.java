@@ -5,57 +5,32 @@ package paproj.algorithms.codebase.knapsackproblem;
  */
 public class Knapsack {
 
-    private static double[] p; //contains the profit of n objects
-    private static double[] w; //contains the weight of n objects
-    private static double[] t; // solution vector
+    private static int[] v; //contains the values of n objects
+    private static int[] w; //contains the weight of n objects
+    private static int n; // number of distinct items
+    private static int W; //Knapsack capacity
+    private static int[][] solution;
 
-    public static KnapsackObject Knapsack(int m, int n) {
-        //m is the knapsack size
-        //n number of objects
+    public static KnapsackObject Knapsack(int[] values, int[] weight, int nItems, int WItems) {
 
+        v = values;
+        w = weight;
+        n = nItems;
+        W = WItems;
 
-        p = new double[n];
-        w = new double[n];
-        t = new double[n];
-
-
-        unitPriceOrder();
-        int j;
-        for (j = 0; j < p.length; j++) {
-            t[j] = 0;
+        for (int j = 0; j < W; j++) {
+            solution[0][j] = 0;
         }
-        double total = m;
-        for (j = 0; j < p.length; j++) {
-            if (w[j] <= total) {
-                t[j] = 1.00;
-                total = total - w[j];
-            } else {
-                break;// to exit the for-loop
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < W; j++) {
+                if (w[i] > j)
+                    solution[i][j] = solution[i - 1][j];
+                else
+                    solution[i][j] = Math.max(solution[i - 1][j], solution[i - 1][j - w[i]] + v[i]);
             }
         }
-        if (j < p.length) {
-            t[j] = (total / w[j]);
-
-
-        }
-        return new KnapsackObject(p, w, t);
-    }
-
-    private static void unitPriceOrder() {
-        for (int i = 0; i < p.length; i++) {
-            for (int j = 1; j < (p.length - i); j++) {
-                double x = p[j - 1] / w[j - 1];
-                double y = p[j] / w[j];
-                if (x <= y) {
-                    double temp = p[j - 1];
-                    p[j - 1] = p[j];
-                    p[j] = temp;
-
-                    double temp1 = w[j - 1];
-                    w[j - 1] = w[j];
-                    w[j] = temp1;
-                }
-            }
-        }
+        return new KnapsackObject(solution[n][W]);
     }
 }
+
+

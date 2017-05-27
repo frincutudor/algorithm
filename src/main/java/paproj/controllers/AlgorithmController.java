@@ -16,6 +16,7 @@ import paproj.algorithms.codebase.helperclasses.Edge;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanCodeHelper;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
 import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
+import paproj.algorithms.codebase.knapsackproblem.Knapsack;
 import paproj.algorithms.codebase.knapsackproblem.KnapsackObject;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
@@ -37,7 +38,6 @@ import paproj.helpers.commonhelpers.Response;
 
 import java.util.*;
 
-import static paproj.algorithms.codebase.convexhull.ConvexHull.QuickHull;
 import static paproj.algorithms.codebase.sortings.InsertionSort.insertionSort;
 import static paproj.algorithms.dynamicprograming.LongestCommonSubsequence.lcsSolver;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
@@ -328,27 +328,39 @@ public class AlgorithmController {
     public KnapsackObject solveKnapsackProblem(@RequestBody KnapsackBody kBody) {
 
         String[] input = kBody.getKBody();
-        String nObjects = input[0];
-        String tWeight = input[1];
-        String[] s1 = nObjects.split("\\s+");
-        String[] s2 = tWeight.split("\\s+");
+        String MaxWeight = input[0];
+        String TotalItems = input[1];
+        String ValuesOfItems = input[2];
+        String WeightOfItems = input[3];
 
-        int m = s1.length;
-        int n = s2.length;
+        String[] s1 = MaxWeight.split("\\s+");
+        String[] s2 = TotalItems.split("\\s+");
+        String[] s3 = ValuesOfItems.split("\\s+");
+        String[] s4 = WeightOfItems.split("\\s+");
+
+        int[] v = new int[s1.length];
+        int[] w = new int[s2.length];
+        int n = s3.length;
+        int W = s4.length;
+
 
         int i = 0;
         for (String s : s1) {
-            m = Integer.parseInt(s);
+            v[i] = Integer.parseInt(s);
             i++;
         }
         i = 0;
-        for (String s : s2) {
-            n = Integer.parseInt(s);
+        for (String s : s2){
+            w[i] = Integer.parseInt(s);
             i++;
         }
 
-
-        return Knapsack(m, n);
-
+        for (String s : s3){
+            n = Integer.parseInt(s);
+        }
+        for (String s : s4){
+            W = Integer.parseInt(s);
+        }
+        return Knapsack(v,w,n,W);
     }
 }

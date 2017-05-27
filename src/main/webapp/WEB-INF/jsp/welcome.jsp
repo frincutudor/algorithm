@@ -32,7 +32,7 @@
     <div class="row">
         <br>
         <ul>
-           <!--TODO: Add mappings for all jsp menus-->
+
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
@@ -56,7 +56,6 @@
                 <div class="dropdown-content">
                     <a href="/home/lcs">Longest common subsequence</a>
                     <a href="/home/dtw">DTW</a>
-                    <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
@@ -68,9 +67,6 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">MP</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
                 </div>
             </li>
         </ul>
