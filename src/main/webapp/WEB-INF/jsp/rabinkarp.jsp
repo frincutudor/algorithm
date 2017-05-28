@@ -6,9 +6,8 @@
     <link href="/resources/css/rabinkarp/paper.css" rel="stylesheet">
     <link href="/resources/css/rabinkarp/accordion.css" rel="stylesheet">
     <link href="/resources/css/rabinkarp/bookmark.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/resources/css/button.css" rel="stylesheet">
+
 
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
@@ -36,33 +35,31 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
+                    <a href="/home/insertion">Insertion</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kruskal">Kruskal</a>
+                    <a href="/home/dijkstra">Dijkstra</a>
+                    <a href="/home/huffman">Huffman</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/rdp">Ramer Douglas Peucker</a>
+                    <a href="/home/hull">Quick Hull</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">MP</a>
                 <div class="dropdown-content">
@@ -82,7 +79,7 @@
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button type="button" class="btn btn-warning btn-lg"
+                    <button class="button"
                             style="position: absolute; top: 410px; right: 75%" ng-click="click()">Try it
                     </button>
                     <p style="font-family: Neucha; position:absolute; top: 455px; font-size: 22px">

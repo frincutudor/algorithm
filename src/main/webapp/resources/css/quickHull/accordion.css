@@ -1,6 +1,6 @@
 .ac-container{
-    width: 460px;
-    margin: 20px auto 30px auto;
+    width: 395px;
+    margin: 10px auto 30px auto;
     text-align: center;
 }
 
@@ -88,8 +88,8 @@
 
 }
 .ac-container input:checked ~ article.ac-medium{
-    height: 250px;
+    height: 230px;
 }
 .ac-container input:checked ~ article.ac-large{
-    height: 360px;
+    height: 380px;
 }

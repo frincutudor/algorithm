@@ -15,7 +15,7 @@ canvas.addEventListener('mousedown', function(e) {
 ctx.lineWidth = 3;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-ctx.strokeStyle = '#ff0000';
+ctx.strokeStyle = '#8B0000';
 var index=0;
 
 
@@ -31,7 +31,7 @@ function getPosition(event)
     x -= canvas.offsetLeft;
     y -= canvas.offsetTop;
 
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#8B0000";
     ctx.fillRect(x,y,2,2);
     var point = x.toString() + " " + y.toString();
     circles[index] = point;

@@ -36,21 +36,20 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="/home/insertion">Insertion Sort</a>
+                    <a href="/home/insertion">Insertion</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="/home/huffman">Huffman</a>
                     <a href="/home/kruskal">Kruskal</a>
                     <a href="/home/dijkstra">Dijkstra</a>
+                    <a href="/home/huffman">Huffman</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
                     <a href="/home/rdp">Ramer Douglas Peucker</a>
                     <a href="/home/hull">Quick Hull</a>
-                    <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
@@ -59,14 +58,16 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-
-                    <a href="/home/boyer/moore">Boyer Moore</a>
                     <a href="/home/kmp">KMP</a>
                     <a href="/home/rabin/karp">Rabin Karp</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
 
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">MP</a>
                 <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
                 </div>
             </li>
         </ul>

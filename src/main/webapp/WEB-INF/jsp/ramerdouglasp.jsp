@@ -6,9 +6,7 @@
     <link href="/resources/css/RDP/bookmark.css" rel="stylesheet">
     <link href="/resources/css/rdp.css" rel="stylesheet">
     <link href="/resources/css/RDP/accordion.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/resources/css/button.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -44,33 +42,31 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
+                    <a href="/home/insertion">Insertion</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kruskal">Kruskal</a>
+                    <a href="/home/dijkstra">Dijkstra</a>
+                    <a href="/home/huffman">Huffman</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/hull">Quick Hull</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/rabin/karp">Rabin Karp</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">MP</a>
                 <div class="dropdown-content">
@@ -80,10 +76,6 @@
                 </div>
             </li>
         </ul>
-
-        <div id="large-header" class="large-header">
-            <canvas id="demo-canvas"></canvas>
-        </div>
         <div id="centerRDP">
             <div id="leftRDP">
                 <canvas id="myCanvas" width=570 height=250 style="position: absolute; top: 10px"></canvas>
@@ -93,10 +85,10 @@
                     here: </label>
                 <input style="position: absolute; top: 570px; left: 180px" id="input">
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button type="button" class="btn btn-warning btn-lg" id="clear"
-                            style="position: absolute; right: 82%; top: 610px">Clear
+                    <button class="button" id="clear"
+                            style="position: absolute; right: 80%; top: 610px">Clear
                     </button>
-                    <button type="button" class="btn btn-warning btn-lg"
+                    <button class="button"
                             style="position: absolute; top: 610px; right: 92%" ng-click="click()">Try it!!
                     </button>
                     <p>{{content.data}}</p>
@@ -143,6 +135,9 @@
                     </article>
                 </section>
             </div>
+        </div>
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
         </div>
     </div>
 </div>
