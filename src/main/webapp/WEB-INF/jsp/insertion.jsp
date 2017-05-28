@@ -3,13 +3,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Neucha');
     </style>
-    <link href="/resources/css/template.css" rel="stylesheet">
-
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
-    <link href="/resources/css/insertionSort/fontStyle.css" rel="stylesheet">
+    <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/accordion.css" rel="stylesheet">
-    <link href="/resources/css/insertionSort/paper.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/bookmark.css" rel="stylesheet">
+    <link href="/resources/css/insertionSort/paper.css" rel="stylesheet">
+    <link href="/resources/css/button.css" rel="stylesheet">
 
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
@@ -26,6 +25,7 @@
     <script src="/resources/js/canvas/rAF.js"></script>
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/test.js"></script>
+    <script src="/resources/angular/insertion.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
@@ -36,64 +36,53 @@
 
     <div class="row">
         <br>
-
-        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kruskal">Kruskal</a>
+                    <a href="/home/dijkstra">Dijkstra</a>
+                    <a href="/home/huffman">Huffman</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/rdp">Ramer Douglas Peucker</a>
+                    <a href="/home/hull">Quick Hull</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/rabin/karp">Rabin Karp</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+
                 </div>
             </li>
         </ul>
+
         <div id="center">
-
             <div id="row2">
-
                 <div id="paper">
                     <div id="paper-content">
                         <textarea autofocus id="autofocus"></textarea>
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" ng-click="click()" style="position: absolute; right: 70%">Try
+                    <button class="button"
+                            style="position: absolute; top: 410px; right: 70%" ng-click="click()">Try
                         it
                     </button>
-                    <br>
-                    <br>
-                    <p style="font-family: Neucha; font-size: 22px"><label>Result: </label>
+                    <p style="font-family: Neucha; position: absolute; top: 445px; font-size: 22px">
+                        <label>Result: </label>
                         {{content.response}}</p>
                 </div>
             </div>
@@ -104,11 +93,11 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert the numbers in any order in the left box and click "Try it!" button. </p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>
-                    <article class="ac-small">
+                    <article class="ac-medium">
                         <p>Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one
                             item at a time. It is much less efficient on large lists than more advanced algorithms such
                             as quicksort, heapsort, or merge sort.<br>

@@ -5,9 +5,9 @@
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
     <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
     <link href="/resources/css/huffman/paper.css" rel="stylesheet">
-    <link href="/resources/css/huffman/buttonStyle.css" rel="stylesheet">
     <link href="/resources/css/huffman/accordion.css" rel="stylesheet">
     <link href="/resources/css/huffman/bookmark.css" rel="stylesheet">
+    <link href="/resources/css/button.css" rel="stylesheet">
 
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
@@ -44,39 +44,31 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
+                    <a href="/home/insertion">Insertion</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kruskal">Kruskal</a>
+                    <a href="/home/dijkstra">Dijkstra</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/rdp">Ramer Douglas Peucker</a>
+                    <a href="/home/hull">Quick Hull</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/rabin/karp">Rabin Karp</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+
                 </div>
             </li>
         </ul>
@@ -93,10 +85,11 @@
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button class="buttonStyle" type="button" style="position:absolute; right: 70%" ng-click="click()">
+                    <button class="button"
+                            style="position: absolute; top: 220px; right: 70%" ng-click="click()">
                         Try it
                     </button>
-                    <canvas id="canvas" width=635 height=550 style="position: absolute; top: 245px"></canvas>
+                    <canvas id="canvas" width=635 height=550 style="position: absolute; top: 285px"></canvas>
                     <p>{{content.response}}</p>
                 </div>
             </div>
@@ -107,7 +100,7 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Pleas insert any text in left box and click "Try it!" button </p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>

@@ -3,6 +3,11 @@
     <link href="/resources/css/template.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/insertion-template.css" rel="stylesheet">
     <link href="/resources/css/huffman/huffman.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/templateKruskal.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/bookmark.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/accordion.css" rel="stylesheet">
+    <link href="/resources/css/kruskal/paper.css" rel="stylesheet">
+    <link href="/resources/css/button.css" rel="stylesheet">
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
     <meta name="author" content="Codrops"/>
@@ -19,7 +24,7 @@
     <script src="/resources/js/canvas/demo-1.js"></script>
     <script src="/resources/angular/test.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
     <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -34,68 +39,96 @@
 
     <div class="row">
         <br>
-
-        <!-- TODO Fix dropwdown menu-->
         <ul>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
+                    <a href="/home/insertion">Insertion</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/dijkstra">Dijkstra</a>
+                    <a href="/home/huffman">Huffman</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/rdp">Ramer Douglas Peucker</a>
+                    <a href="/home/hull">Quick Hull</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/rabin/karp">Rabin Karp</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+
                 </div>
             </li>
         </ul>
 
-        <!--TODO Arrange button , make this div look nice -->
-        <div id="center">
-            <div ng-app="myApp" ng-controller="myCtrl" >
 
-                <!--TODO Upgrade textarea interface ( or find better solutions for data input on user side ) -->
-                <textarea id="kruskalArea"></textarea>
-
+        <div id="centerKruskal">
+            <div id="leftKruskal">
+                <div id="paper">
+                    <div id="paper-content">
 
 
+                        <textarea autofocus id="autofocus"></textarea>
+                    </div>
+                </div>
 
-                <button id="button" type="button" ng-click="click()">Try it</button>
-                <!--TODO Convert JSON response to look nice -->
-                <canvas id="canvas" width=500 height=300></canvas>
-                <br>
-                <br>
-                <canvas id="canvas2" width=800 height=300></canvas>
-                <p>{{content}}</p>
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <button class="button"
+                            style="position: absolute; top: 220px; right: 70%"
+                            ng-click="click()">
+                        Try it
+                    </button>
+                    <canvas id="canvas" width=635 height=630 style="position: absolute; top: 320px"></canvas>
+                    <p>{{content.data}}</p>
+                </div>
             </div>
 
+            <div id="rightKruskal">
+                <div id="bookmark"></div>
+                <div id="left2"></div>
+                <section class="ac-container">
+                    <input id="ac-1" name="accordion-1" type="checkbox"/>
+                    <label for="ac-1">Instructions</label>
+                    <article class="ac-small">
+                        <p>Please insert only one number in left box and click "Try it!" button. </p>
+                    </article>
+                    <input id="ac-2" name="accordion-1" type="checkbox"/>
+                    <label for="ac-2">What it is</label>
+                    <article class="ac-large">
+                        <p>Kruskal's algorithm is a minimum-spanning-tree algorithm which finds an edge of the least
+                            possible weight that connects any two trees in the forest. It is a greedy algorithm in
+                            graph theory as it finds a minimum spanning tree for a connected weighted graph adding
+                            increasing cost arcs at each step. This means it finds a subset of the edges that forms a
+                            tree that includes every vertex, where the total weight of all the edges in the tree is
+                            minimized. If the graph is not connected, then it finds a minimum spanning forest (a minimum
+                            spanning tree for each connected component).<br>
+                            <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">For more information, please
+                                visit the following link</a></p>
+                    </article>
+                    <input id="ac-3" name="accordion-1" type="checkbox"/>
+                    <label for="ac-3">How it works</label>
+                    <article class="ac-large">
+                        <p>A demo for Kruskal's algorithm based on Euclidean distance.<br>
+                            <a title="By Shiyu Ji (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons"
+                               href="https://commons.wikimedia.org/wiki/File%3AKruskalDemo.gif"><img width="256"
+                                                                                                     alt="KruskalDemo"
+                                                                                                     src="https://upload.wikimedia.org/wikipedia/commons/b/bb/KruskalDemo.gif"/></a><br>
+                        </p>
+                    </article>
+                </section>
+
+            </div>
         </div>
 
 
@@ -117,7 +150,7 @@
 <script src="/resources/js/canvas/demo-1.js"></script>
 <script src="/resources/angular/kruskal.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://code.jquery.com/ui/1.9.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
 <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>

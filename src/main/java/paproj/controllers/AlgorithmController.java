@@ -16,7 +16,6 @@ import paproj.algorithms.codebase.helperclasses.Edge;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanCodeHelper;
 import paproj.algorithms.codebase.huffmanalgorithm.HuffmanNode;
 import paproj.algorithms.codebase.huffmanalgorithm.StringParser;
-import paproj.algorithms.codebase.knapsackproblem.KnapsackObject;
 import paproj.algorithms.codebase.kruskalalgorithm.GraphHelperImpl;
 import paproj.algorithms.codebase.kruskalalgorithm.Kruskal;
 
@@ -39,16 +38,16 @@ import paproj.helpers.commonhelpers.Response;
 
 import java.util.*;
 
-import static paproj.algorithms.codebase.convexhull.ConvexHull.QuickHull;
 import static paproj.algorithms.codebase.sortings.InsertionSort.insertionSort;
 import static paproj.algorithms.dynamicprograming.LongestCommonSubsequence.lcsSolver;
 import static paproj.helpers.commonhelpers.InputParser.graphInputParser;
 import static paproj.algorithms.codebase.ramerdouglaspakardalgorithm.RamerDouglasPeucker.RamerDouglasPeuckerFilter;
 import static paproj.helpers.commonhelpers.InputParser.inputParser;
 import static paproj.algorithms.dynamicprograming.DTW.DTW;
-import static paproj.algorithms.codebase.knapsackproblem.Knapsack.Knapsack;
+
 import static paproj.algorithms.codebase.sortings.BubbleSort.bubbleSort;
 import static paproj.algorithms.codebase.sortings.SelectionSort.selectionSort;
+
 
 /**
  * Created by frincutudor on 3/10/17.
@@ -323,39 +322,6 @@ public class AlgorithmController {
     }
 
 
-    @RequestMapping(value = "/home/knapsack")
-    public ModelAndView homeKnapsackProblem() {
-        return new ModelAndView("knapsack.jsp");
-    }
-
-    @RequestMapping(value = "/algorithm/knapsack", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public KnapsackObject solveKnapsackProblem(@RequestBody KnapsackBody kBody) {
-
-        String[] input = kBody.getKBody();
-        String nObjects = input[0];
-        String tWeight = input[1];
-        String[] s1 = nObjects.split("\\s+");
-        String[] s2 = tWeight.split("\\s+");
-    //TODO: bad implementation n,m and s1,s2 will fix after knapsac review
-        int m = s1.length;
-        int n = s2.length;
-
-        int i = 0;
-        for (String s : s1) {
-            m = Integer.parseInt(s);
-            i++;
-        }
-        i = 0;
-        for (String s : s2) {
-            n = Integer.parseInt(s);
-            i++;
-        }
-
-
-        return Knapsack(m, n);
-
-    }
-
     @RequestMapping(value = "/home/bubblesort")
     public ModelAndView homeBubbleSort() {
         return new ModelAndView("bublesort.jsp");
@@ -406,4 +372,5 @@ public class AlgorithmController {
         object.setVector(selectionSort(integers));
         return object;
     }
+
 }

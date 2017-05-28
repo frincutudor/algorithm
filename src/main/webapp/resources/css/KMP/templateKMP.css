@@ -1,26 +1,26 @@
-#centerHuffman{
+#centerKMP {
     top: 50%;
-    left: 50%;
-    width: 70em;
+    left: 55%;
+    width: 62em;
     height: 60em;
     margin-top: -12em;
     margin-left: -35em;
     border: 1px black;
-    background-color:#fff79e;
+    background-color: #fff79e;
     position: absolute;
     z-index: 5;
     opacity: 0.8;
 }
-#leftHuffman {
+#leftKMP{
     display: inline-block;
-    width: 58%;
+    width: 50%;
     height: 100%;
     z-index: 5;
 }
 
-#rightHuffman{
+#rightKMP{
     display: inline-block;
-    width: 35%;
+    width: 40%;
     height: 100%;
     z-index: 5;
 }

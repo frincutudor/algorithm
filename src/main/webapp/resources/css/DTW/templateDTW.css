@@ -1,26 +1,26 @@
-#centerHuffman{
+#centerDTW {
     top: 50%;
     left: 50%;
-    width: 70em;
-    height: 60em;
+    width: 60em;
+    height: 71em;
     margin-top: -12em;
-    margin-left: -35em;
+    margin-left: -30em;
     border: 1px black;
     background-color:#fff79e;
     position: absolute;
     z-index: 5;
     opacity: 0.8;
 }
-#leftHuffman {
+#leftDTW{
     display: inline-block;
-    width: 58%;
+    width: 50%;
     height: 100%;
     z-index: 5;
 }
 
-#rightHuffman{
+#rightDTW{
     display: inline-block;
-    width: 35%;
+    width: 40%;
     height: 100%;
     z-index: 5;
 }

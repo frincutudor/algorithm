@@ -31,7 +31,7 @@ function drawHull(jsonResponse)
     function drawLines() {
 
         ctx.clearRect(0,0,cw,ch);
-        ctx.strokeStyle = '#F4D871'; // props Stefan
+        ctx.strokeStyle = '#8B0000'; // props Stefan
         ctx.lineWidth = 3;
         ctx.beginPath();
 
