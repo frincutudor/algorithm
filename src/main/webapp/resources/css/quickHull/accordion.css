@@ -91,5 +91,5 @@
     height: 230px;
 }
 .ac-container input:checked ~ article.ac-large{
-    height: 380px;
+    height: 390px;
 }

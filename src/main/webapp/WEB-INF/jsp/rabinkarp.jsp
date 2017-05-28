@@ -59,15 +59,8 @@
                 <div class="dropdown-content">
                     <a href="/home/kmp">KMP</a>
                     <a href="/home/boyer/moore">Boyer Moore</a>
-
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
                 </div>
-            </li>
+
         </ul>
 
 
@@ -83,8 +76,14 @@
                             style="position: absolute; top: 410px; right: 75%" ng-click="click()">Try it
                     </button>
                     <p style="font-family: Neucha; position:absolute; top: 455px; font-size: 22px">
-                        <label>Result: </label>
-                        {{content}}</p>
+                        <label>Text: </label>
+                        {{content.text}}</p>
+                    <p style="font-family: Neucha; position:absolute; top: 475px; font-size: 22px">
+                        <label>Pattern: </label>
+                        {{content.pattern}}</p>
+                    <p style="font-family: Neucha; position:absolute; top: 495px; font-size: 22px">
+                        <label>Position: </label>
+                        {{content.position}}</p>
                 </div>
             </div>
             <div id="rightRBK">
@@ -94,7 +93,8 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert two strings with space between them in left box and click "Try it!" button.<br>
+                            Example: ABC ABCDAB</p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>
@@ -106,16 +106,17 @@
                             algorithm can rapidly search through a paper for instances of sentences from the source
                             material, ignoring details such as case and punctuation. Because of the abundance of the
                             sought strings, single-string searching algorithms are impractical.</p>
-                            <a href="https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm">For
-                                more
-                                information, please
-                                visit the following link</a></p>
+                        <a href="https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm">For
+                            more
+                            information, please
+                            visit the following link</a></p>
                     </article>
                     <input id="ac-3" name="accordion-1" type="checkbox"/>
                     <label for="ac-3">How it works</label>
                     <article class="ac-large">
                         <br>
-                        <img src="/resources/css/images/rabin-karp-string-matching-algorithm-5-638.jpg" style="width: 400px">
+                        <img src="/resources/css/images/rabin-karp-string-matching-algorithm-5-638.jpg"
+                             style="width: 400px">
 
                     </article>
                 </section>

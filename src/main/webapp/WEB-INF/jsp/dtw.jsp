@@ -63,12 +63,6 @@
                     <a href="/home/rabin/karp">Rabin Karp</a>
                     <a href="/home/boyer/moore">Boyer Moore</a>
 
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
                 </div>
             </li>
         </ul>
@@ -88,8 +82,12 @@
                     <br>
                     <br>
                     <p style="font-family: Neucha; position:absolute; top: 455px; font-size: 22px">
-                        <label>Result: </label>
-                        {{content}}</p>
+                        <label>Warping Path: </label>
+                        {{content.warpingPath}}</p>
+
+                    <p style="font-family: Neucha; position:absolute; top: 485px; font-size: 22px">
+                        <label>Warping Distance: </label>
+                        {{content.warpingDistance}}</p>
                 </div>
             </div>
             <div id="rightDTW">
@@ -99,7 +97,11 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert two sequences of numbers with Enter between them and click "Try it!" button.
+                        <br>
+                        Example: <br>
+                            1 2 3 4 5<br>
+                            5 4 3 2 1</p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>

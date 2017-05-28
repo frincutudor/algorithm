@@ -65,12 +65,6 @@
                     <a href="/home/rabin/karp">Rabin Karp</a>
                     <a href="/home/boyer/moore">Boyer Moore</a>
 
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
                 </div>
             </li>
         </ul>
@@ -84,12 +78,12 @@
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
                     <button class="button"
-                            style="position: absolute; top: 410px; right: 70%">Try
+                            style="position: absolute; top: 410px; right: 70%" ng-click="click()">Try
                         it
                     </button>
-                    <p style="font-family: Neucha; position: absolute; top: 410px; font-size: 22px">
+                    <p style="font-family: Neucha; position: absolute; top: 445px; font-size: 22px">
                         <label>Result: </label>
-                        {{content}}</p>
+                        {{content.response}}</p>
                 </div>
             </div>
             <div id="right">
@@ -99,11 +93,11 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert the numbers in any order in the left box and click "Try it!" button. </p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>
-                    <article class="ac-small">
+                    <article class="ac-medium">
                         <p>Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one
                             item at a time. It is much less efficient on large lists than more advanced algorithms such
                             as quicksort, heapsort, or merge sort.<br>

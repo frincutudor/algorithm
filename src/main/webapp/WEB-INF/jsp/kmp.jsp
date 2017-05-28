@@ -58,12 +58,6 @@
                     <a href="/home/rabin/karp">Rabin Karp</a>
                     <a href="/home/boyer/moore">Boyer Moore</a>
 
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
                 </div>
             </li>
         </ul>
@@ -81,8 +75,14 @@
                             style="position: absolute; top: 410px; right: 75%" ng-click="click()">Try it
                     </button>
                     <p style="font-family: Neucha; position:absolute; top: 455px; font-size: 22px">
-                        <label>Result: </label>
-                        {{content}}</p>
+                        <label>Text: </label>
+                        {{content.text}}</p>
+                    <p style="font-family: Neucha; position:absolute; top: 475px; font-size: 22px">
+                        <label>Pattern: </label>
+                        {{content.pattern}}</p>
+                    <p style="font-family: Neucha; position:absolute; top: 495px; font-size: 22px">
+                        <label>Position: </label>
+                        {{content.position}}</p>
                 </div>
             </div>
             <div id="rightKMP">
@@ -92,7 +92,8 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert two strings with space between them in left box and click "Try it!" button.<br>
+                        Example: ABC ABCDAB</p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>

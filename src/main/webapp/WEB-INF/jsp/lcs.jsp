@@ -58,13 +58,6 @@
                     <a href="/home/kmp">KMP</a>
                     <a href="/home/rabin/karp">Rabin Karp</a>
                     <a href="/home/boyer/moore">Boyer Moore</a>
-
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
                 </div>
             </li>
         </ul>
@@ -92,7 +85,8 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert two different sequences with space between them and click "Try it!" button.
+                        <br>Example: abc abcdef</p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>

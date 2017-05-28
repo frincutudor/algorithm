@@ -84,11 +84,11 @@
 }
 
 .ac-container input:checked ~ article.ac-small{
-    height: 140px;
+    height: 170px;
 
 }
 .ac-container input:checked ~ article.ac-medium{
-    height: 317px;
+    height: 335px;
 }
 .ac-container input:checked ~ article.ac-large{
     height: 400px;
