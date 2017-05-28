@@ -40,8 +40,8 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/bubblesort">Bubble Sort</a>
+                    <a href="/home/selection">Selection Sort</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">

@@ -10,6 +10,7 @@
     <link href="/resources/css/insertionSort/accordion.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/paper.css" rel="stylesheet">
     <link href="/resources/css/insertionSort/bookmark.css" rel="stylesheet">
+    <link href="/resources/css/button.css" rel="stylesheet">
 
     <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
     <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
@@ -44,39 +45,31 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Diverse</a>
                 <div class="dropdown-content">
-                    <a href="index.html">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/insertion">Insertion Sort</a>
+                    <a href="/home/selection">Selection Sort</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Greddy</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kruskal">Kruskal</a>
+                    <a href="/home/dijkstra">Dijkstra</a>
+                    <a href="/home/huffman">Huffman</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Divide et impera</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/rdp">Ramer Douglas Peucker</a>
+                    <a href="/home/hull">Quick Hull</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Programare dinamica</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/lcs">Longest common subsequence</a>
+                    <a href="/home/dtw">DTW</a>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Pattern match</a>
                 <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">MP</a>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="/home/kmp">KMP</a>
+                    <a href="/home/rabin/karp">Rabin Karp</a>
+                    <a href="/home/boyer/moore">Boyer Moore</a>
+
                 </div>
             </li>
         </ul>
@@ -90,12 +83,15 @@
                     </div>
                 </div>
                 <div ng-app="myApp" ng-controller="myCtrl">
-                    <button  ng-click="click()" style="position: absolute; right: 70%">Try
+                    <button class="button"
+                            style="position: absolute; top: 410px; right: 70%" ng-click="click()"
+                            style="position: absolute; right: 70%">Try
                         it
                     </button>
                     <br>
                     <br>
-                    <p style="font-family: Neucha; font-size: 22px"><label>Result: </label>
+                    <p style="font-family: Neucha; position: absolute; top: 445px; font-size: 22px">
+                        <label>Result: </label>
                         {{content.solution}}</p>
                 </div>
             </div>
@@ -106,26 +102,27 @@
                     <input id="ac-1" name="accordion-1" type="checkbox"/>
                     <label for="ac-1">Instructions</label>
                     <article class="ac-small">
-                        <p>Some content... </p>
+                        <p>Please insert the numbers in any order in the left box and click "Try it!" button.</p>
                     </article>
                     <input id="ac-2" name="accordion-1" type="checkbox"/>
                     <label for="ac-2">What it is</label>
-                    <article class="ac-small">
-                        <p>Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one
-                            item at a time. It is much less efficient on large lists than more advanced algorithms such
-                            as quicksort, heapsort, or merge sort.<br>
-                            <a href="https://en.wikipedia.org/wiki/Insertion_sort">For more information, please
+                    <article class="ac-medium">
+                        <p>Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that
+                            repeatedly steps through the list to be sorted, compares each pair of adjacent items and
+                            swaps them if they are in the wrong order. Passes through the list are repeated until no
+                            swaps are needed, which indicates that the list is sorted.<br>
+                            <a href="https://en.wikipedia.org/wiki/Bubble_sort">For more information, please
                                 visit the following link</a></p>
                     </article>
                     <input id="ac-3" name="accordion-1" type="checkbox"/>
                     <label for="ac-3">How it works</label>
                     <article class="ac-large">
-                        <p>A graphical example of insertion sort<br>
+                        <p>A graphical example of bubblesort sort<br>
+                            <br>
                             <a title="By Swfung8 (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons"
-                               href="https://commons.wikimedia.org/wiki/File%3AInsertion-sort-example-300px.gif"><img
-                                    width="256" alt="Insertion-sort-example-300px"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif"/></a><br>
-                            <a href="https://visualgo.net/en/sorting"> External link for a visual explanation</a>
+                               href="https://commons.wikimedia.org/wiki/File%3ABubble-sort-example-300px.gif"><img
+                                    width="256" alt="Bubble-sort-example-300px"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif"/></a>
                         </p>
                     </article>
                 </section>
