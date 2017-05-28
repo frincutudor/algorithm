@@ -81,25 +81,26 @@
             </li>
         </ul>
 
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+        </div>
         <div id="centerRDP">
             <div id="leftRDP">
-                <canvas id="myCanvas" width=630 height=500 style="position: absolute; top: 10px"></canvas>
-                <canvas id="canvas" width=630 height=469 style="position: absolute; top: 520px;"></canvas>
-                <label style="position:absolute; top:1030px; font-family: Handlee, cursive; font-size: 25px">Set
+                <canvas id="myCanvas" width=570 height=250 style="position: absolute; top: 10px"></canvas>
+                <canvas id="canvas" width=570 height=250 style="position: absolute; top: 280px;"></canvas>
+                <label style="position:absolute; top:570px; font-family: Handlee, cursive; font-size: 25px">Set
                     epsilon
                     here: </label>
-                <input style="position: absolute; top: 1030px; left: 180px" id="input">
+                <input style="position: absolute; top: 570px; left: 180px" id="input">
                 <div ng-app="myApp" ng-controller="myCtrl">
                     <button type="button" class="btn btn-warning btn-lg" id="clear"
-                            style="position: absolute; right: 82%; top: 1070px">Clear
+                            style="position: absolute; right: 82%; top: 610px">Clear
                     </button>
                     <button type="button" class="btn btn-warning btn-lg"
-                            style="position: absolute; top: 1070px; right: 92%" ng-click="click()">Try it!!
+                            style="position: absolute; top: 610px; right: 92%" ng-click="click()">Try it!!
                     </button>
                     <p>{{content.data}}</p>
                     <br>
-
-
                 </div>
             </div>
             <div id="rightRDP">
@@ -142,11 +143,6 @@
                     </article>
                 </section>
             </div>
-        </div>
-
-
-        <div id="large-header" class="large-header">
-            <canvas id="demo-canvas"></canvas>
         </div>
     </div>
 </div>

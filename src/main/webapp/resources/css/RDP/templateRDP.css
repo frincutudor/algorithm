@@ -1,9 +1,9 @@
 #centerRDP {
-    top: 50%;
-    left: 45%;
+    top: 18%;
+    left: 37%;
     width: 80em;
-    height: 85em;
-    margin-top: -12em;
+    height: 65em;
+    margin-top: 0em;
     margin-left: -35em;
     border: 1px black;
     background-color:#fff79e;
@@ -14,13 +14,13 @@
 #leftRDP {
     display: inline-block;
     width: 58%;
-    height: 100%;
+    height: 90%;
     z-index: 5;
 }
 
 #rightRDP {
     display: inline-block;
     width: 35%;
-    height: 100%;
+    height: 90%;
     z-index: 5;
 }
